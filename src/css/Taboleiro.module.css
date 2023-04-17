@@ -1,0 +1,21 @@
+body    {text-align: center;
+}
+
+#taboleiro      {
+        display: grid;
+        grid-template-columns: 100px 200px 300px 400px 500px;
+        grid-template-rows: 100px 200px 300px 400px 500px;
+        width: 800px;
+        height: 800px;
+}        
+
+.b      {background-color: antiquewhite;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+}
+
+.n      {background-color: aqua;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+}
+
