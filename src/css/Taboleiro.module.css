@@ -8,20 +8,20 @@ body{
         height: 100vh;
         display: grid;
         place-items: center;
-        background: #000046;
-        background: linear-gradient(to right, #1CB5E0,#000046);
+        background: #1ce09f;
+        background: linear-gradient(to right, #1ce09f,#244103);
 }
 .taboleiro      {
-        width: 800px;
-        height: 800px;
+        width: 550px;
+        height: 550px;
         display: grid;
         grid-template-columns: repeat(8,1fr);
         grid-template-rows: repeat(8,1fr);
         background-color: #fff;
-        border: dotted thin black;
-       
+        border: dotted thin black;   
 }  
 .taboleiro *{
+        font-family: Chess;
         text-align: center;
         font-size: 60px;
         transition: 0.2s ease-in-out;
@@ -34,8 +34,8 @@ body{
         font-weight: 600;
 }
 .b{
-        background-color: #a5682a;
+        background-color: antiquewhite;
 }
 .n{
-        
-}
+        background-color: #a5682a;
+}  
