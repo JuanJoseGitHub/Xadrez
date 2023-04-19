@@ -8,12 +8,11 @@ body{
         height: 100vh;
         display: grid;
         place-items: center;
-        background: #1ce09f;
         background: linear-gradient(to right, #1ce09f,#244103);
 }
 .taboleiro      {
-        width: 550px;
-        height: 550px;
+        width: 600px;
+        height: 600px;
         display: grid;
         grid-template-columns: repeat(8,1fr);
         grid-template-rows: repeat(8,1fr);
