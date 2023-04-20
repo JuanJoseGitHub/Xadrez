@@ -7,17 +7,14 @@ export default function Taboleiro() {
   const chess = new Chess();
   chess.move("e4");
   chess.move("e5");
-  chess.move("Nf3");
-  chess.move("Nc6");
-  chess.move("Bc4");
-  chess.move("Bc5");
-  chess.move("O-O");
 
-  const taboleiro = xeneraTaboleiro(chess);
+  let taboleiro = xeneraTaboleiro();
 
-  //Funcion xenera Taboleiro8x8()
-
-  function xeneraTaboleiro(chess) {
+   //chess.move("d4")
+  //taboleiro=xeneraTaboleiro(chess)
+ 
+ //Funcion xenera Taboleiro8x8()
+  function xeneraTaboleiro() {
     let TodoTaboleiro = chess.ascii();
     let filasSucias = TodoTaboleiro.split("|").filter(
       (fila) => fila.length === 24
@@ -35,10 +32,17 @@ export default function Taboleiro() {
     return Taboleiro8x8;
   }
 
+  //  Manexador boton
+  function unhaMais(){
+   chess.move("d4")
+   taboleiro = xeneraTaboleiro()
+   }
+
   return (
 
     // Pinta o taboleiro en pantalla
-    
+    <>
+    <button onClick={unhaMais}>Palante</button>
     <div className={styles.taboleiro}>
       <div className={styles.b} id={styles.a8}>
         {taboleiro[0][0]}
@@ -233,5 +237,6 @@ export default function Taboleiro() {
         {taboleiro[7][7]}
       </div>
     </div>
+    </>
   );
 }
