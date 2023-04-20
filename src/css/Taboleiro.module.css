@@ -11,8 +11,8 @@ body{
         background: linear-gradient(to right, #1ce09f,#244103);
 }
 .taboleiro      {
-        width: 600px;
-        height: 600px;
+        width: 550px;
+        height: 550px;
         display: grid;
         grid-template-columns: repeat(8,1fr);
         grid-template-rows: repeat(8,1fr);
