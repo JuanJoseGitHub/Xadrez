@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "../css/Taboleiro.module.css";
 import { Chess } from "chess.js";
 
 export default function Taboleiro() {
-  // Iniciamos o modulo cunha partida na posición inicial
   const chess = new Chess();
-  chess.move("e4");
-  chess.move("e5");
+  // Iniciamos o modulo cunha partida na posición inicial 
+  const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
+  const iniciado = useRef(false)
 
-  let taboleiro = xeneraTaboleiro();
+  useEffect(
+    ()=>{
+      if ( ! iniciado.current ) {
+        delayedMovement(["e4","e5"])
+        iniciado.current = true
+      }
+    },
+    []
+  )
 
-   //chess.move("d4")
-  //taboleiro=xeneraTaboleiro(chess)
- 
+  function delayedMovement(movementos) {
+    for (let orde in movementos) {
+      setTimeout(()=>{
+        chess.move(movementos[orde])
+        setTaboleiro(xeneraTaboleiro())
+      }, 1000*orde)
+    }
+
+  }
+
+
  //Funcion xenera Taboleiro8x8()
   function xeneraTaboleiro() {
     let TodoTaboleiro = chess.ascii();
@@ -32,17 +48,10 @@ export default function Taboleiro() {
     return Taboleiro8x8;
   }
 
-  //  Manexador boton
-  function unhaMais(){
-   chess.move("d4")
-   taboleiro = xeneraTaboleiro()
-   }
-
   return (
 
     // Pinta o taboleiro en pantalla
     <>
-    <button onClick={unhaMais}>Palante</button>
     <div className={styles.taboleiro}>
       <div className={styles.b} id={styles.a8}>
         {taboleiro[0][0]}
