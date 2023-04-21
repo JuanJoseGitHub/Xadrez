@@ -52,196 +52,196 @@ export default function Taboleiro() {
     // Pinta o taboleiro en pantalla
     <>
     <div className={styles.taboleiro}>
-      <div className={styles.b} id={styles.a8}>
+      <div className={styles.b} id={styles.a8} draggable="true">
         {taboleiro[0][0]}
       </div>
-      <div className={styles.n} id={styles.b8}>
+      <div className={styles.n} id={styles.b8} draggable="true">
         {taboleiro[0][1]}
       </div>
-      <div className={styles.b} id={styles.c8}>
+      <div className={styles.b} id={styles.c8} draggable="true">
         {taboleiro[0][2]}
       </div>
-      <div className={styles.n} id={styles.d8}>
+      <div className={styles.n} id={styles.d8} draggable="true">
         {taboleiro[0][3]}
       </div>
-      <div className={styles.b} id={styles.e8}>
+      <div className={styles.b} id={styles.e8} draggable="true">
         {taboleiro[0][4]}
       </div>
-      <div className={styles.n} id={styles.f8}>
+      <div className={styles.n} id={styles.f8} draggable="true">
         {taboleiro[0][5]}
       </div>
-      <div className={styles.b} id={styles.g8}>
+      <div className={styles.b} id={styles.g8} draggable="true">
         {taboleiro[0][6]}
       </div>
-      <div className={styles.n} id={styles.h8}>
+      <div className={styles.n} id={styles.h8} draggable="true">
         {taboleiro[0][7]}
       </div>
-      <div className={styles.n} id={styles.a7}>
+      <div className={styles.n} id={styles.a7} draggable="true">
         {taboleiro[1][0]}
       </div>
-      <div className={styles.b} id={styles.b7}>
+      <div className={styles.b} id={styles.b7} draggable="true">
         {taboleiro[1][1]}
       </div>
-      <div className={styles.n} id={styles.c7}>
+      <div className={styles.n} id={styles.c7} draggable="true">
         {taboleiro[1][2]}
       </div>
-      <div className={styles.b} id={styles.d7}>
+      <div className={styles.b} id={styles.d7} draggable="true">
         {taboleiro[1][3]}
       </div>
-      <div className={styles.n} id={styles.e7}>
+      <div className={styles.n} id={styles.e7} draggable="true">
         {taboleiro[1][4]}
       </div>
-      <div className={styles.b} id={styles.f7}>
+      <div className={styles.b} id={styles.f7} draggable="true">
         {taboleiro[1][5]}
       </div>
-      <div className={styles.n} id={styles.g7}>
+      <div className={styles.n} id={styles.g7} draggable="true">
         {taboleiro[1][6]}
       </div>
-      <div className={styles.b} id={styles.h7}>
+      <div className={styles.b} id={styles.h7} draggable="true">
         {taboleiro[1][7]}
       </div>
-      <div className={styles.b} id={styles.a6}>
+      <div className={styles.b} id={styles.a6} draggable="true">
         {taboleiro[2][0]}
       </div>
-      <div className={styles.n} id={styles.b6}>
+      <div className={styles.n} id={styles.b6} draggable="true">
         {taboleiro[2][1]}
       </div>
-      <div className={styles.b} id={styles.c6}>
+      <div className={styles.b} id={styles.c6} draggable="true">
         {taboleiro[2][2]}
       </div>
-      <div className={styles.n} id={styles.d6}>
+      <div className={styles.n} id={styles.d6} draggable="true">
         {taboleiro[2][3]}
       </div>
-      <div className={styles.b} id={styles.e6}>
+      <div className={styles.b} id={styles.e6} draggable="true">
         {taboleiro[2][4]}
       </div>
-      <div className={styles.n} id={styles.f6}>
+      <div className={styles.n} id={styles.f6} draggable="true">
         {taboleiro[2][5]}
       </div>
-      <div className={styles.b} id={styles.g6}>
+      <div className={styles.b} id={styles.g6} draggable="true">
         {taboleiro[2][6]}
       </div>
-      <div className={styles.n} id={styles.h6}>
+      <div className={styles.n} id={styles.h6} draggable="true">
         {taboleiro[2][7]}
       </div>
-      <div className={styles.n} id={styles.a5}>
+      <div className={styles.n} id={styles.a5} draggable="true">
         {taboleiro[3][0]}
       </div>
-      <div className={styles.b} id={styles.b5}>
+      <div className={styles.b} id={styles.b5} draggable="true">
         {taboleiro[3][1]}
       </div>
-      <div className={styles.n} id={styles.c5}>
+      <div className={styles.n} id={styles.c5} draggable="true">
         {taboleiro[3][2]}
       </div>
-      <div className={styles.b} id={styles.d5}>
+      <div className={styles.b} id={styles.d5} draggable="true">
         {taboleiro[3][3]}
       </div>
-      <div className={styles.n} id={styles.e5}>
+      <div className={styles.n} id={styles.e5} draggable="true">
         {taboleiro[3][4]}
       </div>
-      <div className={styles.b} id={styles.f5}>
+      <div className={styles.b} id={styles.f5} draggable="true">
         {taboleiro[3][5]}
       </div>
-      <div className={styles.n} id={styles.g5}>
+      <div className={styles.n} id={styles.g5} draggable="true">
         {taboleiro[3][6]}
       </div>
-      <div className={styles.b} id={styles.h5}>
+      <div className={styles.b} id={styles.h5} draggable="true">
         {taboleiro[3][7]}
       </div>
-      <div className={styles.b} id={styles.a4}>
+      <div className={styles.b} id={styles.a4} draggable="true">
         {taboleiro[4][0]}
       </div>
-      <div className={styles.n} id={styles.b4}>
+      <div className={styles.n} id={styles.b4} draggable="true">
         {taboleiro[4][1]}
       </div>
-      <div className={styles.b} id={styles.c4}>
+      <div className={styles.b} id={styles.c4} draggable="true">
         {taboleiro[4][2]}
       </div>
-      <div className={styles.n} id={styles.d4}>
+      <div className={styles.n} id={styles.d4} draggable="true">
         {taboleiro[4][3]}
       </div>
-      <div className={styles.b} id={styles.e4}>
+      <div className={styles.b} id={styles.e4} draggable="true">
         {taboleiro[4][4]}
       </div>
-      <div className={styles.n} id={styles.f4}>
+      <div className={styles.n} id={styles.f4} draggable="true">
         {taboleiro[4][5]}
       </div>
-      <div className={styles.b} id={styles.g4}>
+      <div className={styles.b} id={styles.g4} draggable="true">
         {taboleiro[4][6]}
       </div>
-      <div className={styles.n} id={styles.h4}>
+      <div className={styles.n} id={styles.h4} draggable="true">
         {taboleiro[4][7]}
       </div>
-      <div className={styles.n} id={styles.a3}>
+      <div className={styles.n} id={styles.a3} draggable="true">
         {taboleiro[5][0]}
       </div>
-      <div className={styles.b} id={styles.b3}>
+      <div className={styles.b} id={styles.b3} draggable="true">
         {taboleiro[5][1]}
       </div>
-      <div className={styles.n} id={styles.c3}>
+      <div className={styles.n} id={styles.c3} draggable="true">
         {taboleiro[5][2]}
       </div>
-      <div className={styles.b} id={styles.d3}>
+      <div className={styles.b} id={styles.d3} draggable="true">
         {taboleiro[5][3]}
       </div>
-      <div className={styles.n} id={styles.e3}>
+      <div className={styles.n} id={styles.e3} draggable="true">
         {taboleiro[5][4]}
       </div>
-      <div className={styles.b} id={styles.f3}>
+      <div className={styles.b} id={styles.f3} draggable="true">
         {taboleiro[5][5]}
       </div>
-      <div className={styles.n} id={styles.g3}>
+      <div className={styles.n} id={styles.g3} draggable="true">
         {taboleiro[5][6]}
       </div>
-      <div className={styles.b} id={styles.h3}>
+      <div className={styles.b} id={styles.h3} draggable="true">
         {taboleiro[5][7]}
       </div>
-      <div className={styles.b} id={styles.a2}>
+      <div className={styles.b} id={styles.a2} draggable="true">
         {taboleiro[6][0]}
       </div>
-      <div className={styles.n} id={styles.b2}>
+      <div className={styles.n} id={styles.b2} draggable="true">
         {taboleiro[6][1]}
       </div>
-      <div className={styles.b} id={styles.c2}>
+      <div className={styles.b} id={styles.c2} draggable="true">
         {taboleiro[6][2]}
       </div>
-      <div className={styles.n} id={styles.d2}>
+      <div className={styles.n} id={styles.d2} draggable="true">
         {taboleiro[6][3]}
       </div>
-      <div className={styles.b} id={styles.e2}>
+      <div className={styles.b} id={styles.e2} draggable="true">
         {taboleiro[6][4]}
       </div>
-      <div className={styles.n} id={styles.f2}>
+      <div className={styles.n} id={styles.f2} draggable="true">
         {taboleiro[6][5]}
       </div>
-      <div className={styles.b} id={styles.g2}>
+      <div className={styles.b} id={styles.g2} draggable="true">
         {taboleiro[6][6]}
       </div>
-      <div className={styles.n} id={styles.h2}>
+      <div className={styles.n} id={styles.h2} draggable="true">
         {taboleiro[6][7]}
       </div>
-      <div className={styles.n} id={styles.a1}>
+      <div className={styles.n} id={styles.a1} draggable="true">
         {taboleiro[7][0]}
       </div>
-      <div className={styles.b} id={styles.b1}>
+      <div className={styles.b} id={styles.b1} draggable="true">
         {taboleiro[7][1]}
       </div>
-      <div className={styles.n} id={styles.c1}>
+      <div className={styles.n} id={styles.c1} draggable="true">
         {taboleiro[7][2]}
       </div>
-      <div className={styles.b} id={styles.d1}>
+      <div className={styles.b} id={styles.d1} draggable="true">
         {taboleiro[7][3]}
       </div>
-      <div className={styles.n} id={styles.e1}>
+      <div className={styles.n} id={styles.e1} draggable="true">
         {taboleiro[7][4]}
       </div>
-      <div className={styles.b} id={styles.f1}>
+      <div className={styles.b} id={styles.f1} draggable="true">
         {taboleiro[7][5]}
       </div>
-      <div className={styles.n} id={styles.g1}>
+      <div className={styles.n} id={styles.g1} draggable="true">
         {taboleiro[7][6]}
       </div>
-      <div className={styles.b} id={styles.h1}>
+      <div className={styles.b} id={styles.h1} draggable="true">
         {taboleiro[7][7]}
       </div>
     </div>
