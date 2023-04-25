@@ -18,7 +18,7 @@ export default function CargaPGN() {
     return (
     <>
       <div className={style.container}>
-      <button>1.</button>
+        <button>1.</button>
         <button>-</button>
         <button>+</button>
         <button>Fin</button>

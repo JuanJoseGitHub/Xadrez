@@ -8,34 +8,8 @@ export default function TaboleiroInicio() {
   const chess = new Chess();
   const [ taboleiro, setTaboleiro] = useState(xeneraTaboleiro())
   const iniciado = useRef(false)
-
-    let xogadaInicio="e2"
-    let xogadaFin="e4"
-    // chess.move( {from: 'e2', to: 'e4'} )
-    let partida=chess.history()
-    // setTaboleiro(xeneraTaboleiro())
     
-  useEffect(
-    ()=>{
-      if ( ! iniciado.current ) {
-        delayedMovement(partida)
-        iniciado.current = true
-      }
-    },
-    []
-  )
-
-  function delayedMovement(movementos) {
-    for (let orde in movementos) {
-      setTimeout(()=>{
-        chess.move(movementos[orde])
-        setTaboleiro(xeneraTaboleiro())
-      }, 1000*orde)
-    }
-
-  }
-
-
+ 
  //Funcion xenera Taboleiro8x8()
   function xeneraTaboleiro() {
     let TodoTaboleiro = chess.ascii();

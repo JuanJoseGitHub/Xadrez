@@ -11,10 +11,10 @@ const Contexto=createContext()
 function App() {
   return (
     <>
-    <Contexto.Provider>
-      <Taboleiro></Taboleiro>
+    <Contexto.Provider>    
       <CargaPGN></CargaPGN>
       {/* <TaboleiroInicio></TaboleiroInicio> */}
+      <Taboleiro></Taboleiro>
       {/* <LeeXogada></LeeXogada> */}
       {/* <VisualizaPGN></VisualizaPGN> */}
     </Contexto.Provider>
