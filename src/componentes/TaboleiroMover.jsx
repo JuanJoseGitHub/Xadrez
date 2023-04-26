@@ -1,15 +1,33 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../css/Taboleiro.module.css";
 import { Chess } from "chess.js";
+import PartidaAuto from '../componentes/PartidaAuto'
 
-export default function TaboleiroInicio() {
-
+export default function TaboleiroMover({partida=[]}) {
 // Iniciamos o modulo cunha partida na posición inicial 
   const chess = new Chess();
-  const [ taboleiro, setTaboleiro] = useState(xeneraTaboleiro())
   
-    
- 
+  const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
+  const [ auto , setAuto ] = useState(false)
+  
+  useEffect(
+    ()=>{
+      //if ( ! iniciado.current ) {
+        delayedMovement(partida)
+        //iniciado.current = true
+      //}
+    },
+    [partida]
+  )
+
+  function delayedMovement(movementos) {
+    for (let orde in movementos) {
+        chess.move(movementos[orde])
+        setTaboleiro(xeneraTaboleiro())
+    }
+
+  }
+
  //Funcion xenera Taboleiro8x8()
   function xeneraTaboleiro() {
     let TodoTaboleiro = chess.ascii();
@@ -29,15 +47,22 @@ export default function TaboleiroInicio() {
     return Taboleiro8x8;
   }
 
+  function manexadorClick(){
+    setAuto(!auto)
+    console.log({auto})
+  }
+
   return (
 
+    
     // Pinta o taboleiro en pantalla
     <>
+    <button onClick={manexadorClick}>Auto</button>
     <div className={styles.taboleiro}>
-      <div className={styles.b} id="a8" draggable="true" onClick={(e)=>{console.log(e.target.id)}}>
+      <div className={styles.b} id="a8" draggable="true" onDrag={(e)=>{console.log(e.target.id)}}>
         {taboleiro[0][0]}
       </div>
-      <div className={styles.n} id="b8" draggable="true">
+      <div className={styles.n} id="b8" draggable="true" onDrag={(e)=>{console.log(e.target.id)}}>
         {taboleiro[0][1]}
       </div>
       <div className={styles.b} id="c8" draggable="true">

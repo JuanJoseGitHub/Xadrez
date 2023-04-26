@@ -49,9 +49,7 @@ export default function Taboleiro({partida=[]}) {
   }
 
   function manexadorClick(){
-    setAuto(!auto)
-    console.log({auto})
-  //   <PartidaAuto></PartidaAuto>
+    console.log("Pulsado")
   }
 
   return (

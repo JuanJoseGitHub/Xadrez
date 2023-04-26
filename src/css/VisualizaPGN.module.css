@@ -14,3 +14,7 @@ border: 1px solid;
     padding: 2rem;
     border: 1px solid
 }
+button {font-size: large;
+        padding: 4px;
+        border-radius: 8px;
+        border: 1px solid green;}

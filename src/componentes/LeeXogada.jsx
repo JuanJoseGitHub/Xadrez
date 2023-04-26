@@ -9,31 +9,33 @@ export default function LeeXogada() {
   const iniciado = useRef(false)
     let xogadaInicio="e2"
     let xogadaFin="e4"
-    chess.move( {from: 'e2', to: 'e4'} )
+    chess.move( {from: xogadaInicio, to: xogadaFin} )
+    xogadaInicio="e7"
+    xogadaFin="e5"
+    chess.move( {from: xogadaInicio, to: xogadaFin} )
     let partida=chess.history()
     console.log(partida)
 
     // chess.remove('e4')
 
-  useEffect(
-    ()=>{
-      if ( ! iniciado.current ) {
-        delayedMovement(["e4","e5"])
-        iniciado.current = true
+    useEffect(
+      ()=>{
+        //if ( ! iniciado.current ) {
+          delayedMovement(partida)
+          //iniciado.current = true
+        //}
+      },
+      [partida]
+    )
+  
+    function delayedMovement(movementos) {
+      for (let orde in movementos) {
+          chess.move(movementos[orde])
+          setTaboleiro(xeneraTaboleiro())
       }
-    },
-    []
-  )
-
-  function delayedMovement(movementos) {
-    for (let orde in movementos) {
-      setTimeout(()=>{
-        chess.move(movementos[orde])
-        setTaboleiro(xeneraTaboleiro())
-      }, 3000*orde)
+  
     }
-
-  }
+  
 
  //Funcion xenera Taboleiro8x8()
   function xeneraTaboleiro() {
