@@ -12,10 +12,7 @@ export default function TaboleiroMover({partida=[]}) {
   
   useEffect(
     ()=>{
-      //if ( ! iniciado.current ) {
         delayedMovement(partida)
-        //iniciado.current = true
-      //}
     },
     [partida]
   )
