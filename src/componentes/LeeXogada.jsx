@@ -9,15 +9,15 @@ export default function LeeXogada() {
   let pulsado
   let buscandoInicio=true
   let datosCompletos=false
-  let [xogadaInicio , setXogadaInicio]= useState("")
-  let [xogadaFin , setXogadaFin]=useState("")
+  let xogadaInicio="e2"
+  let xogadaFin="e4"
   const iniciado = useRef (false)
 
 
    
   useEffect(
     ()=>{
-  if( ! iniciado.current && datosCompletos ) { 
+  if( ! iniciado.current ) { 
       chess.move( {from: xogadaInicio, to: xogadaFin} )
       let partida=chess.history()
       console.log(partida)
@@ -51,14 +51,17 @@ export default function LeeXogada() {
     pulsado=event.target.id 
     
     if(buscandoInicio)
-    {setXogadaInicio(pulsado)
+    {xogadaInicio=pulsado
       console.log("Inicio:"+pulsado)
       buscandoInicio=false
-      console.log (buscandoInicio)}
+      console.log ("BI:"+buscandoInicio)}
     else
-    {setXogadaFin(pulsado)
+    {xogadaFin=pulsado
       console.log("Fin:"+pulsado)
-    datosCompletos=true}
+      datosCompletos=true
+      buscandoInicio=true
+    console.log("BI:"+buscandoInicio);
+    console.log("Bool"+! iniciado.current && datosCompletos);}
   }
   
   function Dragado(event) { 
