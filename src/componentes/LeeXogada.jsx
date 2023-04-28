@@ -8,20 +8,19 @@ export default function LeeXogada() {
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
   let pulsado
   let buscandoInicio=true
-  let datosCompletos=false
-  let xogadaInicio="e2"
-  let xogadaFin="e4"
+  let [ xogadaInicio , setXogadaInicio ] = useState ("e2")
+  let [ xogadaFin , setXogadaFin ] = useState ("e4")
+  let [ datosCompletos , setDatosCompletos ] = useState (false)
   const iniciado = useRef (false)
-
-
-   
+  
   useEffect(
     ()=>{
-  if( ! iniciado.current ) { 
-      chess.move( {from: xogadaInicio, to: xogadaFin} )
-      let partida=chess.history()
-      console.log(partida)
-      setTaboleiro(xeneraTaboleiro())
+  if( ! iniciado.current ) {
+      console.log("USEEFFECT") 
+      // chess.move( {from: xogadaInicio, to: xogadaFin} )
+      // let partida=chess.history()
+      // console.log(partida)
+      // setTaboleiro(xeneraTaboleiro())
       iniciado.current = true    
       }
     },
@@ -51,21 +50,27 @@ export default function LeeXogada() {
     pulsado=event.target.id 
     
     if(buscandoInicio)
-    {xogadaInicio=pulsado
-      console.log("Inicio:"+pulsado)
-      buscandoInicio=false
-      console.log ("BI:"+buscandoInicio)}
-    else
-    {xogadaFin=pulsado
-      console.log("Fin:"+pulsado)
-      datosCompletos=true
-      buscandoInicio=true
-    console.log("BI:"+buscandoInicio);
-    console.log("Bool"+! iniciado.current && datosCompletos);}
+      {
+        setXogadaInicio(pulsado)
+        console.log("Inicio:"+pulsado)
+        buscandoInicio=false
+        console.log ("BI:"+buscandoInicio)
+      }
+    
+      else
+      {
+        setXogadaFin(pulsado)
+        console.log("Fin:"+pulsado)
+        setDatosCompletos(true)
+        chess.move( {from: xogadaInicio, to: xogadaFin})
+        setTaboleiro(xeneraTaboleiro())
+        buscandoInicio=true
+        console.log("BI:"+buscandoInicio)
+      }
   }
   
   function Dragado(event) { 
-    event.dataTransfer.setData("id",event.target.id)
+    event.dataTransfer.setData("text",event.target.id)
     xogadaFin=event.target.id
       console.log("Drag:"+xogadaFin)
   }
@@ -76,7 +81,8 @@ export default function LeeXogada() {
   }
   
   function Dropado(event) {
-    let idDrop=event.dataTransfer.getData("id")
+    event.preventDefault()
+    let idDrop=event.dataTransfer.getData("text")
     console.log("Drop:",idDrop)
   }
 
@@ -85,7 +91,7 @@ export default function LeeXogada() {
     // Pinta o taboleiro en pantalla
     <>
     <div className={styles.taboleiro}>
-      <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>
+      <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onDragOver={Dragover} onClick={PulsadoInicio}>
         {taboleiro[0][0]}
       </div>
       <div className={styles.n} id="b8" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>

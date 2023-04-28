@@ -22,7 +22,6 @@ export default function TaboleiroMover({partida=[]}) {
         chess.move(movementos[orde])
         setTaboleiro(xeneraTaboleiro())
     }
-
   }
 
  //Funcion xenera Taboleiro8x8()
