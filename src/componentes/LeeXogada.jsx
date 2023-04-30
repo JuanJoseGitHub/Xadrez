@@ -93,10 +93,6 @@ export default function LeeXogada() {
     console.log ('Fin Drop:'+coordFin)
   }
 
-  function DragStart(event) {
-    console.log ('iniciado DragStart')
-  }
-
   function FinDrag(event) {
     casillaFin=event.target.id
     coordFin=event.clientY
@@ -109,7 +105,7 @@ export default function LeeXogada() {
     // Pinta o taboleiro en pantalla
     <>
     <div className={styles.taboleiro}>
-      <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onDragEnd={FinDrag} onDragStart={DragStart} onDragOver={Dragover} onDrop={Dropado} onClick={PulsadoInicio}>
+      <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onDragEnd={FinDrag} onDragOver={Dragover} onDrop={Dropado} onClick={PulsadoInicio}>
         {taboleiro[0][0]}
       </div>
       <div className={styles.n} id="b8" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>
