@@ -17,14 +17,14 @@ body{
         grid-template-columns: repeat(8,1fr);
         grid-template-rows: repeat(8,1fr);
         background-color: #fff;
-        border: dotted thin black;   
+        border: dotted thin black;
+        cursor: pointer;   
 }  
 .taboleiro *{
         font-family: Chess;
         text-align: center;
         font-size: 60px;
         transition: 0.2s ease-in-out;
-        cursor: pointer;
         user-select: none;
         border: black thin solid;
 }       

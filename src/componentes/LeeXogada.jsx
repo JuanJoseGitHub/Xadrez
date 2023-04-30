@@ -8,6 +8,8 @@ export default function LeeXogada() {
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
   let pulsado
   let buscandoInicio=true
+  let casillaFin=""
+  let coordFin
   let [ xogadaInicio , setXogadaInicio ] = useState ("e2")
   let [ xogadaFin , setXogadaFin ] = useState ("e4")
   let [ datosCompletos , setDatosCompletos ] = useState (false)
@@ -71,27 +73,43 @@ export default function LeeXogada() {
   
   function Dragado(event) { 
     event.dataTransfer.setData("text",event.target.id)
-    xogadaFin=event.target.id
-      console.log("Drag:"+xogadaFin)
+    xogadaInicio=event.target.id
+      console.log("Inicio Drag:"+xogadaInicio)
   }
   
-  function Dragover(event)
-  {
+  function Dragover(event) {
     event.preventDefault()
+    casillaFin=event.target.id
+    console.log ('Casilla Fin:'+casillaFin)
   }
   
   function Dropado(event) {
     event.preventDefault()
     let idDrop=event.dataTransfer.getData("text")
     console.log("Drop:",idDrop)
+    casillaFin=event.target.id
+    coordFin=event.clientY
+    console.log ('Fin Drop:'+casillaFin)
+    console.log ('Fin Drop:'+coordFin)
   }
 
+  function DragStart(event) {
+    console.log ('iniciado DragStart')
+  }
+
+  function FinDrag(event) {
+    casillaFin=event.target.id
+    coordFin=event.clientY
+    console.log ('Fin Drag:'+casillaFin)
+    console.log ('Fin Drag:'+coordFin)
+  }
+  
   return (
 
     // Pinta o taboleiro en pantalla
     <>
     <div className={styles.taboleiro}>
-      <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onDragOver={Dragover} onClick={PulsadoInicio}>
+      <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onDragEnd={FinDrag} onDragStart={DragStart} onDragOver={Dragover} onDrop={Dropado} onClick={PulsadoInicio}>
         {taboleiro[0][0]}
       </div>
       <div className={styles.n} id="b8" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>
@@ -139,7 +157,7 @@ export default function LeeXogada() {
       <div className={styles.b} id="h7" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>
         {taboleiro[1][7]}
       </div>
-      <div className={styles.b} id="a6" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>
+      <div className={styles.b} id="a6" draggable="true" onDrag={Dragado} onDragEnd={FinDrag} onDragStart={DragStart} onDragOver={Dragover} onClick={PulsadoInicio}>
         {taboleiro[2][0]}
       </div>
       <div className={styles.n} id="b6" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>
