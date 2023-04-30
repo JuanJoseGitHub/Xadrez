@@ -153,7 +153,7 @@ export default function LeeXogada() {
       <div className={styles.b} id="h7" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>
         {taboleiro[1][7]}
       </div>
-      <div className={styles.b} id="a6" draggable="true" onDrag={Dragado} onDragEnd={FinDrag} onDragStart={DragStart} onDragOver={Dragover} onClick={PulsadoInicio}>
+      <div className={styles.b} id="a6" draggable="true" onDrag={Dragado} onDragEnd={FinDrag}git onDragOver={Dragover} onClick={PulsadoInicio}>
         {taboleiro[2][0]}
       </div>
       <div className={styles.n} id="b6" draggable="true" onDrag={Dragado} onClick={PulsadoInicio}>
