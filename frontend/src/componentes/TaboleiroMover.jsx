@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../css/Taboleiro.module.css";
 import { Chess } from "chess.js";
-import PartidaAuto from '../componentes/PartidaAuto'
+import PartidaAuto from './PartidaAuto'
 
 export default function TaboleiroMover({partida=[]}) {
 // Iniciamos o modulo cunha partida na posición inicial 
