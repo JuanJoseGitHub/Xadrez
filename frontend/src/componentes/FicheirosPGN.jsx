@@ -19,6 +19,7 @@ export default function FicheirosPGN() {
     <>
     <div>FicheirosPGN</div>
     <button onClick={cargaPGN}></button>
+    {resposta}
     </>
   )
 }

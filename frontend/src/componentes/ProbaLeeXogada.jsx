@@ -10,7 +10,7 @@ export default function ProbaLeeXogada({partida=[]}) {
     const iniciado=useRef(false)
    
     let pulsado
-    let [ buscandoInicio , setBuscandoInicio] = true
+    let [ buscandoInicio , setBuscandoInicio] = useState (true)
     let casillaFin=""
     
     let [ xogadaInicio , setXogadaInicio ] = useState ('')
@@ -21,21 +21,21 @@ export default function ProbaLeeXogada({partida=[]}) {
     useEffect(
     ()=>{
         if (! iniciado.current ) { 
+    
     chess.move({ from: 'e2', to: 'e4'} )
     partida=chess.history()
     console.log(partida)
     setTaboleiro(xeneraTaboleiro())
     iniciado.current = true
+
+    chess.move({ from: 'e7', to: 'e5'} )  
+    partida=chess.history()
+    console.log(partida)
+    setTaboleiro(xeneraTaboleiro())
         }
-    },
+      },
     [partida]
     )
-
-    // chess.move({ from: 'e7', to: 'e5'} )  
-    // chess.move({ from: 'g1', to: 'f3'} )
-    // chess.move({ from: 'b8', to: 'c6'} )
-  
-  
     
     
  //Funcion xenera Taboleiro8x8()
@@ -70,8 +70,7 @@ export default function ProbaLeeXogada({partida=[]}) {
         setXogadaFin(pulsado)
         console.log("Fin:"+pulsado)
         setDatosCompletos(true)
-        chess.move( {from: xogadaInicio, to: xogadaFin})
-        setTaboleiro(xeneraTaboleiro())
+        console.log("I:" + xogadaInicio +"F:"+ xogadaFin)
         setBuscandoInicio(true)
         console.log("BI:"+buscandoInicio)
         }
