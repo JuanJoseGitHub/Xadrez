@@ -1,5 +1,5 @@
 import './App.css';
-import LeeXogada from './componentes/LeeXogada';
+import ProbaLeeXogada from './componentes/ProbaLeeXogada';
 import Taboleiro from './componentes/Taboleiro';
 import { createContext } from "react";
 import VisualizaPGN from './componentes/VisualizaPGN';
@@ -14,9 +14,10 @@ function App() {
       {/* <PartidaAuto></PartidaAuto> */}
       {/* <TaboleiroInicio></TaboleiroInicio> */}
       {/* <Taboleiro></Taboleiro> */}
-      <LeeXogada></LeeXogada>
+      {/* <LeeXogada></LeeXogada> */}
       {/* <VisualizaPGN></VisualizaPGN> */}
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
+      <ProbaLeeXogada></ProbaLeeXogada>
     </Contexto.Provider>
     </>
   )
