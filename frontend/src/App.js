@@ -4,22 +4,34 @@ import Taboleiro from './componentes/Taboleiro';
 import { createContext } from "react";
 import VisualizaPGN from './componentes/VisualizaPGN';
 import PartidaAuto from './componentes/PartidaAuto.jsx'
-import ProbaPinta from './componentes/ProbaPinta';
+import LeeXogada from './componentes/LeeXogada';
 
 const Contexto=createContext()
 
 function App() {
   return (
     <>
-    <Contexto.Provider>    
+    <Contexto.Provider> 
+
+      {/* PartidaAuto: Reproduce automaticamente unha partida que se suministra nun Array de strings sen numerar*/}
       {/* <PartidaAuto></PartidaAuto> */}
-      {/* <TaboleiroInicio></TaboleiroInicio> */}
-      {/* <Taboleiro></Taboleiro> */}
-      {/* <LeeXogada></LeeXogada> */}
+
+      {/* VisualizaPGN: Mostra unha partida en PGN numerado, avanza e retrocede xogada a xogada, Inicio e Fin */}
+      {/* Utiliza o componente TaboleiroMover */}
       {/* <VisualizaPGN></VisualizaPGN> */}
+
+      {/* Taboleiro: Pinta o taboleiro coa posición inicial. Si se lle da un array de strings mostra a posición final*/}
+      {/* <Taboleiro></Taboleiro> */}
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
+          
+      
+      {/* RESOLVER */}
+      {/* ProbaLeeXogada (Debería ler unha xogada do DROP) */}
       {/* <ProbaLeeXogada></ProbaLeeXogada> */}
-      <ProbaPinta></ProbaPinta>
+      
+      {/* NON FUNCIONA */}
+      <LeeXogada></LeeXogada>
+
     </Contexto.Provider>
     </>
   )

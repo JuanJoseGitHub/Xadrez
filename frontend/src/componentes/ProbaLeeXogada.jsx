@@ -28,7 +28,7 @@ export default function ProbaLeeXogada({partida=[]}) {
     setTaboleiro(xeneraTaboleiro())
     iniciado.current = true
 
-    chess.move({ from: 'e7', to: 'e5'} )  
+    chess.move({ from: "e7", to: "e5"} )  
     partida=chess.history()
     console.log(partida)
     setTaboleiro(xeneraTaboleiro())
