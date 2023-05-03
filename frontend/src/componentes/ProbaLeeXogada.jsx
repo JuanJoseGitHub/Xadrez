@@ -20,7 +20,7 @@ export default function ProbaLeeXogada({partida=[]}) {
 
     useEffect(
     ()=>{
-        if (! iniciado.current ) { 
+        // if (! iniciado.current ) { 
     
     chess.move({ from: 'e2', to: 'e4'} )
     partida=chess.history()
@@ -32,9 +32,9 @@ export default function ProbaLeeXogada({partida=[]}) {
     partida=chess.history()
     console.log(partida)
     setTaboleiro(xeneraTaboleiro())
-        }
+        // }
       },
-    [partida]
+    []
     )
     
     
