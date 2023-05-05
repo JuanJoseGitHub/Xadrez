@@ -5,7 +5,8 @@ export default function PintaTaboleiro({taboleiro}) {
          
     let [ casillaInicio , setCasillaInicio ] = useState ('')
     let [ casillaFin , setCasillaFin ] = useState ('')
-      
+    let auto=true
+    
     function Dragado(event) { 
         setCasillaInicio(event.target.id)
         console.log("Casilla Inicio:"+casillaInicio)
@@ -17,8 +18,14 @@ export default function PintaTaboleiro({taboleiro}) {
         console.log ('Casilla Fin:'+casillaFin)
       }
 
+      function Auto () {
+        auto=!auto
+        console.log(auto)
+      }
+
   return (
     <>
+    <button onClick={Auto}>Auto</button>
     <div className={styles.taboleiro}>
       <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onDragOver={Dragover} >
         {taboleiro[0][0]}
