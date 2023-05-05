@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../css/LeeXogada.module.css";
 import { Chess } from "chess.js";
+import {part, chess, procesarMovemento} from "../modulos/introduceXogada.mjs"
 
 export default function LeeXogada() {
 // Iniciamos o modulo cunha partida na posición inicial 
-  const chess = new Chess();
+  // const chess = new Chess();
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
   
   let pulsado
@@ -14,18 +15,7 @@ export default function LeeXogada() {
   let [ xogadaInicio , setXogadaInicio ] = useState ()
   let [ xogadaFin , setXogadaFin ] = useState ()
   let [ datosCompletos , setDatosCompletos ] = useState (false)
-  
-  // useEffect(
-  //   ()=>{
-  //     if (datosCompletos) {
-  //       chess.move({ from: xogadaInicio, to: xogadaFin} )
-  //       console.log(chess.history()); 
-  //       setTaboleiro(xeneraTaboleiro())
-  //       setDatosCompletos(false)
-  //     }
-  //   },
-  //   [datosCompletos]
-  // )
+
  
   useEffect(
     ()=>{

@@ -1,5 +1,4 @@
 import './App.css';
-import ProbaLeeXogada from './componentes/ProbaLeeXogada';
 import Taboleiro from './componentes/Taboleiro';
 import { createContext } from "react";
 import VisualizaPGN from './componentes/VisualizaPGN';
