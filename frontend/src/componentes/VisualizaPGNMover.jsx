@@ -37,7 +37,8 @@ export default function VisualizaPGNMover({partida})
   function principio(){
     setXogada(1)
     
-}
+  }
+  
   function mais(){
     if (xogada<arrayPGN.length/3)
     setXogada(xogada+1)

@@ -1,17 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
-import styles from "../css/Taboleiro.module.css";
 import { Chess } from "chess.js";
-import PartidaAuto from './PartidaAuto'
 import PintaTaboleiro from "./PintaTaboleiro";
 
 export default function TaboleiroMover({partida=[]}) {
 // Iniciamos o modulo cunha partida na posición inicial 
   const chess = new Chess();
-  
-
-  
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
-  const [ auto , setAuto ] = useState(false)
   
   useEffect(
     ()=>{

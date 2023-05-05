@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import styles from "../css/Taboleiro.module.css";
 import { Chess } from "chess.js";
 import PintaTaboleiro from "./PintaTaboleiro";
 

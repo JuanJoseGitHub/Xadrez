@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import styles from "../css/Taboleiro.module.css";
 import { Chess } from "chess.js";
-import PartidaAuto from '../componentes/PartidaAuto'
 import PintaTaboleiro from "./PintaTaboleiro";
 
 export default function Taboleiro({partida=[]}) {
@@ -9,7 +7,6 @@ export default function Taboleiro({partida=[]}) {
   const chess = new Chess();
   
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
-  const [ auto , setAuto ] = useState(false)
   const iniciado = useRef(false)
   
   useEffect(
