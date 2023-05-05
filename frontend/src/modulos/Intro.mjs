@@ -7,7 +7,6 @@ const chess=new Chess()
 function procesarMovemento(movemento) {
     try {
         chess.move(movemento)
-        console.log(chess.history());
     } catch (excepcion) {
         console.log("Ilegal!!!");
     }

@@ -54,16 +54,12 @@ export default function LeeXogada() {
   }
   
   function PulsadoInicio(event) {
-    pulsado=event.target.id 
-    
-    if(buscandoInicio.current)
-      {
+    pulsado=event.target.id   
+    if(buscandoInicio.current) { 
         setCasillaInicio(pulsado)
         buscandoInicio.current=false
       }
-    
-      else
-      {
+      else {
         setCasillaFin(pulsado)
         setDatosCompletos(true)
         buscandoInicio.current=true
@@ -84,7 +80,7 @@ export default function LeeXogada() {
   }
     
   return (
-
+    
     // Pinta o taboleiro en pantalla
     <>
     <div className={styles.taboleiro}>

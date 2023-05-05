@@ -14,7 +14,7 @@ function App() {
     <Contexto.Provider> 
 
       {/* PartidaAuto: Reproduce automaticamente unha partida que se suministra nun Array de strings sen numerar*/}
-      <PartidaAuto></PartidaAuto>
+      {/* <PartidaAuto></PartidaAuto> */}
 
       {/* VisualizaPGN: Mostra unha partida en PGN numerado, avanza e retrocede xogada a xogada, Inicio e Fin */}
       {/* Utiliza o componente TaboleiroMover */}
@@ -26,7 +26,7 @@ function App() {
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
       
       {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
-      {/* <LeeXogada></LeeXogada> */}
+      <LeeXogada></LeeXogada>
 
         
     </Contexto.Provider>
