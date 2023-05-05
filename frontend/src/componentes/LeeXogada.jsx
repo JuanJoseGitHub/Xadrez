@@ -1,43 +1,32 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../css/LeeXogada.module.css";
-import { Chess } from "chess.js";
-import {part, chess, procesarMovemento} from "../modulos/introduceXogada.mjs"
+import {part, chess, procesarMovemento} from '../modulos/Intro.mjs'
 
 export default function LeeXogada() {
-// Iniciamos o modulo cunha partida na posición inicial 
-  // const chess = new Chess();
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
   
   let pulsado
   let buscandoInicio=useRef(true)
-  let casillaFin=""
   
-  let [ xogadaInicio , setXogadaInicio ] = useState ()
-  let [ xogadaFin , setXogadaFin ] = useState ()
+  let [ casillaInicio , setCasillaInicio ] = useState ('')
+  let [ casillaFin , setCasillaFin ] = useState ('')
   let [ datosCompletos , setDatosCompletos ] = useState (false)
 
  
   useEffect(
     ()=>{
-      if(xogadaInicio && xogadaFin) {
-        console.log(xogadaInicio, xogadaFin);
+      if((casillaInicio && casillaFin)&&(casillaInicio !==casillaFin)) {
+        console.log(casillaInicio, casillaFin);
+        procesarMovemento( { from: casillaInicio, to: casillaFin} )
         console.log(chess.history()); 
-        chess.move( { from: xogadaInicio, to: xogadaFin} )
         setTaboleiro(xeneraTaboleiro())
-        setXogadaInicio()
-        setXogadaFin()
+        setCasillaInicio()
+        setCasillaFin()
       }
     },
-    [xogadaInicio, xogadaFin]
+    [casillaInicio, casillaFin]
   )
   
-  // useEffect(
-  //   ()=>{
-  //       delayedMovement(partida)
-  //   },
-  //   [partida]
-  // )
-
   function delayedMovement(movementos) {
     for (let orde in movementos) {
         chess.move(movementos[orde])
@@ -69,43 +58,29 @@ export default function LeeXogada() {
     
     if(buscandoInicio.current)
       {
-        setXogadaInicio(pulsado)
-        console.log("Inicio:"+pulsado)
+        setCasillaInicio(pulsado)
         buscandoInicio.current=false
-        console.log ("BI:"+buscandoInicio.current)
       }
     
       else
       {
-        setXogadaFin(pulsado)
-        console.log("Fin:"+pulsado)
+        setCasillaFin(pulsado)
         setDatosCompletos(true)
-        //chess.move( {from: xogadaInicio, to: xogadaFin})
-        //setTaboleiro(xeneraTaboleiro())
         buscandoInicio.current=true
-        console.log("BI:"+buscandoInicio.current)
       }
   }
   
   function Dragado(event) { 
-    // xogadaInicio=event.target.id
-    //event.dataTransfer.setData("text", event.target.id);
-    setXogadaInicio(event.target.id)
-    //console.log("Inicio Drag:"+xogadaInicio)
+    setCasillaInicio(event.target.id)
   }
   
   function Dragover(event) {
       event.preventDefault()
-    // // casillaFin=event.target.id
-    // setXogadaFin(event.target.id)
-    // console.log ('Casilla Fin:'+casillaFin)
   }
 
   function Dropado(event) {
     event.preventDefault()
-    //const xogadaInicio = event.dataTransfer.getData("text")
-    //const xogadaFin = event.target.id
-    setXogadaFin(event.target.id)
+    setCasillaFin(event.target.id)
   }
     
   return (
