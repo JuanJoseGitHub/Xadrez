@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import style from "../css/LeeXogada.module.css";
 import {part, chess, procesarMovemento} from '../modulos/Intro.mjs'
+import { Contexto } from "../App";
+import { useContext } from "react";
 
 export default function LeeXogada() {
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
@@ -9,11 +11,11 @@ export default function LeeXogada() {
   let buscandoInicio=useRef(true)
   let arrayPGN = []
   let arrayXogada = []
+  const [empate , setEmpate] = useContext(Contexto)
 
-  let [ xogada , setXogada] = useState(0)
+  // let [ xogada , setXogada] = useState(0)
   let [ turno , setTurno] = useState ("w") 
   let [ xaque , setXaque] = useState (false)
-  let [ empate , setEmpate] = useState (false)
   let [ gameOver , setGameOver] = useState (false)
   let [ casillaInicio , setCasillaInicio ] = useState ('')
   let [ casillaFin , setCasillaFin ] = useState ('')
@@ -23,21 +25,17 @@ export default function LeeXogada() {
    useEffect(
     ()=>{
       if((casillaInicio && casillaFin)&&(casillaInicio !==casillaFin)) {
-        console.log(casillaInicio, casillaFin);
         procesarMovemento( { from: casillaInicio, to: casillaFin} )
-        console.log(chess.history()); 
         setTaboleiro(xeneraTaboleiro())
         setCasillaInicio()
         setCasillaFin()
         PintaPartida()
         setTurno(chess.turn())
-        console.log("Turno:",turno)
         setXaque(chess.inCheck())
-        console.log("Xaque",xaque)
         setGameOver(chess.isGameOver())
-        console.log("Fin",gameOver)
+        console.log ("Fin:",gameOver)
         setEmpate(chess.isDraw())
-        console.log("Taboas",empate);
+        console.log ("Empate:",empate)
       }
     },
     [casillaInicio, casillaFin]
@@ -106,10 +104,10 @@ export default function LeeXogada() {
     // Pinta o taboleiro en pantalla
     <>
     <div className={style.container}>
-      <p>Xogan: {turno}</p>
-      <p>Xaque: {xaque}</p>
-      <p>Empate: {empate}</p>
-      <p>Partida rematada: {gameOver}</p> 
+      <p>Xogan: {turno==="w" && "Brancas"}</p>
+      <p>Xaque: {xaque && "Xaque"}</p>
+      <p>Empate: {empate && "Taboas"}</p>
+      <p>Fin: {gameOver && "Fin !!"}</p> 
     </div>
 
     <div className={style.partidaPGN}>

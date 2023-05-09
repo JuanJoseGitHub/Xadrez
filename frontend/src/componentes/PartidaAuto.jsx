@@ -6,7 +6,9 @@ export default function Taboleiro() {
 // Iniciamos o modulo cunha partida na posición inicial 
   const chess = new Chess();
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
+  
   const iniciado = useRef(false)
+  
 
   useEffect(
     ()=>{

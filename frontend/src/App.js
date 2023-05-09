@@ -1,6 +1,6 @@
 import './App.css';
 import Taboleiro from './componentes/Taboleiro';
-import { createContext } from "react";
+import { createContext , useState } from "react";
 import VisualizaPGN from './componentes/VisualizaPGN';
 import VisualizaPGNMover from './componentes/VisualizaPGNMover';
 import PartidaAuto from './componentes/PartidaAuto.jsx'
@@ -9,9 +9,10 @@ import LeeXogada from './componentes/LeeXogada';
 const Contexto=createContext()
 
 function App() {
+  const [ empate , setEmpate ] = useState(false)
   return (
     <>
-    <Contexto.Provider> 
+    <Contexto.Provider value={[empate , setEmpate]}> 
 
       {/* PartidaAuto: Reproduce automaticamente unha partida que se suministra nun Array de strings sen numerar*/}
       {/* <PartidaAuto></PartidaAuto> */}
@@ -35,3 +36,7 @@ function App() {
 }
 
 export default App;
+
+export {
+  Contexto
+}
