@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../css/PintaTaboleiro.module.css";
+import melen from '../musica/Melendi.mp3'
 
 export default function PintaTaboleiro({taboleiro}) {
          
@@ -20,12 +21,12 @@ export default function PintaTaboleiro({taboleiro}) {
 
       function Auto () {
         auto=!auto
-        console.log(auto)
+        new Audio(melen).play()
       }
 
   return (
     <>
-    <button onClick={Auto}>Auto</button>
+    <button onClick={Auto}>Música</button>
     <div className={styles.taboleiro}>
       <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onDragOver={Dragover} >
         {taboleiro[0][0]}

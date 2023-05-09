@@ -11,9 +11,9 @@ export default function LeeXogada() {
   let buscandoInicio=useRef(true)
   let arrayPGN = []
   let arrayXogada = []
+ 
   const [empate , setEmpate] = useContext(Contexto)
 
-  // let [ xogada , setXogada] = useState(0)
   let [ turno , setTurno] = useState ("w") 
   let [ xaque , setXaque] = useState (false)
   let [ gameOver , setGameOver] = useState (false)
@@ -104,7 +104,7 @@ export default function LeeXogada() {
     // Pinta o taboleiro en pantalla
     <>
     <div className={style.container}>
-      <p>Xogan: {turno==="w" && "Brancas"}</p>
+      <p>Xogan: {(turno==="w" && "Brancas") || (turno==="b" && "Negras")}</p>
       <p>Xaque: {xaque && "Xaque"}</p>
       <p>Empate: {empate && "Taboas"}</p>
       <p>Fin: {gameOver && "Fin !!"}</p> 
