@@ -38,3 +38,23 @@ body{
 .n{
     background-color: hsl(187, 80%, 63%);
 }  
+.container {position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 200px;
+background-color: greenyellow;
+padding: 2rem;
+border: 1px solid;
+}
+.partidaPGN {position:absolute;
+    top: 30px;
+    right: 30px;
+    width: 200px;
+    background-color: cadetblue;
+    padding: 2rem;
+    border: 1px solid
+}
+button {font-size: large;
+        padding: 4px;
+        border-radius: 8px;
+        border: 1px solid green;}
