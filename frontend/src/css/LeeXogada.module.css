@@ -21,7 +21,7 @@ body{
     grid-template-columns: repeat(8,1fr);
     grid-template-rows: repeat(8,1fr);
     background-color: #fff;
-    border: solid thick blue;   
+    border: solid thick rgb(46, 48, 2);   
 }  
 .taboleiro *{
     font-family: Chess;
