@@ -15,10 +15,6 @@ body{
     display: grid;
     place-items: center;
     }
-.borde {
-    width: 600px;
-    height: 600px;
-}
 
 
 .taboleiro      {

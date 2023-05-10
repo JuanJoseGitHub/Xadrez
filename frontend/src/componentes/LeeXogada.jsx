@@ -13,8 +13,8 @@ export default function LeeXogada() {
   let arrayXogada = []
  
   const [empate , setEmpate] = useContext(Contexto)
-
-  let [ turno , setTurno] = useState ("w") 
+  
+  let [turno , setTurno] = useState("w")
   let [ xaque , setXaque] = useState (false)
   let [ gameOver , setGameOver] = useState (false)
   let [ casillaInicio , setCasillaInicio ] = useState ('')
@@ -33,9 +33,7 @@ export default function LeeXogada() {
         setTurno(chess.turn())
         setXaque(chess.inCheck())
         setGameOver(chess.isGameOver())
-        console.log ("Fin:",gameOver)
         setEmpate(chess.isDraw())
-        console.log ("Empate:",empate)
       }
     },
     [casillaInicio, casillaFin]
@@ -104,11 +102,19 @@ export default function LeeXogada() {
     // Pinta o taboleiro en pantalla
     <>
     <div className={style.container}>
-      <p>Xogan: {(turno==="w" && "Brancas") || (turno==="b" && "Negras")}</p>
-      <p>Xaque: {xaque && "Xaque"}</p>
-      <p>Empate: {empate && "Taboas"}</p>
-      <p>Fin: {gameOver && "Fin !!"}</p> 
+      <p>Xogan: {(turno==="w" && " Brancas") || (turno==="b" && " Negras")}</p>
+      <p>Xaque: {xaque && " Xaque"}</p>
+      <p>Empate: {empate && " Taboas"}</p>
+      <p>Fin: {gameOver && " Fin !!"}</p>
+
     </div>
+    <div className={style.bordeV}>
+      <div>8</div><div>7</div><div>6</div><div>5</div><div>4</div><div>3</div><div>2</div><div>1</div>      
+      </div> 
+
+    <div className={style.bordeH}>
+      <div>a</div><div>b</div><div>c</div><div>d</div><div>e</div><div>f</div><div>g</div><div>h</div>      
+      </div> 
 
     <div className={style.partidaPGN}>
         {arrayObxetosXogada.map( xogada => <p>{xogada.id}  {xogada.blancas}   {xogada.negras}</p>)}

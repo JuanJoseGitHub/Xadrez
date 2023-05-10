@@ -3,6 +3,30 @@
     margin: 0;
     box-sizing: border-box;
 }
+.bordeH {
+    position: absolute;
+    top: 588px;
+    right: 435px;
+    width: 490px;
+    height: 30px;
+    background-color: transparent;
+    font-size: x-large;
+    display:flex;
+    justify-content: space-between;    
+}
+.bordeV {
+    position: absolute;
+    top: 60px;
+    right: 970px;
+    width: 30px;
+    height: 500px;
+    background-color: blue;
+    font-size: x-large;
+    display:flex;
+    flex-direction: column;  
+
+}
+
 body{
     background-image: url(../graficos/fondo2.jpg);
     background-repeat: no-repeat;
@@ -14,6 +38,8 @@ body{
     display: grid;
     place-items: center;
 }
+
+
 .taboleiro      {
     width: 550px;
     height: 550px;
