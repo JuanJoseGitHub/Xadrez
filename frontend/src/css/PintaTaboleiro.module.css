@@ -15,6 +15,11 @@ body{
     display: grid;
     place-items: center;
     }
+.borde {
+    width: 600px;
+    height: 600px;
+}
+
 
 .taboleiro      {
     width: 550px;
@@ -24,6 +29,7 @@ body{
     grid-template-rows: repeat(8,1fr);
     background-color: #fff;
     border: dotted thin black;   
+    
 }  
 .taboleiro *{
     font-family: Chess;
