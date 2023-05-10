@@ -1,7 +1,5 @@
 import { Chess } from "chess.js";
 
-let part
-
 const chess=new Chess()
 
 function procesarMovemento(movemento) {
@@ -12,5 +10,5 @@ function procesarMovemento(movemento) {
     }
 }
 
-export {part, chess, procesarMovemento}
+export { chess, procesarMovemento}
 console.log("Deep Blue working...");

@@ -8,8 +8,6 @@ export default function Taboleiro() {
   
   const iniciado = useRef(false)
  
-  
-
   useEffect(
     ()=>{
       if ( ! iniciado.current ) {
@@ -27,7 +25,6 @@ export default function Taboleiro() {
         setTaboleiro(xeneraTaboleiro())
       }, 3000*orde)
     }
-
   }
 
  //Funcion xenera Taboleiro8x8()

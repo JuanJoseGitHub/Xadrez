@@ -21,7 +21,7 @@ body{
         grid-template-columns: repeat(8,1fr);
         grid-template-rows: repeat(8,1fr);
         background-color: #fff;
-        border: dotted thin black;
+        border: solid thick blue; 
         cursor: pointer;   
 }  
 .taboleiro *{
@@ -30,7 +30,7 @@ body{
         font-size: 60px;
         transition: 0.2s ease-in-out;
         user-select: none;
-        border: black thin solid;
+        border: black thin dotted;
 }       
 
 .taboleiro *:hover{

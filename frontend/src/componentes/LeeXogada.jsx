@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import style from "../css/LeeXogada.module.css";
-import {part, chess, procesarMovemento} from '../modulos/Intro.mjs'
+import { chess, procesarMovemento} from '../modulos/Intro.mjs'
 import { Contexto } from "../App";
 import { useContext } from "react";
 

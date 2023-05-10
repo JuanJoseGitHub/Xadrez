@@ -26,6 +26,7 @@ export default function PintaTaboleiro({taboleiro}) {
 
   return (
     <>
+    
     <button onClick={Auto}>Música</button>
     <div className={styles.taboleiro}>
       <div className={styles.b} id="a8" draggable="true" onDrag={Dragado} onDragOver={Dragover} >

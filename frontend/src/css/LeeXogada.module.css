@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(../graficos/fondo.jpg);
+    background-image: url(../graficos/fondo2.jpg);
     background-repeat: no-repeat;
     background-position-x:center;
     background-position-y:center;
@@ -21,7 +21,7 @@ body{
     grid-template-columns: repeat(8,1fr);
     grid-template-rows: repeat(8,1fr);
     background-color: #fff;
-    border: dotted thin black;   
+    border: solid thick blue;   
 }  
 .taboleiro *{
     font-family: Chess;
@@ -30,7 +30,7 @@ body{
     transition: 0.2s ease-in-out;
     cursor: pointer;
     user-select: none;
-    border: black thin solid;
+    border: black thin dotted;
 }       
 
 .taboleiro *:hover{
@@ -49,14 +49,17 @@ body{
 background-color: greenyellow;
 padding: 2rem;
 border: 1px solid;
+border-radius: 5px;
 }
+
 .partidaPGN {position:absolute;
     top: 30px;
     right: 30px;
     width: 200px;
     background-color: cadetblue;
     padding: 2rem;
-    border: 1px solid
+    border: 1px solid;
+    border-radius: 5px;
 }
 button {font-size: large;
         padding: 4px;
