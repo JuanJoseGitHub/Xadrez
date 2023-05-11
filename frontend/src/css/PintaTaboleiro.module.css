@@ -4,6 +4,30 @@
     box-sizing: border-box;
 }
 
+.bordeH {
+    position: relative;
+    top: -565px;
+    width: 550px;
+    background-color: transparent;
+    font-size: 40px;
+    display:flex;
+    justify-content: space-around;
+    color:antiquewhite
+    
+}
+.bordeV {
+    position: relative;
+    height: 550px;
+    top: 30px;
+    left: -30px;
+    background-color: transparent;
+    font-size: 40px;
+    display:flex;
+    flex-direction: column; 
+    justify-content: space-around; 
+    color:antiquewhite
+}
+
 body{
     background-image: url(../graficos/fondo.jpg);
     background-repeat: no-repeat;
@@ -16,17 +40,18 @@ body{
     place-items: center;
     }
 
-
 .taboleiro      {
-    width: 550px;
-    height: 550px;
-    display: grid;
-    grid-template-columns: repeat(8,1fr);
-    grid-template-rows: repeat(8,1fr);
-    background-color: #fff;
-    border: solid thick rgb(46, 48, 2);  
-    
-}  
+        position: relative;
+        top: -565px;
+        width: 550px;
+        height: 550px;
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(8,1fr);
+        background-color: #fff;
+        border: solid thick rgb(46, 48, 2);   
+    }  
+
 .taboleiro *{
     font-family: Chess;
     text-align: center;
