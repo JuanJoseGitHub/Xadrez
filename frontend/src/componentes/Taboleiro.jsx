@@ -42,7 +42,7 @@ export default function Taboleiro({partida=[]}) {
       Taboleiro8x8.push(
         fila.map((casilla) => (casilla !== "." ? casilla : " "))
       )
-    );
+    )
     return Taboleiro8x8;
   }
 

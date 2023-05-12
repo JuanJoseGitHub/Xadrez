@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import style from "../css/PintaTaboleiro.module.css";
 import melen from '../musica/Melendi.mp3'
 
@@ -6,7 +6,7 @@ export default function PintaTaboleiro({taboleiro}) {
          
     let [ casillaInicio , setCasillaInicio ] = useState ('')
     let [ casillaFin , setCasillaFin ] = useState ('')
-    let auto=true
+    const audio=useRef(new Audio(melen))
     
     function Dragado(event) { 
         setCasillaInicio(event.target.id)
@@ -20,8 +20,8 @@ export default function PintaTaboleiro({taboleiro}) {
       }
 
       function Auto () {
-        auto=!auto
-        new Audio(melen).play()
+        if (audio.current.paused) audio.current.play()
+        else audio.current.pause()
       }
 
   return (
