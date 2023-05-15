@@ -117,7 +117,7 @@ export default function LeeXogada() {
       </div> 
 
     <div className={style.partidaPGN}>
-        {arrayObxetosXogada.map( xogada => <p>{xogada.id}  {xogada.blancas}   {xogada.negras}</p>)}
+        {arrayObxetosXogada.map( xogada => <p>{xogada.id+". "} {xogada.blancas} {xogada.negras}</p>)}
     </div>
 
     <div className={style.taboleiro}>

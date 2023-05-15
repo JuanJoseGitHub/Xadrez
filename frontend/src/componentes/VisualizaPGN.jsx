@@ -25,7 +25,7 @@ export default function VisualizaPGN() {
         setArrayPgnActual(proximaXogada)
     }
 
-  for (let indice=0;indice<=arrayPGN.length;indice+=3) {  
+  for (let indice=0;indice<arrayPGN.length;indice+=3) {  
     let obxetoXogada = {
       id: arrayPGN[indice],
       blancas: arrayPGN[indice+1],
@@ -63,7 +63,9 @@ export default function VisualizaPGN() {
       </div>
     
       <div className={style.partidaPGN}>
-        {arrayObxetosXogada.map( xogada => <p>{xogada.id} {xogada.blancas}  {xogada.negras}</p>)}
+        <table>
+        {arrayObxetosXogada.map( xogada => <tr><td>{xogada.id}</td> <td>{xogada.blancas+" "}</td>  <td>{xogada.negras+" "}</td></tr>)}
+        </table>
       </div>
       <div> 
         <TaboleiroMover partida={arrayPGNActual}></TaboleiroMover>
