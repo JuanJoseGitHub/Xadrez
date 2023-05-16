@@ -5,6 +5,8 @@ import VisualizaPGN from './componentes/VisualizaPGN';
 import VisualizaPGNMover from './componentes/VisualizaPGNMover';
 import PartidaAuto from './componentes/PartidaAuto.jsx'
 import LeeXogada from './componentes/LeeXogada';
+import FicheirosPGN from './componentes/FicheirosPGN';
+import BorraPGN from './componentes/BorraPGN';
 
 const Contexto=createContext()
 
@@ -28,8 +30,12 @@ function App() {
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
       
       {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
-      <LeeXogada></LeeXogada>
+      {/* <LeeXogada></LeeXogada> */}
+      
+      {/* FicheirosPGN: Engade unha partida por POST á base de datos PARTIDAS.SQLITE do backend */}
+      <FicheirosPGN/>
 
+      {/* <BorraPGN></BorraPGN> */}
         
     </Contexto.Provider>
     </>

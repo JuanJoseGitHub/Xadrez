@@ -14,6 +14,7 @@ export default function LeeXogada() {
  
   const [empate , setEmpate] = useContext(Contexto)
   
+  
   let [turno , setTurno] = useState("w")
   let [ xaque , setXaque] = useState (false)
   let [ gameOver , setGameOver] = useState (false)
