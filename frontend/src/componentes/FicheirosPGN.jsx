@@ -15,6 +15,7 @@ export default function FicheirosPGN() {
             White: "Manu Fraga",
             Black: "Manuel Canedo",
             Result:"1-0", 
+            Eco:"C10",
             PGNGame: partidaAcargar
           }
         )

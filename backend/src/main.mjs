@@ -29,6 +29,7 @@ const Game = sequelize.define('Game', {
     White:{type: DataTypes.STRING},
     Black:{type: DataTypes.STRING},
     Result:{type: DataTypes.STRING},
+    ECO:{type: DataTypes.STRING},
     PGNGame:{type:DataTypes.STRING}
 })
 await sequelize.sync({ alter:true })
