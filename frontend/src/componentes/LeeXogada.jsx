@@ -97,6 +97,25 @@ export default function LeeXogada() {
     event.preventDefault()
     setCasillaFin(event.target.id)
   }
+
+  function manexadorGraba() {
+    const arrayPartida=chess.history()
+    const arrayPartidaGrabada=[]
+   
+    for (let indice=0;indice<arrayPartida.length;indice+=2) {  
+      let obxetoPartida = {
+        id: (indice/2+1).toFixed(0),
+        blancas: arrayPartida[indice],
+        negras: arrayPartida[indice+1],
+        }
+      let arrayObxetosPartida
+      arrayPartidaGrabada.push(obxetoPartida)
+      
+      // arrayObxetosPartida.map( xogada => xogada.id+". "+xogada.blancas+" "+xogada.negras)
+      // console.log (arrayObxetosPartida)
+    }
+
+  }
     
   return (
     
@@ -107,6 +126,7 @@ export default function LeeXogada() {
       <p>Xaque: {xaque && " Xaque"}</p>
       <p>Empate: {empate && " Taboas"}</p>
       <p>Fin: {gameOver && " Fin !!"}</p>
+      <button onClick={manexadorGraba}>Graba partida</button>
 
     </div>
     <div className={style.bordeV}>
