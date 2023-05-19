@@ -99,22 +99,26 @@ export default function LeeXogada() {
   }
 
   function manexadorGraba() {
-    const arrayPartida=chess.history()
-    const arrayPartidaGrabada=[]
-   
-    for (let indice=0;indice<arrayPartida.length;indice+=2) {  
-      let obxetoPartida = {
-        id: (indice/2+1).toFixed(0),
-        blancas: arrayPartida[indice],
-        negras: arrayPartida[indice+1],
-        }
-      let arrayObxetosPartida
-      arrayPartidaGrabada.push(obxetoPartida)
-      
-      // arrayObxetosPartida.map( xogada => xogada.id+". "+xogada.blancas+" "+xogada.negras)
-      // console.log (arrayObxetosPartida)
-    }
-
+    const pgn=chess.pgn()
+    const resposta = fetch ("http://localhost:8000/XadrezAPI/partida", 
+      {
+        method:'POST',
+        headers:{'Content-type':'application/json'},
+        body: JSON.stringify (
+          { Event:"FIDE World Championship",
+            Site: "Xadrez.es",
+            Date: "2023.02.29",
+            Round: "1",
+            White: "Alba Branco",
+            Black: "Un día sen pan",
+            Result:"1-0", 
+            Eco:"C10",
+            PGNGame: pgn
+          }
+        )
+      }
+    )
+  console.log("Partida Grabada OK");
   }
     
   return (
