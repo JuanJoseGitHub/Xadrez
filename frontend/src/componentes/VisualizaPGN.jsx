@@ -52,13 +52,14 @@ export default function VisualizaPGN() {
     setXogada(arrayPGN.length/3)
   }
 
+  
     return (
     <>
       <div className={style.container}>
         <button onClick={principio}>1.</button>
         <button onClick={menos}>-</button>
         <button onClick={mais}>+</button>
-        <button onClick={remate}>Fin</button>
+        <button onClick={remate}>Fin</button> 
         Xogada:{xogada}
       </div>
     
