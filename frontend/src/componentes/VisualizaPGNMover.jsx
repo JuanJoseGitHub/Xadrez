@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import style from '../css/VisualizaPGN.module.css'
 import TaboleiroMover from './TaboleiroMover'
+import { Contexto } from '../App'
 
 export default function VisualizaPGNMover({partida})
  {

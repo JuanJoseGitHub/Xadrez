@@ -7,6 +7,8 @@ export default function Taboleiro() {
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
   
   const iniciado = useRef(false)
+
+  
  
   useEffect(
     ()=>{

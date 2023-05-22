@@ -7,15 +7,19 @@ import PartidaAuto from './componentes/PartidaAuto.jsx'
 import LeeXogada from './componentes/LeeXogada';
 import BorraPGN from './componentes/BorraPGN';
 import VerPartida from './componentes/VerPartida';
+import SeleccionaPartida from './componentes/SeleccionaPartida';
 
 const Contexto=createContext()
 
 function App() {
   const [ empate , setEmpate ] = useState(false)
+  // const stateEmpate = useState(false)
+  // const statePartidaenPGN = useState("")
   
   return (
     <>
     <Contexto.Provider value={[empate , setEmpate]}> 
+    {/* <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}>  */}
 
       {/* PartidaAuto: Reproduce automaticamente unha partida que se suministra nun Array de strings sen numerar*/}
       {/* <PartidaAuto></PartidaAuto> */}
@@ -35,7 +39,9 @@ function App() {
       {/* <BorraPGN></BorraPGN> */}
 
       {<VerPartida></VerPartida>}
-        
+
+      {/* <SeleccionaPartida/> */}
+
     </Contexto.Provider>
     </>
   )

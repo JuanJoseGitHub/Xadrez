@@ -27,7 +27,7 @@ export default function PintaTaboleiro({taboleiro}) {
   return (
     <>
     
-    <button onClick={Auto}>Música</button>
+    <button className={style.container} onClick={Auto}>Música</button>
     
     <div className={style.bordeV}>
       <div>8</div><div>7</div><div>6</div><div>5</div><div>4</div><div>3</div><div>2</div><div>1</div>      

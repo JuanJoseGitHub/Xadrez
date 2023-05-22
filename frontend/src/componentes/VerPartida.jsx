@@ -1,24 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState , useContext  } from 'react'
 import VisualizaPGNMover from './VisualizaPGNMover'
+import { Contexto } from '../App'
+
 
 export default function VerPartida() {
 
-  const [cargada,setCargada] = useState(false)
-  
+  const  [ partidaenPGN, setPartidaenPGN ] = useContext (Contexto)
+  // const  { statePartidaenPGN } = useContext (Contexto)
+  // const [ partidaenPGN, setPartidaenPGN ] = statePartidaenPGN
+
   async function manexadorVer(){
     const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida?id=1")
     const partidaObx=await resposta.json()
     const partidaPGN=partidaObx.PGNGame
-    console.log(partidaPGN)
-    setCargada(true)
-    console.log(cargada)
-    return partidaPGN   
+    setPartidaenPGN(partidaPGN)
   }
 
   return (
     <div>
       <button onClick={manexadorVer}>Ver Partida</button>
-      {cargada && <VisualizaPGNMover partidaPGN/>}
+      {partidaenPGN && <VisualizaPGNMover partida={partidaenPGN}/>}
     </div>
   )
 }
