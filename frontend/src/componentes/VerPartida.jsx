@@ -1,5 +1,5 @@
 import React, { useState , useContext  } from 'react'
-import VisualizaPGNMover from './VisualizaPGNMover'
+import VisualizaPGN from './VisualizaPGN'
 import { Contexto } from '../App'
 
 
@@ -19,7 +19,7 @@ export default function VerPartida() {
   return (
     <div>
       <button onClick={manexadorVer}>Ver Partida</button>
-      {partidaenPGN && <VisualizaPGNMover partida={partidaenPGN}/>}
+      {partidaenPGN && <VisualizaPGN partida={partidaenPGN}/>}
     </div>
   )
 }

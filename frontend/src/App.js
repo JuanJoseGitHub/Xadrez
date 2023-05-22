@@ -2,7 +2,7 @@ import './App.css';
 import Taboleiro from './componentes/Taboleiro';
 import { createContext , useState } from "react";
 import VisualizaPGN from './componentes/VisualizaPGN';
-import VisualizaPGNMover from './componentes/VisualizaPGNMover';
+import VisualizaPGN from './componentes/VisualizaPGN';
 import PartidaAuto from './componentes/PartidaAuto.jsx'
 import LeeXogada from './componentes/LeeXogada';
 import BorraPGN from './componentes/BorraPGN';
