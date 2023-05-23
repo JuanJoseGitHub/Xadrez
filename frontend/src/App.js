@@ -31,9 +31,6 @@ function App() {
       {/* Taboleiro: Pinta o taboleiro coa posición inicial. Si se lle da un array de strings mostra a posición final*/}
       {/* <Taboleiro></Taboleiro> */}
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
-      
-      
-    
 
       {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
       {/* <LeeXogada></LeeXogada> */}

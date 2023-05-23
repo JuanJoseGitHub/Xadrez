@@ -75,7 +75,9 @@ export default function VisualizaPGN({partida})
     
       <div className={style.partidaPGN}>
         <table>
-        {arrayObxetosXogada.map( xogada => <tr><td>{xogada.id}</td> <td>{xogada.blancas+" "}</td>  <td>{xogada.negras+" "}</td></tr>)}
+          <tbody>
+        {arrayObxetosXogada.map( (xogada,index) => <tr key={index}><td>{xogada.id}</td><td>{xogada.blancas}</td><td>{xogada.negras}</td></tr>)}
+        </tbody>
         </table>
       </div>
       <div> 

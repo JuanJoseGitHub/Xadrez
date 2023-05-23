@@ -1,8 +1,8 @@
 import React from 'react'
 
 export default function BorraPGN() {
-    function borraPGN () {
-        const resposta = fetch ("http://localhost:8000/XadrezAPI/borra", 
+    async function borraPGN () {
+        const resposta = await fetch ("http://localhost:8000/XadrezAPI/borra", 
           {
             method:'DELETE',
             headers:{'Content-type':'application/json'},
