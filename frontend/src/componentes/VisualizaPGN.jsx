@@ -21,8 +21,8 @@ export default function VisualizaPGN({partida})
     function ParSemiXogadas(){
       const proximaXogada = []
       for ( let visual=1 ; visual <= xogada ; visual++ ){
-        proximaXogada.push(arrayPGN[visual*3-2])
-        proximaXogada.push(arrayPGN[visual*3-1])
+        if (arrayPGN[visual*3-2]) proximaXogada.push(arrayPGN[visual*3-2])
+        if (arrayPGN[visual*3-1]) proximaXogada.push(arrayPGN[visual*3-1])
         }
         setArrayPgnActual(proximaXogada)
     }
@@ -52,7 +52,7 @@ export default function VisualizaPGN({partida})
   }
 
   function remate(){
-    setXogada(arrayPGN.length/3)
+    setXogada(Math.round(arrayPGN.length/3))
   }
 
   function Auto () {

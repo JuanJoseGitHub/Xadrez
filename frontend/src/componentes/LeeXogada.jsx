@@ -133,7 +133,7 @@ export default function LeeXogada() {
     <>
     <div className={style.container}>
       <p>Xogan: {(turno==="w" && " Brancas") || (turno==="b" && " Negras")}</p>
-      <p>Xaque: {xaque && " Xaque"}</p>
+      <p>Xaque: {xaque && " Xaque !"}</p>
       <p>Empate: {empate && " Taboas"}</p>
       <p>Fin: {gameOver && " Fin !!"}</p>
       <button onClick={manexadorGraba}>Grabar partida</button>
