@@ -18,8 +18,8 @@ export default function VerPartida() {
     arrayCon=partidaPGN.split(" ")
     
     for (let indice=0;indice<arrayCon.length;indice+=3) {    
-      if (arrayCon[indice+1]) (arraySal.push(arrayCon[indice+1])
-      if (arrayCon[indice+2]) (arraySal.push(arrayCon[indice+2])
+      if (arrayCon[indice+1]) {arraySal.push(arrayCon[indice+1])}
+      if (arrayCon[indice+2]) {arraySal.push(arrayCon[indice+2])}
       console.log(arraySal)
     }
     setPartidaenPGN(arraySal)    
