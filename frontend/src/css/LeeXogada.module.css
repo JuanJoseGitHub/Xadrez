@@ -82,13 +82,26 @@ border-radius: 5px;
 .partidaPGN {position:absolute;
     top: 50px;
     right: 30px;
-    width: 180px;
+    width: 200px;
+    height: 92vh ;
     background-color: darkseagreen;
     padding: 2rem;
     border: 1px solid;
     border-radius: 5px;
+    overflow-y: scroll;
 }
 button {font-size: large;
-        padding: 4px;
+        padding: 2px;
         border-radius: 8px;
-        border: 1px solid green;}
+        margin: 2px;
+        border: 1px solid green;
+        background-color:aquamarine;
+        text-align: center;
+        transition-duration: 0.4s;
+        }
+
+button:hover {
+    background-color:cornflowerblue;
+    color: antiquewhite;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

@@ -1,18 +1,19 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import style from "../css/LeeXogada.module.css";
 import { chess, procesarMovemento} from '../modulos/Intro.mjs'
 import { Contexto } from "../App";
-import { useContext } from "react";
+import melen from '../musica/Melendi.mp3'
 
 export default function LeeXogada() {
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
-  
+    
   let pulsado
   let buscandoInicio=useRef(true)
   let arrayPGN = []
   let arrayXogada = []
- 
-  const [empate , setEmpate] = useContext(Contexto)
+  const audio=useRef(new Audio(melen))
+  const { stateEmpate } = useContext (Contexto)
+  const [ empate , setEmpate ] = stateEmpate
   
   
   let [turno , setTurno] = useState("w")
@@ -98,6 +99,11 @@ export default function LeeXogada() {
     setCasillaFin(event.target.id)
   }
 
+  function Auto () {
+    if (audio.current.paused) audio.current.play()
+    else audio.current.pause()
+  }
+
   function manexadorGraba() {
     const pgn=chess.pgn()
     const resposta = fetch ("http://localhost:8000/XadrezAPI/partida", 
@@ -130,7 +136,8 @@ export default function LeeXogada() {
       <p>Xaque: {xaque && " Xaque"}</p>
       <p>Empate: {empate && " Taboas"}</p>
       <p>Fin: {gameOver && " Fin !!"}</p>
-      <button onClick={manexadorGraba}>Graba partida</button>
+      <button onClick={manexadorGraba}>Grabar partida</button>
+      <button onClick={Auto}>Música</button>
 
     </div>
     <div className={style.bordeV}>

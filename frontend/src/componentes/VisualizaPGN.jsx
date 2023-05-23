@@ -1,14 +1,15 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useRef, useContext } from 'react'
 import style from '../css/VisualizaPGN.module.css'
 import TaboleiroMover from './TaboleiroMover'
 import { Contexto } from '../App'
+import melen from '../musica/Mecano.mp3'
 
 export default function VisualizaPGN({partida})
  {
     let pgn=partida
     let arrayPGN=pgn.split(" ")
     let arrayObxetosXogada = []
-   
+    const audio=useRef(new Audio(melen))
     let [arrayPGNActual, setArrayPgnActual ] = useState([])
     let [ xogada, setXogada]=useState(0)
 
@@ -54,6 +55,11 @@ export default function VisualizaPGN({partida})
     setXogada(arrayPGN.length/3)
   }
 
+  function Auto () {
+    if (audio.current.paused) audio.current.play()
+    else audio.current.pause()
+  }
+
     return (
     <>
       <div className={style.container}>
@@ -62,6 +68,9 @@ export default function VisualizaPGN({partida})
         <button onClick={mais}>+</button>
         <button onClick={remate}>Fin</button>
         Xogada:{xogada}
+        <p></p>
+        <button onClick={Auto}>Música</button>
+        
       </div>
     
       <div className={style.partidaPGN}>

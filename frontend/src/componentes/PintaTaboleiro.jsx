@@ -1,12 +1,11 @@
 import React, { useState,useRef } from "react";
 import style from "../css/PintaTaboleiro.module.css";
-import melen from '../musica/Melendi.mp3'
 
 export default function PintaTaboleiro({taboleiro}) {
          
     let [ casillaInicio , setCasillaInicio ] = useState ('')
     let [ casillaFin , setCasillaFin ] = useState ('')
-    const audio=useRef(new Audio(melen))
+    
     
     function Dragado(event) { 
         setCasillaInicio(event.target.id)
@@ -19,15 +18,8 @@ export default function PintaTaboleiro({taboleiro}) {
         console.log ('Casilla Fin:'+casillaFin)
       }
 
-      function Auto () {
-        if (audio.current.paused) audio.current.play()
-        else audio.current.pause()
-      }
-
   return (
     <>
-    
-    <button className={style.container} onClick={Auto}>Música</button>
     
     <div className={style.bordeV}>
       <div>8</div><div>7</div><div>6</div><div>5</div><div>4</div><div>3</div><div>2</div><div>1</div>      
