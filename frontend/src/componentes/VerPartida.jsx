@@ -8,7 +8,8 @@ export default function VerPartida() {
 
   const  { statePartidaenPGN } = useContext (Contexto)
   const [ partidaenPGN , setPartidaenPGN ] = statePartidaenPGN
-  // const [ auto, setAuto ] = useState(true)
+  const [ auto, setAuto ] = useState(true)
+  const [elexido,setElexido] = useState(false)
   let arrayCon=[]
   let arraySal=[]
 
@@ -24,24 +25,25 @@ export default function VerPartida() {
       console.log(arraySal)
     }
     setPartidaenPGN(arraySal)
-    // setAuto(true)    
+    setElexido(true)
+    setAuto(true)    
   }
 
   async function manexadorVer(){
     const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida?id=1")
     const partidaObx=await resposta.json()
     const partidaPGN=partidaObx.PGNGame
-    
     setPartidaenPGN(partidaPGN) 
-    // setAuto(false)   
+    setElexido(true)
+    setAuto(false)   
   }
 
   return (
     <div>
       <button onClick={manexadorVerAuto}>Ver Partida (Auto)</button>
-      {/* <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button> */}
-      {partidaenPGN && <PartidaAuto autoPartida={partidaenPGN}/>}
-      {/* {partidaenPGN && <VisualizaPGN partida={partidaenPGN}/>} */}
+      <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button>
+      {(elexido && auto) && <PartidaAuto autoPartida={partidaenPGN}/>}
+      {(elexido && !auto) && <VisualizaPGN partida={partidaenPGN}/>}
     </div>
   )
 }

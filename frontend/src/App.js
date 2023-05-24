@@ -37,7 +37,7 @@ function App() {
 
       {/* <BorraPGN></BorraPGN> */}
 
-      {<VerPartida></VerPartida>}
+      {/* {<VerPartida></VerPartida>} */}
 
       {/* <SeleccionaPartida/> */}
 
