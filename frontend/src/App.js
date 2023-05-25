@@ -9,6 +9,7 @@ import VerPartida from './componentes/VerPartida';
 import SeleccionaPartida from './componentes/SeleccionaPartida';
 import TaboleiroMover from './componentes/TaboleiroMover';
 import CargaPGN from './componentes/CargaPGN';
+import CargaECO from './componentes/CargaECO';
 
 const Contexto=createContext()
 
@@ -42,7 +43,9 @@ function App() {
 
       {/* <SeleccionaPartida/> */}
 
-      <CargaPGN/>
+      {/* <CargaPGN/> */}
+
+      <CargaECO/>
 
     </Contexto.Provider>
     </>

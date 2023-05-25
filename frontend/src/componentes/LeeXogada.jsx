@@ -15,7 +15,6 @@ export default function LeeXogada() {
   const { stateEmpate } = useContext (Contexto)
   const [ empate , setEmpate ] = stateEmpate
   
-  
   let [turno , setTurno] = useState("w")
   let [ xaque , setXaque] = useState (false)
   let [ gameOver , setGameOver] = useState (false)
@@ -23,6 +22,8 @@ export default function LeeXogada() {
   let [ casillaFin , setCasillaFin ] = useState ('')
   let [ datosCompletos , setDatosCompletos ] = useState (false)
   let [arrayObxetosXogada , setArrayObxetosXogada] = useState ([])
+  let [tempoBrancas,setTempoBrancas] = useState (10)
+  let [tempoNegras,setTempoNegras] = useState(10)
   
    useEffect(
     ()=>{
