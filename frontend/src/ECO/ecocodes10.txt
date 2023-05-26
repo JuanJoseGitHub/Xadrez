@@ -3332,7 +3332,7 @@
 {B33   Siciliana: Pelícano, 7.Ag5 a6 8.Axf6}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Bxf6
 {B33   Siciliana: Pelícano, 7.Ag5 a6 8.Ca3}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3
 {B33   Siciliana: Pelícano, Variante Bird}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 Be6
-{B33   Siciliana: Pelícano, Variante Chelyabinsk, 8..b5}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5"  1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5
+{B33   Siciliana: Pelícano, Variante Chelyabinsk, 8..b5}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5
 {B33   Siciliana: Pelícano, Chelyabinsk, 9.Cd5}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Nd5
 {B33   Siciliana: Pelícano, Chelyabinsk, 9.Cd5 Ae7}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Nd5 Be7
 {B33   Siciliana: Pelícano, Chelyabinsk, 9.Cd5 Ae7, 11.c3}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Nd5 Be7 10.Bxf6 Bxf6 11.c3
@@ -3345,7 +3345,7 @@
 {B33   Siciliana: Pelícano, Chelyabinsk, 9.Axf6 gxf6 10.Cd5}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5
 {B33   Siciliana: Pelícano, Chelyabinsk, 9.Axf6 gxf6 10.Cd5 Ag7}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5 Bg7
 {B33   Siciliana: Pelícano, Chelyabinsk, 9.Axf6 gxf6 10.Cd5 Ag7 11.Ad3}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5 Bg7 11.Bd3
-{B33   Siciliana: Pelícano, Variante Sveshnikov, 10..f5}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5 f5"  1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5 f5
+{B33   Siciliana: Pelícano, Variante Sveshnikov, 10..f5}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5 f5
 {B33   Siciliana: Pelícano, Sveshnikov, 11.c3}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5 f5 11.c3
 {B33   Siciliana: Pelícano, Sveshnikov, 11.c3 Ag7}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5 f5 11.c3 Bg7
 {B33   Siciliana: Pelícano, Sveshnikov, 11.c3 Ag7 12.exf5 Axf5}1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Bxf6 gxf6 10.Nd5 f5 11.c3 Bg7 12.exf5 Bxf5
