@@ -32,7 +32,33 @@ const Game = sequelize.define('Game', {
     ECO:{type: DataTypes.STRING},
     PGNGame:{type:DataTypes.STRING}
 })
+
+const ECO = sequelize.define('ECO', {
+    ECOcode:{type: DataTypes.STRING},
+    OpeningName:{type: DataTypes.STRING},
+    OpeningPlayed:{type: DataTypes.STRING},
+    Ascii:{type: DataTypes.STRING}
+})
+
 await sequelize.sync({ alter:true })
+
+export {
+    ECO,
+    Game
+}
+
+
+app.post("/XadrezAPI/ECO/",async (peticion,resposta)=>{
+    try {
+        await ECO.create(peticion.body) 
+        console.log(peticion.body)
+        resposta.status(200)
+        resposta.send("Apertura incorporada ao Libro")
+        } catch (error) {
+        resposta.status(500)
+        resposta.send('Erro!')
+        }
+})
 
 app.get("/XadrezAPI/",(peticion,resposta)=>{
     try{
