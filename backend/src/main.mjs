@@ -60,6 +60,18 @@ app.post("/XadrezAPI/ECO/",async (peticion,resposta)=>{
         }
 })
 
+app.get("/XadrezAPI/ECO/",async (peticion,resposta)=>{
+    try {
+        const ecoObx=await ECO.findAll({where:{Ascii:peticion.query.Ascii}})
+        resposta.setHeader("Content-Type", "application/json")
+        resposta.status(200)
+        resposta.send(JSON.stringify(ecoObx))
+        } catch (error) {
+        resposta.status(500)
+        resposta.send('Erro!')
+        }
+})
+
 app.get("/XadrezAPI/",(peticion,resposta)=>{
     try{
     resposta.status(200)

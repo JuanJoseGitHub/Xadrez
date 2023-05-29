@@ -24,6 +24,7 @@ export default function LeeXogada() {
   let [arrayObxetosXogada , setArrayObxetosXogada] = useState ([])
   let [tempoBrancas,setTempoBrancas] = useState (10)
   let [tempoNegras,setTempoNegras] = useState(10)
+  let [ECO,setECO] = useState("")
   
    useEffect(
     ()=>{
@@ -37,11 +38,20 @@ export default function LeeXogada() {
         setXaque(chess.inCheck())
         setGameOver(chess.isGameOver())
         setEmpate(chess.isDraw())
+        BuscaECO()
       }
     },
     [casillaInicio, casillaFin]
   )
  
+  async function BuscaECO(){
+    let ecoActual=chess.ascii()
+    const resposta = await fetch ("http://localhost:8000/XadrezAPI/ECO/?Ascii="+ecoActual)
+    const ECO = await resposta.json()
+    console.log("ecoActual:" + ecoActual)
+    console.log ("ECO:" + ECO)
+    }
+
   function PintaPartida() {
   arrayPGN=chess.history()
   for (let indice=0;indice<=arrayPGN.length;indice+=2) {  
