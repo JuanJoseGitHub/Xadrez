@@ -9,6 +9,7 @@ import VerPartida from './componentes/VerPartida';
 import SeleccionaPartida from './componentes/SeleccionaPartida';
 import TaboleiroMover from './componentes/TaboleiroMover';
 import CargaPGN from './componentes/CargaPGN';
+import VerLibro from './componentes/VerLibro';
 
 
 const Contexto=createContext()
@@ -35,7 +36,7 @@ function App() {
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
 
       {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
-      <LeeXogada></LeeXogada>
+      {/* <LeeXogada></LeeXogada> */}
 
       {/* <BorraPGN></BorraPGN> */}
 
@@ -45,7 +46,7 @@ function App() {
 
       {/* <CargaPGN/> */}
 
-  
+    <VerLibro></VerLibro>
 
     </Contexto.Provider>
     </>

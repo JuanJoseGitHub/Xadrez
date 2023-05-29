@@ -60,9 +60,21 @@ app.post("/XadrezAPI/ECO/",async (peticion,resposta)=>{
         }
 })
 
-app.get("/XadrezAPI/ECO/",async (peticion,resposta)=>{
+app.get("/XadrezAPI/ECO/busca/",async (peticion,resposta)=>{
     try {
         const ecoObx=await ECO.findAll({where:{Ascii:peticion.query.Ascii}})
+        resposta.setHeader("Content-Type", "application/json")
+        resposta.status(200)
+        resposta.send(JSON.stringify(ecoObx))
+        } catch (error) {
+        resposta.status(500)
+        resposta.send('Erro!')
+        }
+})
+
+app.get("/XadrezAPI/ECO/",async (peticion,resposta)=>{
+    try {
+        const ecoObx=await ECO.findAll()
         resposta.setHeader("Content-Type", "application/json")
         resposta.status(200)
         resposta.send(JSON.stringify(ecoObx))
@@ -79,6 +91,30 @@ app.get("/XadrezAPI/",(peticion,resposta)=>{
     } catch (error) {
         resposta.status(500)
         resposta.send('Erro!')
+    }
+})
+
+app.get("/XadrezAPI/verECO/", async (peticion,resposta)=>{
+    if (peticion.query.id) {
+        try {
+            const game=await ECO.findByPk(peticion.query.id)
+            resposta.setHeader("Content-Type", "application/json")
+            resposta.status(200)
+            resposta.send(game.toJSON())
+            } catch (error) {
+            resposta.status(500)
+            resposta.send('Erro!')
+            }
+    } else {
+        try {
+            const totalgame=await ECO.findAll()
+            resposta.setHeader("Content-Type", "application/json")
+            resposta.status(200)
+            resposta.send(JSON.stringify(totalgame))
+        } catch (error) {
+            resposta.status(500)
+            resposta.send('Erro!')
+        }
     }
 })
 

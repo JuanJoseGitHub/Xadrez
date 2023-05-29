@@ -16,7 +16,10 @@ for ( let text of file.split(/\n/) ) {
     console.log(ECOstring+" "+Plyes)
     chess.loadPgn(Plyes)
     let TaboleiroPrevio=chess.ascii()
-    let Taboleiro=TaboleiroPrevio.substring(30,)
+    let Taboleiro=TaboleiroPrevio.slice(30,-58)
+    // let TaboleiroCurto=TaboleiroPrevio.slice(30,-58)
+    // let Taboleiro=encodeURIComponent(Taboleiro)
+    
 
     ECO.create({
       ECOcode:ECOstring ,
