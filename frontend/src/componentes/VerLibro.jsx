@@ -4,16 +4,19 @@ import { Contexto } from '../App'
 import PartidaAuto from './PartidaAuto'
 import VisualizaPGN from './VisualizaPGN'
 import VisualizaLibro from './VisualizaLibro'
+import TaboleiroMover from './TaboleiroMover'
 
 export default function VerLibro() {
 
   const  { statePartidaenPGN } = useContext (Contexto)
   const [ partidaenPGN , setPartidaenPGN ] = statePartidaenPGN
+  const [ x , setX] = useState("")
   const [ partidas , setPartidas ] = useState ([])
   const [ auto, setAuto ] = useState(true)
   const [ elexido , setElexido ] = useState (false)
   let [ECO,setECO] = useState("")
   let [opName,setOpName] = useState("")
+  let [para,setPara]=useState(true)
   let arrayCon=[]
   let arraySal=[]
 
@@ -29,7 +32,7 @@ export default function VerLibro() {
       const partidaenPGN=partidaObx.OpeningPlayed
       const ECO=partidaObx.ECOcode
       const OName=partidaObx.OpeningName
-      let partidaPGN = partidaenPGN.replaceAll(".",". ")
+      //let partidaPGN = partidaenPGN.replaceAll(".",". ")
       setECO(ECO)
       setOpName(OName)
       setPartidaenPGN(partidaenPGN) 
@@ -43,7 +46,6 @@ export default function VerLibro() {
     const resposta = await fetch ("http://localhost:8000/XadrezAPI/verECO/?id="+event.target.id)
     const partidaObx=await resposta.json()
     const partidaPGN=partidaObx.OpeningPlayed
-    // partidaPGN.replaceAll('.','. ')
     arrayCon=partidaPGN.split(" ")
     for (let indice=0;indice<arrayCon.length;indice+=3) {    
       if (arrayCon[indice+1]) {arraySal.push(arrayCon[indice+1])}
@@ -53,10 +55,17 @@ export default function VerLibro() {
     setPartidaenPGN(arraySal)
     setElexido(true)
     setAuto(true)
-    console.log(partidaPGN) 
+    // console.log(partidaPGN) 
     console.log(partidaenPGN)    
   }
-
+   
+  if (elexido && para) {
+    setX(partidaenPGN.replaceAll(".",". "))
+    setPartidaenPGN(x)
+    setPara(false)
+    console.log("PPGN:"+partidaenPGN)
+    console.log("X:" + x)
+  }
 
   return (
     <> 
@@ -64,10 +73,10 @@ export default function VerLibro() {
     <ol className={style.centro}>
       {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorVer}>{partida.ECOcode+" "+partida.OpeningName+" "+partida.OpeningPlayed}</li>)}
     </ol>
-    {partidaenPGN}
-    {/* {elexido && <VisualizaPGN partida={partidaenPGN}/>} */}
+    <p className={style.up}>{partidaenPGN}</p>
+    {elexido && <VisualizaPGN partida={partidaenPGN}/>}
     {/* {elexido && <PartidaAuto autoPartida={partidaenPGN}/>} */}
-    <VisualizaLibro (partidaenPGN)></VisualizaLibro>
+    {/* elexido && <VisualizaLibro partidaenPGN></VisualizaLibro> */}
     </>
   )
 }

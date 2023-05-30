@@ -1,4 +1,6 @@
 .up {position: absolute;
+    background-color: blue;
+    color:aquamarine;
     top: 1px;
     left: 20px;
 }

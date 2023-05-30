@@ -40,7 +40,8 @@ const ECO = sequelize.define('ECO', {
     Ascii:{type: DataTypes.STRING}
 })
 
-await sequelize.sync({ alter:true })
+//await sequelize.sync({ alter:true })
+await sequelize.sync()
 
 export {
     ECO,
@@ -97,10 +98,11 @@ app.get("/XadrezAPI/",(peticion,resposta)=>{
 app.get("/XadrezAPI/verECO/", async (peticion,resposta)=>{
     if (peticion.query.id) {
         try {
-            const game=await ECO.findAll({where:{Ascii: peticion.query.id}})
+            // const game=await ECO.findAll({where:{Ascii: peticion.query.id}})
+            const game=await ECO.findByPk(parseInt(peticion.query.id))
             resposta.setHeader("Content-Type", "application/json")
             resposta.status(200)
-            resposta.json(game)
+            resposta.send(game.toJSON())
             } catch (error) {
             resposta.status(500)
             resposta.send('Erro!')
