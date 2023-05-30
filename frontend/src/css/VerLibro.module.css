@@ -1,0 +1,15 @@
+.up {position: absolute;
+    top: 1px;
+    left: 20px;
+}
+.centro {position: absolute;
+    top: 32px;
+    left: 20px;
+    width: 95vw;
+    height: 94vh;
+    background-color: greenyellow;
+    padding: 2rem;
+    border: 1px solid;
+    border-radius: 5px;
+    overflow-y: scroll;
+}

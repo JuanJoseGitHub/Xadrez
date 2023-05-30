@@ -1,8 +1,9 @@
 import React, { useState , useContext } from 'react'
-import style from '../css/SeleccionaPartida.module.css'
+import style from '../css/VerLibro.module.css'
 import { Contexto } from '../App'
 import PartidaAuto from './PartidaAuto'
 import VisualizaPGN from './VisualizaPGN'
+import VisualizaLibro from './VisualizaLibro'
 
 export default function VerLibro() {
 
@@ -11,6 +12,8 @@ export default function VerLibro() {
   const [ partidas , setPartidas ] = useState ([])
   const [ auto, setAuto ] = useState(true)
   const [ elexido , setElexido ] = useState (false)
+  let [ECO,setECO] = useState("")
+  let [opName,setOpName] = useState("")
   let arrayCon=[]
   let arraySal=[]
 
@@ -24,22 +27,24 @@ export default function VerLibro() {
       const resposta =await fetch ("http://localhost:8000/XadrezAPI/verECO/?id="+event.target.id)
       const partidaObx=await resposta.json()
       const partidaenPGN=partidaObx.OpeningPlayed
-
+      const ECO=partidaObx.ECOcode
+      const OName=partidaObx.OpeningName
       let partidaPGN = partidaenPGN.replaceAll(".",". ")
-      
-      setPartidaenPGN(partidaPGN) 
+      setECO(ECO)
+      setOpName(OName)
+      setPartidaenPGN(partidaenPGN) 
       setElexido(true)
       setAuto(false)  
-      console.log(partidaPGN) 
+      // console.log(partidaPGN) 
+      console.log(partidaenPGN)
       }
 
     async function manexadorVerAuto(event){
-    const resposta =await fetch ("http://localhost:8000/XadrezAPI/verECO/?id="+event.target.id)
+    const resposta = await fetch ("http://localhost:8000/XadrezAPI/verECO/?id="+event.target.id)
     const partidaObx=await resposta.json()
     const partidaPGN=partidaObx.OpeningPlayed
-    partidaPGN.replace('.','. ')
+    // partidaPGN.replaceAll('.','. ')
     arrayCon=partidaPGN.split(" ")
-    
     for (let indice=0;indice<arrayCon.length;indice+=3) {    
       if (arrayCon[indice+1]) {arraySal.push(arrayCon[indice+1])}
       if (arrayCon[indice+2]) {arraySal.push(arrayCon[indice+2])}
@@ -47,19 +52,22 @@ export default function VerLibro() {
     }
     setPartidaenPGN(arraySal)
     setElexido(true)
-    setAuto(true)    
+    setAuto(true)
+    console.log(partidaPGN) 
+    console.log(partidaenPGN)    
   }
 
 
   return (
     <> 
-    <button onClick={manexadorSelecciona}>Selecciona Partida</button>
+    <button className={style.up} onClick={manexadorSelecciona}>Selecciona Partida</button>
     <ol className={style.centro}>
-      {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorVer}>{"ID["+partida.id+"]  "+partida.OpeningPlayed}</li>)}
+      {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorVer}>{partida.ECOcode+" "+partida.OpeningName+" "+partida.OpeningPlayed}</li>)}
     </ol>
     {partidaenPGN}
-    {elexido && <VisualizaPGN partida={partidaenPGN}/>}
+    {/* {elexido && <VisualizaPGN partida={partidaenPGN}/>} */}
     {/* {elexido && <PartidaAuto autoPartida={partidaenPGN}/>} */}
+    <VisualizaLibro (partidaenPGN)></VisualizaLibro>
     </>
   )
 }

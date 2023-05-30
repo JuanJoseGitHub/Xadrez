@@ -25,6 +25,8 @@ export default function LeeXogada() {
   let [tempoBrancas,setTempoBrancas] = useState (10)
   let [tempoNegras,setTempoNegras] = useState(10)
   let [ECO,setECO] = useState("")
+  let [opName,setOpName] = useState("")
+  let [opPlayed,setOpPlayed] = useState("")
   
    useEffect(
     ()=>{
@@ -51,9 +53,13 @@ export default function LeeXogada() {
     let buscaECO = encodeURIComponent(ecoActual)
     const resposta = await fetch ("http://localhost:8000/XadrezAPI/ECO/busca/?Ascii="+buscaECO)
     const ECO = await resposta.json()
-    let Codigo=ECO.ECOcode
-    console.log ("ECO:" + Codigo)
-    console.log("ecoActual:" + ecoActual)
+    let Codigo=ECO[0]
+    console.log ("ECO:" + Codigo.ECOcode)
+    if (Codigo.ECOcode) {setECO(Codigo.ECOcode)}
+    console.log ("ON:" + Codigo.OpeningName)
+    if (Codigo.OpeningName) {setOpName(Codigo.OpeningName)}
+    console.log ("OP:" + Codigo.OpeningPlayed)
+    if (Codigo.OpeningPlayed) {setOpPlayed(Codigo.OpeningPlayed)}
     }
 
   function PintaPartida() {
@@ -153,6 +159,10 @@ export default function LeeXogada() {
       <p>Fin: {gameOver && " Fin !!"}</p>
       <button onClick={manexadorGraba}>Grabar partida</button>
       <button onClick={Auto}>Música</button>
+      <p>{ECO}</p>
+      <p>{opName}</p>
+      <br></br>
+      <p>{opPlayed}</p>
 
     </div>
     <div className={style.bordeV}>

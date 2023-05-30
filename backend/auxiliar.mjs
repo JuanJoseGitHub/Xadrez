@@ -18,7 +18,7 @@ for ( let text of file.split(/\n/) ) {
     let TaboleiroPrevio=chess.ascii()
     let Taboleiro=TaboleiroPrevio.slice(30,-58)
     // let TaboleiroCurto=TaboleiroPrevio.slice(30,-58)
-    // let Taboleiro=encodeURIComponent(Taboleiro)
+    // let Taboleiro=encodeURIComponent(TaboleiroCurto)
     
 
     ECO.create({
