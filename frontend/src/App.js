@@ -36,7 +36,7 @@ function App() {
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
 
       {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
-      {/* <LeeXogada></LeeXogada> */}
+      <LeeXogada></LeeXogada>
 
       {/* <BorraPGN></BorraPGN> */}
 
@@ -46,7 +46,7 @@ function App() {
 
       {/* <CargaPGN/> */}
 
-    <VerLibro></VerLibro>
+    {/* <VerLibro></VerLibro> */}
 
     </Contexto.Provider>
     </>
