@@ -48,17 +48,13 @@ export default function LeeXogada() {
  
   async function BuscaECO(){
     let ecoActualCrudo=chess.ascii()
-    console.log(ecoActualCrudo);
     let ecoActual=ecoActualCrudo.slice(30,-58)
     let buscaECO = encodeURIComponent(ecoActual)
     const resposta = await fetch ("http://localhost:8000/XadrezAPI/ECO/busca/?Ascii="+buscaECO)
     const ECO = await resposta.json()
     let Codigo=ECO[0]
-    console.log ("ECO:" + Codigo.ECOcode)
     if (Codigo.ECOcode) {setECO(Codigo.ECOcode)}
-    console.log ("ON:" + Codigo.OpeningName)
     if (Codigo.OpeningName) {setOpName(Codigo.OpeningName)}
-    console.log ("OP:" + Codigo.OpeningPlayed)
     if (Codigo.OpeningPlayed) {setOpPlayed(Codigo.OpeningPlayed)}
     }
 

@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
 import style from '../css/VerLibro.module.css'
 import { ChangeEvent , useState } from 'react'
+import { Chess } from 'chess.js'
 
 export default function CargaPGN() {
 
     const [file, setFile] = useState()
+    const chess=new Chess()
 
     useEffect(
-        ()=>{ console.log(file);},
+        ()=>{ console.log(file) },
         [file]
     )
 
