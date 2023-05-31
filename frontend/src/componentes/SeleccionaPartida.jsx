@@ -1,5 +1,5 @@
 import React, { useState , useContext } from 'react'
-import style from '../css/SeleccionaPartida.module.css'
+import style from '../css/VerLibro.module.css'
 import { Contexto } from '../App'
 import PartidaAuto from './PartidaAuto'
 import VisualizaPGN from './VisualizaPGN'
@@ -48,7 +48,7 @@ export default function SeleccionaPartida() {
 
   return (
     <> 
-    <button onClick={manexadorSelecciona}>Selecciona Partida</button>
+    <button className={style.up} onClick={manexadorSelecciona}>Selecciona Partida</button>
     <ol className={style.centro}>
       {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorVer}>{"ID["+partida.id+"]  "+partida.PGNGame}</li>)}
     </ol>

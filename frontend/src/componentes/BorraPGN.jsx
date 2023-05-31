@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import style from '../css/SeleccionaPartida.module.css'
+import style from '../css/VerLibro.module.css'
 
 export default function BorraPGN() {
 
@@ -29,7 +29,7 @@ export default function BorraPGN() {
       return (
         <>
         
-        <button onClick={manexadorSelecciona}>Selecciona para borrar</button>
+        <button className={style.up} onClick={manexadorSelecciona}>Selecciona para borrar</button>
         <ol className={style.centro}>
          {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorBorra}>{"ID["+partida.id+"]  "+partida.PGNGame}</li>)}
         </ol>

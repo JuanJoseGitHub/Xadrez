@@ -2,16 +2,27 @@
     background-color: blue;
     color:aquamarine;
     top: 1px;
-    left: 20px;
+    left: 10px;
 }
 .centro {position: absolute;
     top: 32px;
-    left: 20px;
-    width: 95vw;
+    left: 10px;
+    width: 24vw;
+    height: 94vh;
+    background-color: greenyellow;
+    padding: 3rem;
+    border: 1px solid;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.dereita{
+    position:absolute;
+    top: 32px;
+    right:40px;
+    width: 18vw;
     height: 94vh;
     background-color: greenyellow;
     padding: 2rem;
     border: 1px solid;
     border-radius: 5px;
-    overflow-y: scroll;
 }

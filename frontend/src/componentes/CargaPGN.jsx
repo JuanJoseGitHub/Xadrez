@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import style from '../css/SeleccionaPartida.module.css'
+import style from '../css/VerLibro.module.css'
 import { ChangeEvent , useState } from 'react'
 
 export default function CargaPGN() {
@@ -21,8 +21,8 @@ export default function CargaPGN() {
 
   return (
     <>
-    <div>CargaPGN</div>
-    <input type='file' onChange={CambioFicheiro}/>
+    <div className={style.up}>CargaPGN</div>
+    <input className={style.up} type='file' onChange={CambioFicheiro}/>
     </>
   )
 }

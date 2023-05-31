@@ -38,6 +38,9 @@ function App() {
       {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
       {/* <LeeXogada></LeeXogada> */}
 
+      {/* Permite seleccionar unha apertura do libro de aperturas e reproducila automaticamente */}
+      {/* <VerLibro></VerLibro> */}
+
       {/* <BorraPGN></BorraPGN> */}
 
       {/* {<VerPartida></VerPartida>} */}
@@ -46,7 +49,7 @@ function App() {
 
       {/* <CargaPGN/> */}
 
-    <VerLibro></VerLibro>
+      
 
     </Contexto.Provider>
     </>
