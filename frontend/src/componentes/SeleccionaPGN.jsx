@@ -54,10 +54,10 @@ export default function SeleccionaPGN() {
         {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorVer}>{partida.PGNGame}</li>)}
         </ol>
 
-        <button onClick={manexadorVerAuto}>Ver Partida (Auto)</button>
-        {/* <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button> */}
-        {elexido && <PartidaAuto autoPartida={partidaenPGN}/>}
-        {/* {(elexido && !auto) && <VisualizaPGN partida={partidaenPGN}/>} */}
+        {/* <button onClick={manexadorVerAuto}>Ver Partida (Auto)</button> */}
+        <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button>
+        {/* {elexido && <PartidaAuto autoPartida={partidaenPGN}/>} */}
+        {(elexido && !auto) && <VisualizaPGN partida={partidaenPGN}/>}
       </div>
   )
 }

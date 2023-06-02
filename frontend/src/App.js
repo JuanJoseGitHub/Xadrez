@@ -45,9 +45,9 @@ function App() {
 
       {/* {<VerPartida></VerPartida>} */}
 
-      {/* <SeleccionaPGN/> */}
+      <SeleccionaPGN/>
 
-      <CargaPGN/>
+      {/* <CargaPGN/> */}
 
       
 
