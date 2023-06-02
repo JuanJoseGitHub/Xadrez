@@ -6,7 +6,7 @@ import PartidaAuto from './componentes/PartidaAuto.jsx'
 import LeeXogada from './componentes/LeeXogada';
 import BorraPGN from './componentes/BorraPGN';
 import VerPartida from './componentes/VerPartida';
-import SeleccionaPartida from './componentes/SeleccionaPartida';
+import SeleccionaPGN from './componentes/SeleccionaPGN';
 import TaboleiroMover from './componentes/TaboleiroMover';
 import CargaPGN from './componentes/CargaPGN';
 import VerLibro from './componentes/VerLibro';
@@ -34,7 +34,7 @@ function App() {
       {/* Taboleiro: Pinta o taboleiro coa posición inicial. Si se lle da un array de strings mostra a posición final*/}
       {/* <Taboleiro></Taboleiro> */}
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
-
+      
       {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
       {/* <LeeXogada></LeeXogada> */}
 
@@ -45,7 +45,7 @@ function App() {
 
       {/* {<VerPartida></VerPartida>} */}
 
-      {/* <SeleccionaPartida/> */}
+      {/* <SeleccionaPGN/> */}
 
       <CargaPGN/>
 

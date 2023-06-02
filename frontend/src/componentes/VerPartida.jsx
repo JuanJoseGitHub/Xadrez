@@ -1,8 +1,7 @@
 import React, { useState , useContext  } from 'react'
-import VisualizaPGN from './VisualizaPGN'
 import { Contexto } from '../App'
 import PartidaAuto from './PartidaAuto'
-
+import VisualizaPGN from './VisualizaPGN'
 
 export default function VerPartida() {
 

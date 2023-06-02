@@ -54,6 +54,7 @@ export default function VerLibro() {
     </div>
     
     {elexido && <PartidaAuto autoPartida={myGame}></PartidaAuto>}
+    {/* {elexido && <VisualizaPGN partida={myGame}></VisualizaPGN>} */}
     </>
   )
 }

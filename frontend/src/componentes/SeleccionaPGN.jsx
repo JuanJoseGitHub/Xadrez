@@ -4,7 +4,7 @@ import { Contexto } from '../App'
 import PartidaAuto from './PartidaAuto'
 import VisualizaPGN from './VisualizaPGN'
 
-export default function SeleccionaPartida() {
+export default function SeleccionaPGN() {
 
   const  { statePartidaenPGN } = useContext (Contexto)
   const [ partidaenPGN , setPartidaenPGN ] = statePartidaenPGN
@@ -18,6 +18,7 @@ export default function SeleccionaPartida() {
         const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida")
         const partidaObx=await resposta.json()
         setPartidas(partidaObx)
+        setElexido(false)
       }
 
     async function manexadorVer(event){
@@ -47,14 +48,16 @@ export default function SeleccionaPartida() {
 
 
   return (
-    <> 
-    <button className={style.up} onClick={manexadorSelecciona}>Selecciona Partida</button>
-    <ol className={style.centro}>
-      {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorVer}>{"ID["+partida.id+"]  "+partida.PGNGame}</li>)}
-    </ol>
-    
-    {elexido && <VisualizaPGN partida={partidaenPGN}/>}
-    {/* {elexido && <PartidaAuto autoPartida={partidaenPGN}/>} */}
-    </>
+    <div>
+        <button className={style.up} onClick={manexadorSelecciona}>Selecciona Partida</button>
+        <ol className={style.centro}>
+        {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorVer}>{partida.PGNGame}</li>)}
+        </ol>
+
+        <button onClick={manexadorVerAuto}>Ver Partida (Auto)</button>
+        {/* <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button> */}
+        {elexido && <PartidaAuto autoPartida={partidaenPGN}/>}
+        {/* {(elexido && !auto) && <VisualizaPGN partida={partidaenPGN}/>} */}
+      </div>
   )
 }
