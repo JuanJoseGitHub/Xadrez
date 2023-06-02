@@ -9,7 +9,10 @@ export default function CargaPGN() {
     const chess=new Chess()
 
     useEffect(
-        ()=>{ console.log(file) },
+        ()=>{ 
+          console.log(file)
+          
+         },
         [file]
     )
 
