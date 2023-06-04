@@ -1,7 +1,7 @@
 .container {position: absolute;
-    top: 30px;
+    top: 31px;
     left: 10px;
-    width: 328px;
+    width: 24vw;
 background-color: greenyellow;
 padding: 2rem;
 border: 1px solid;
@@ -13,7 +13,7 @@ border-radius: 5px;
     right: 30px;
     width: 200px;
     height: 92vh ;
-    background-color: cadetblue;
+    background-color: aquamarine;
     padding: 2rem;
     border: 1px solid;
     border-radius: 5px;

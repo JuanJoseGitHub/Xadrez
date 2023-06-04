@@ -1,6 +1,7 @@
 import './App.css';
-import Taboleiro from './componentes/Taboleiro';
 import { createContext , useState } from "react";
+
+import Taboleiro from './componentes/Taboleiro';
 import VisualizaPGN from './componentes/VisualizaPGN';
 import PartidaAuto from './componentes/PartidaAuto.jsx'
 import LeeXogada from './componentes/LeeXogada';
@@ -11,11 +12,9 @@ import TaboleiroMover from './componentes/TaboleiroMover';
 import CargaPGN from './componentes/CargaPGN';
 import VerLibro from './componentes/VerLibro';
 
-
 const Contexto=createContext()
 
 function App() {
-  // const [ empate , setEmpate ] = useState(false)
   const stateEmpate = useState(false)
   const statePartidaenPGN = useState("")
   
@@ -41,15 +40,17 @@ function App() {
       {/* Permite seleccionar unha apertura do libro de aperturas e reproducila automaticamente */}
       {/* <VerLibro></VerLibro> */}
 
-      {/* <BorraPGN></BorraPGN> */}
+      {/* Mostra a partida almacenada con id=1 automáticamente ou xogada a xogada */}
+      {<VerPartida></VerPartida>}
 
-      {/* {<VerPartida></VerPartida>} */}
-
+       {/* Mostra as partidas alamcenadas en base de datos e permite reproducir unha xogada a xogada */}
       {/* <SeleccionaPGN/> */}
 
-      <CargaPGN/>
+      {/* Mostra as partidas almacenadas en base de datos e permite seleccionar unha para borrar */}
+      {/* <BorraPGN></BorraPGN> */}
 
-      
+      {/* <CargaPGN/> */}
+     
 
     </Contexto.Provider>
     </>

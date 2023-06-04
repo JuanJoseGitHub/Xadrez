@@ -3,12 +3,13 @@
     color:aquamarine;
     top: 1px;
     left: 10px;
+    width: 24vw;
 }
 .centro {position: absolute;
-    top: 32px;
+    top: 160px;
     left: 10px;
     width: 24vw;
-    height: 94vh;
+    height: 87vh;
     background-color: greenyellow;
     padding: 3rem;
     border: 1px solid;

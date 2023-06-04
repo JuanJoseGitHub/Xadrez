@@ -19,7 +19,7 @@ export default function BorraPGN() {
             headers:{'Content-type':'application/json'},
             body: JSON.stringify (
                 {
-                     id:event.target.id
+                  id:event.target.id
                 }
             )
           }
@@ -31,7 +31,7 @@ export default function BorraPGN() {
         
         <button className={style.up} onClick={manexadorSelecciona}>Selecciona para borrar</button>
         <ol className={style.centro}>
-         {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorBorra}>{"ID["+partida.id+"]  "+partida.PGNGame}</li>)}
+         {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorBorra}>{partida.PGNGame}</li>)}
         </ol>
         
         </>

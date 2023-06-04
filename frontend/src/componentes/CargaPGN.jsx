@@ -3,6 +3,10 @@ import style from '../css/VerLibro.module.css'
 import { useState } from 'react'
 import { Chess } from 'chess.js'
 
+// Cargar avatares (xogadorA, xogadorB)
+
+
+
 export default function CargaPGN() {
 
     const [file, setFile] = useState()
