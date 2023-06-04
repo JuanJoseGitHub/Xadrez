@@ -35,13 +35,13 @@ function App() {
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
       
       {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
-      {/* <LeeXogada></LeeXogada> */}
+      <LeeXogada></LeeXogada>
 
       {/* Permite seleccionar unha apertura do libro de aperturas e reproducila automaticamente */}
       {/* <VerLibro></VerLibro> */}
 
       {/* Mostra a partida almacenada con id=1 automáticamente ou xogada a xogada */}
-      {<VerPartida></VerPartida>}
+      {/* {<VerPartida></VerPartida>} */}
 
        {/* Mostra as partidas alamcenadas en base de datos e permite reproducir unha xogada a xogada */}
       {/* <SeleccionaPGN/> */}
