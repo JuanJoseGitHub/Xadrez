@@ -56,7 +56,7 @@ export default function SeleccionaPGN() {
 
         {/* <button onClick={manexadorVerAuto}>Ver Partida (Auto)</button> */}
         <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button>
-        {/* {elexido && <PartidaAuto autoPartida={partidaenPGN}/>} */}
+        {/* {(elexido && auto) && <PartidaAuto autoPartida={partidaenPGN}/>} */}
         {(elexido && !auto) && <VisualizaPGN partida={partidaenPGN}/>}
       </div>
   )
