@@ -70,9 +70,9 @@ body{
     background-color: hsl(187, 80%, 63%);
 }  
 .container {position: absolute;
-    top: 70px;
-    left: 20px;
-    width: 300px;
+    top: 32px;
+    left: 10px;
+    width: 24vw;
 background-color: greenyellow;
 padding: 2rem;
 border: 1px solid;
@@ -80,7 +80,7 @@ border-radius: 5px;
 }
 
 .partidaPGN {position:absolute;
-    top: 40px;
+    top: 32px;
     right: 30px;
     width: 200px;
     height: 92vh ;
