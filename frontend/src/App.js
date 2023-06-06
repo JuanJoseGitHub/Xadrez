@@ -23,22 +23,26 @@ function App() {
     <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}> 
     <BrowserRouter>
 
-    <nav>
-          <Link to="/">| Xadrez 64 |</Link>
-          <Link to="/xogar">| Xogar unha partida |</Link>      
-          <Link to="/verlibro">| Ver Libro |</Link>
-          <Link to="/verpartida">| Ver Partida 1 |</Link>
-          <Link to="/verpartidas">| Ver Partidas |</Link>
-          <Link to="/borra">| Borrar Partidas |</Link>
+    <nav className='enlaces'>
+          <Link className='link' to="/">| Xadrez 64 |</Link>
+          <Link className='link' to="/xogar">| Xogar unha partida |</Link>      
+          <Link className='link' to="/verlibro">| Ver Libro |</Link>
+          <Link className='link' to="/verpartida">| Ver Partida 1 |</Link>
+          <Link className='link' to="/verpartidas">| Ver Partidas |</Link>
+          <Link className='link' to="/vermanu1">| Ver Manu 1 |</Link>
+          <Link className='link' to="/vermanu2">| Ver Manu 2 |</Link>
+          <Link className='link' to="/borra">| Borrar Partidas |</Link>
        
     </nav>
 
-    <Routes>
+    <Routes className='enlaces'>
       <Route path='/' element={<Home></Home>}/>
       <Route path='/xogar' element={<LeeXogada></LeeXogada>}/>
       <Route path='/verlibro/' element={<VerLibro></VerLibro>}/>
       <Route path='/verpartida/' element={<VerPartida></VerPartida>}/>
       <Route path='/verpartidas/' element={<SeleccionaPGN></SeleccionaPGN>}/>
+      <Route path='/vermanu1/' element={<PartidaAuto autoPartida={["d4","Nf6","Bf4","c5","e3","Qb6","Nc3","Qxb2","Nb5","cxd4","Rb1","Qxa2","Nc7+","Kd8","Nxa8","e5","Bg5","Qa5+","Qd2","Qa2","Rd1","Qb2","c3","dxc3","Qxb2","cxb2","Bc4","Bb4+","Ke2","b6","Nf3","Re8","Bxf7","Ba6+","Rd3","Re7","Ba2","e4","Nd2","exd3+","Kd1","Bb7","Nxb6","axb6","f3","Re5","Bxf6+","gxf6","Nc4","Rc5","Nxb2","Ba6","Bb1","d2"]} ></PartidaAuto>}/>
+      <Route path='/vermanu2/' element={<VisualizaPGN partida='1. e4 e6 2. d4 d5 3. Nc3 c5 4. exd5 exd5 5. dxc5 d4 6. Bb5+ Nc6 7. Qe2+ Be6 8. Ne4 Nf6 9. Bg5 Be7 10. Bxc6+ bxc6 11. Bxf6 Bxf6 12. Nd6+ Kf8 13. Qd2 a5 14. Ne2 Bd5 15. O-O Rb8 16. Nxd4 Rxb2 17. Rfe1 Be7 18. Rxe7 Qxe7 19. Re1 Qd7 20. N4f5 Rb8 21. Qf4 h6 22. Nxf7 Kxf7 23. Ne7+ Ke8 24. Qxb8+ Qd8 25. Nxc6+'></VisualizaPGN>}/> 
       <Route path='/borra/' element={<BorraPGN></BorraPGN>}/>
     </Routes>   
 

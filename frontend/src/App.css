@@ -1,3 +1,9 @@
 .Inicial {font-family: Chess;
             font-size: 56px;}
             
+.enlaces {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+.link {color:aquamarine}

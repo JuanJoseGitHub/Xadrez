@@ -1,5 +1,6 @@
 import React, { useState , useContext  } from 'react'
 import { Contexto } from '../App'
+import style from '../css/VerLibro.module.css'
 import PartidaAuto from './PartidaAuto'
 import VisualizaPGN from './VisualizaPGN'
 
@@ -39,8 +40,8 @@ export default function VerPartida() {
 
   return (
     <div>
-      <button onClick={manexadorVerAuto}>Ver Partida (Auto)</button>
-      <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button>
+      <button className={style.centrado} onClick={manexadorVerAuto}>Ver Partida (Auto)</button>
+      <button className={style.centrado} onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button>
       {(elexido && auto) && <PartidaAuto autoPartida={partidaenPGN}/>}
       {(elexido && !auto) && <VisualizaPGN partida={partidaenPGN}/>}
     </div>

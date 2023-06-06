@@ -6,7 +6,8 @@
 
 .bordeH {
     position: relative;
-    top: -565px;
+    right: -150px;
+    top: -560px;
     width: 550px;
     background-color: transparent;
     font-size: 40px;
@@ -18,8 +19,8 @@
 .bordeV {
     position: relative;
     height: 550px;
-    top: 30px;
-    left: -30px;
+    top: 40px;
+    left: 120px;
     background-color: transparent;
     font-size: 40px;
     display:flex;
@@ -42,7 +43,8 @@ body{
 
 .taboleiro      {
         position: relative;
-        top: -565px;
+        right: -150px;
+        top: -560px;
         width: 550px;
         height: 550px;
         display: grid;
@@ -70,4 +72,4 @@ body{
 }
 .n{
     background-color: hsl(187, 80%, 63%);
-}  
+} 
