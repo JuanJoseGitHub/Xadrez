@@ -1,9 +1,10 @@
 import React from 'react'
+import wallpaper from '../graficos/Home/Wall3.jpg'
 
 export default function Home() {
   return (
     <div>
-      <img src="../graficos/fondo2.jpeg" alt="Sabrina Vega" width="95%" height="97%"></img>
+      <img src={wallpaper} height="100vh" width="100vw" alt='wallpaper'></img>
     </div>
   )
 }
