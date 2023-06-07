@@ -5,8 +5,6 @@ import { Chess } from 'chess.js'
 
 // Cargar avatares (xogadorA, xogadorB)
 
-
-
 export default function CargaPGN() {
 
     const [file, setFile] = useState()

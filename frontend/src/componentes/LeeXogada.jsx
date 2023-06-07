@@ -128,14 +128,14 @@ export default function LeeXogada() {
         method:'POST',
         headers:{'Content-type':'application/json'},
         body: JSON.stringify (
-          { Event:"FIDE World Championship",
+          { Event:"Campionato Mundial",
             Site: "Xadrez.es",
             Date: "2023.02.29",
             Round: "1",
             White: "Alba Branco",
-            Black: "Un día sen pan",
+            Black: "Black and Decker",
             Result:"1-0", 
-            Eco:"C10",
+            ECO: ECO,
             PGNGame: pgn
           }
         )

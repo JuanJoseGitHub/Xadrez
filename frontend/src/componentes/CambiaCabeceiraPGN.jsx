@@ -5,6 +5,7 @@ export default function CambiaCabeceiraPGN() {
 
     const [ partidas , setPartidas ] = useState ([])
     const [ elexido , setElexido ] = useState (false)
+
     
     async function manexadorSelecciona(){
         const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida")
@@ -12,21 +13,25 @@ export default function CambiaCabeceiraPGN() {
         setPartidas(partidaObx)
       }
 
-    
       async function manexadorCambia (event) {
-        const reposta=await fetch ("http://localhost:8000/XadrezAPI/verpartida")
-        const partidaObx=await resposta.json()
+        const resposta2=await fetch ("http://localhost:8000/XadrezAPI/verpartida/?id="+event.target.id)
+        const partidaObx=await resposta2.json()
         console.log(partidaObx)
-    
 
-        const resposta = await fetch ("http://localhost:8000/XadrezAPI/cabeceira", 
+        partidaObx.Event="www.xadrez.es"
+        partidaObx.Site="Santiago de Compostela"
+        partidaObx.Date="2023.06.07"
+        partidaObx.Round="1ª"
+        partidaObx.Black="Negro"
+        partidaObx.White="Blanco"
+        partidaObx.Result="1-0"
+
+        const resposta = await fetch ("http://localhost:8000/XadrezAPI/cabeceira/", 
           {
             method:'PUT',
             headers:{'Content-type':'application/json'},
             body: JSON.stringify (
-                {
-                  id:event.target.id
-                }
+                partidaObx
             )
           }
         )

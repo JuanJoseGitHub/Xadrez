@@ -13,6 +13,7 @@ import CargaPGN from './componentes/CargaPGN';
 import VerLibro from './componentes/VerLibro';
 import Home from './componentes/Home.jsx'
 import CambiaCabeceiraPGN from './componentes/CambiaCabeceiraPGN';
+import Avatares from './componentes/Avatares';
 const Contexto=createContext()
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   
   return (
     <>
+    <Avatares/>
     <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}> 
       
       <BrowserRouter>
