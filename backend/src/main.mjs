@@ -156,6 +156,19 @@ app.post("/XadrezAPI/partida/",async (peticion,resposta)=>{
         }
 })
 
+app.put("XadrezAPI/cabeceira/",async (peticion,resposta)=>{
+    try {
+        const currentGame = await Game.findByPk(peticion.body.id)
+        await currentGame.update(peticion.body)
+    }
+
+    catch (error) {
+    resposta.status(500)
+    resposta.send('Erro!')
+    }
+})
+
+
 app.delete("/XadrezAPI/borra/", async (peticion,resposta)=>{
     try {
         const game = await Game.findByPk(peticion.body.id)
