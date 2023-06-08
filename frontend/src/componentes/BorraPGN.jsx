@@ -27,8 +27,7 @@ export default function BorraPGN() {
       } 
     
       return (
-        <>
-        
+        <>      
         <button className={style.up} onClick={manexadorSelecciona}>Selecciona para borrar</button>
         <ol className={style.centro}>
          {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorBorra}>{partida.PGNGame}</li>)}

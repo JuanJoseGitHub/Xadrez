@@ -4,9 +4,7 @@ import style from '../css/VerLibro.module.css'
 export default function CambiaCabeceiraPGN() {
 
     const [ partidas , setPartidas ] = useState ([])
-    const [ elexido , setElexido ] = useState (false)
-
-    
+        
     async function manexadorSelecciona(){
         const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida")
         const partidaObx=await resposta.json()
@@ -26,7 +24,7 @@ export default function CambiaCabeceiraPGN() {
         partidaObx.White="Blanco"
         partidaObx.Result="1-0"
 
-        const resposta = await fetch ("http://localhost:8000/XadrezAPI/cabeceira/", 
+        const resposta3 = await fetch ("http://localhost:8000/XadrezAPI/cabeceira/", 
           {
             method:'PUT',
             headers:{'Content-type':'application/json'},
