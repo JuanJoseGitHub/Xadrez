@@ -16,18 +16,19 @@ export default function Avatares() {
         [file]
     )
 
-     function CambioFicheiro(e) {   
-        const reader = new FileReader()
-        reader.readAsDataURL(e.target.files[0])
-        reader.addEventListener("load", ()=>{ 
-            setFile(reader.result)
-            })                 
-    }
-
+    function CambioFicheiro(e) {   
+      const reader = new FileReader()
+      reader.addEventListener("load", ()=>{ 
+      setFile(reader.result)},false) 
+      reader.readAsDataURL(e.target.files[0])  
+      const img = document.createElement("img")
+      img.src = e.target.result;
+      document.body.appendChild(img)              
+  }
   return (
     <>
-    <div className={style.up}>Avatares</div>
-    <input className={style.up} type='file' onChange={CambioFicheiro}/>
+    <div>Avatares</div>
+    <input type='file' onChange={CambioFicheiro}/>
     </>
   )
 }
