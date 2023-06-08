@@ -23,7 +23,7 @@ function App() {
   return (
     <>
     <Avatares/>
-    <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}> 
+    {/* <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}> 
       
       <BrowserRouter>
 
@@ -48,7 +48,7 @@ function App() {
       </Routes>   
 
       </BrowserRouter>
-    </Contexto.Provider>
+    </Contexto.Provider> */}
 
       {/* PartidaAuto: Reproduce automaticamente unha partida que se suministra nun Array de strings sen numerar*/}
       {/* autoPartida=["d4","Nf6","Bf4","c5","e3","Qb6","Nc3","Qxb2","Nb5","cxd4","Rb1","Qxa2","Nc7+","Kd8","Nxa8","e5","Bg5","Qa5+","Qd2","Qa2","Rd1","Qb2","c3","dxc3","Qxb2","cxb2","Bc4","Bb4+","Ke2","b6","Nf3","Re8","Bxf7","Ba6+","Rd3","Re7","Ba2","e4","Nd2","exd3+","Kd1","Bb7","Nxb6","axb6","f3","Re5","Bxf6+","gxf6","Nc4","Rc5","Nxb2","Ba6","Bb1","d2"] */}
