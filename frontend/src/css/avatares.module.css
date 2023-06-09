@@ -1,0 +1,13 @@
+.esquerda{
+    position: absolute;
+    left: 90px;
+}
+.dereita {
+    position: absolute;
+    right: 90px;
+}
+
+img{
+    height: 300px;
+    width: 200px;
+}

@@ -55,7 +55,7 @@ function App() {
 
 
     <Avatares/>
-    <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}> 
+    {/* <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}> 
       
       <BrowserRouter>
 
@@ -80,7 +80,7 @@ function App() {
       </Routes>   
 
       </BrowserRouter>
-    </Contexto.Provider>
+    </Contexto.Provider> */}
      
     </>
   )
