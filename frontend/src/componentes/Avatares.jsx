@@ -46,8 +46,12 @@ export default function Avatares() {
   return (
     <>
     <div>Avatares</div>
+    <div className={style.dereita}>
     <input type='file' id="inputDereita" onChange={CambioFicheiroDereita}/>
+    </div>
+    <div className={style.esquerda}>
     <input type='file' id="inputEsquerda" onChange={CambioFicheiroEsquerda}/>
+    </div>
     </>
   )
 }
