@@ -8,7 +8,7 @@
     top: 10px;
     left: 90px;
     height: 98vh;
-    width: 20vw;
+    width: 18vw;
 }
 .dereita {
     background-color: darkcyan;
@@ -20,12 +20,10 @@
     top: 10px;
     right: 90px;
     height:98vh;
-    width: 20vw;
+    width: 18vw;
 }
 
 .centro {
-    background-color: chartreuse;
-    opacity: 0.1;
     position: absolute;
     text-align: center;
     border: 1px solid;
@@ -39,11 +37,30 @@
 
 
 img{
-    height: 450px;
+    position: relative;
+    height: 400px;
     width: 300px;
 }
 
-img.dereita{
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    background-color: aquamarine;
+    opacity: 0.8;
     position: absolute;
+    border: 1px solid;
+    border-radius: 5px;
     top: 20px;
+    left: 1vw;
+    height: 22vh;
+    width: 75vh;
+}
+
+input {
+    margin: 5px;
 }

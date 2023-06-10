@@ -45,21 +45,31 @@ export default function Avatares() {
 
   return (
     <>
-    <div className={style.centro}>Avatares</div>
-    Evento:
-    Lugar:www.xadrez.es
-    Data: {Date()}
-    Rolda: 1ª
-    
+    <div className={style.centro}>
+    <form className={style.formulario}>
+      <label>Evento:</label>
+      <input name="event" type="text" placeholder='Nome do evento'></input> 
+      <label>Lugar:</label>
+      <input name="site" type="text" placeholder='Lugar (www.xadrez.es)'></input>
+      <label>Rolda:</label>
+      <input name="round" type="text" placeholder='Rolda (1ª)'></input> 
+      <label>Data:</label>
+      <input name="date" type="text" placeholder='Data (2023.06.01)'></input>
+      <input id="submit" type='submit'></input> 
+    </form>
+    </div>
+
     <div className={style.esquerda}>
-    Nome xogador brancas
-    {/* <input>nome xogador 1:</input> */}
+    Avatar xogador brancas
     <input type='file' id="inputEsquerda" onChange={CambioFicheiroEsquerda}/>
+    <input name='white' type='text' placeholder="nome brancas"></input>
+    <input id="submit" type='submit'></input> 
     </div>
     <div className={style.dereita}>
-    {/* <input>nome xogador 2:</input> */}
-    Nome xogador negras
+    Avatar xogador de negras
     <input type='file' id="inputDereita" onChange={CambioFicheiroDereita}/>
+    <input name='black' type='text' placeholder="nome negras"></input>
+    <input id="submit" type='submit'></input> 
     </div>
     </>
   )
