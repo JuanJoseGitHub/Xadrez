@@ -1,13 +1,49 @@
 .esquerda{
+    background-color: cornflowerblue;
+    opacity: 0.7;
     position: absolute;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2rem;
+    top: 10px;
     left: 90px;
+    height: 98vh;
+    width: 20vw;
 }
 .dereita {
+    background-color: darkcyan;
+    opacity: 0.7;
     position: absolute;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2rem;
+    top: 10px;
     right: 90px;
+    height:98vh;
+    width: 20vw;
 }
 
+.centro {
+    background-color: chartreuse;
+    opacity: 0.1;
+    position: absolute;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2rem;
+    top: 10px;
+    left: 30vw;
+    height:98vh;
+    width: 40vw;
+}
+
+
 img{
-    height: 300px;
-    width: 200px;
+    height: 450px;
+    width: 300px;
+}
+
+img.dereita{
+    position: absolute;
+    top: 20px;
 }

@@ -45,12 +45,21 @@ export default function Avatares() {
 
   return (
     <>
-    <div>Avatares</div>
-    <div className={style.dereita}>
-    <input type='file' id="inputDereita" onChange={CambioFicheiroDereita}/>
-    </div>
+    <div className={style.centro}>Avatares</div>
+    Evento:
+    Lugar:www.xadrez.es
+    Data: {Date()}
+    Rolda: 1ª
+    
     <div className={style.esquerda}>
+    Nome xogador brancas
+    {/* <input>nome xogador 1:</input> */}
     <input type='file' id="inputEsquerda" onChange={CambioFicheiroEsquerda}/>
+    </div>
+    <div className={style.dereita}>
+    {/* <input>nome xogador 2:</input> */}
+    Nome xogador negras
+    <input type='file' id="inputDereita" onChange={CambioFicheiroDereita}/>
     </div>
     </>
   )
