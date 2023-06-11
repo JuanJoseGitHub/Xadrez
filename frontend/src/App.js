@@ -19,6 +19,13 @@ const Contexto=createContext()
 function App() {
   const stateEmpate = useState(false)
   const statePartidaenPGN = useState("")
+  const stateEvent = useState("")
+  const stateSite = useState("")
+  const stateDate = useState("")
+  const stateRound = useState("")
+  const stateWhite = useState("")
+  const stateBlack = useState("")
+  const stateResult = useState("")
   
   return (
     <>
@@ -54,13 +61,13 @@ function App() {
 
 
 
-    <Avatares/>
-    {/* <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}> 
+   
+    <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvent, stateSite, stateDate, stateRound, stateWhite, stateBlack, stateResult}}> 
       
       <BrowserRouter>
 
       <nav className='enlaces'>
-          <Link className='link' to="/">| Xadrez 64 |</Link>
+          <Link className='link' to="/">| Inicio |</Link>
           <Link className='link' to="/xogar">| Xogar unha partida |</Link>      
           <Link className='link' to="/verlibro">| Ver Libro |</Link>
           <Link className='link' to="/verpartida">| Ver Partida 1 |</Link>
@@ -70,7 +77,7 @@ function App() {
       </nav>
 
       <Routes className='enlaces'>
-        <Route path='/' element={<Home></Home>}/>
+        <Route path='/' element={<Avatares></Avatares>}/>
         <Route path='/xogar' element={<LeeXogada></LeeXogada>}/>
         <Route path='/verlibro/' element={<VerLibro></VerLibro>}/>
         <Route path='/verpartida/' element={<VerPartida></VerPartida>}/>
@@ -80,7 +87,7 @@ function App() {
       </Routes>   
 
       </BrowserRouter>
-    </Contexto.Provider> */}
+    </Contexto.Provider>
      
     </>
   )

@@ -50,11 +50,11 @@ export default function Avatares() {
       <label>Evento:</label>
       <input name="event" type="text" placeholder='Nome do evento'></input> 
       <label>Lugar:</label>
-      <input name="site" type="text" placeholder='Lugar (www.xadrez.es)'></input>
+      <input name="site" type="text" value='www.xadrez.es'></input>
       <label>Rolda:</label>
-      <input name="round" type="text" placeholder='Rolda (1ª)'></input> 
+      <input name="round" type="text" value='1ª'></input> 
       <label>Data:</label>
-      <input name="date" type="text" placeholder='Data (2023.06.01)'></input>
+      <input name="date" type="text" value='2023.06.01'></input>
       <input id="submit" type='submit'></input> 
     </form>
     </div>
