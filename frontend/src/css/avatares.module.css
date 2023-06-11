@@ -4,7 +4,7 @@
     position: absolute;
     border: 1px solid;
     border-radius: 5px;
-    padding: 2rem;
+    padding: 1rem;
     top: 40px;
     left: 90px;
     height: 92vh;
@@ -16,7 +16,7 @@
     position: absolute;
     border: 1px solid;
     border-radius: 5px;
-    padding: 2rem;
+    padding: 1rem;
     top: 40px;
     right: 90px;
     height:92vh;
@@ -28,38 +28,38 @@
     border: 1px solid;
     border-radius: 5px;
     padding: 2rem;
-    top: 40px;
-    left: 30vw;
-    height:92vh;
-    width: 40vw;
+    top: 36px;
+    left: 31vw;
+    height:53vh;
+    width: 41vw;
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: nowrap;
-    padding: 2rem;
+    padding: 1rem;
     background-color: aquamarine;
     opacity: 0.8;
     position: absolute;
     border: 1px solid;
     border-radius: 5px;
-    top: 40px;
-    left: 1vw;
-    height: 40vh;
-    width: 75vh;
+    top: 7px;
+    left: 2vh;
+    height: 51vh;
+    width: 84vh;
 }
 input {
-    margin: 14px;
+    margin: 5px;
     width: 300px;
 }
 .fondo{
     position: relative;
-    top: 280px;
-    width: 40vw;
-    height: 24vw;
+    top: 200px;
+    left: 23px;
+    width: 41vw;
+    height: 18vw;
     background-image: url(../graficos/Home/Wall2.jpg);
     background-size: cover ;
     background-repeat: no-repeat;
