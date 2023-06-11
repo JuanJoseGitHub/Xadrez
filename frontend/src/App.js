@@ -11,7 +11,6 @@ import SeleccionaPGN from './componentes/SeleccionaPGN';
 import TaboleiroMover from './componentes/TaboleiroMover';
 import CargaPGN from './componentes/CargaPGN';
 import VerLibro from './componentes/VerLibro';
-import Home from './componentes/Home.jsx'
 import CambiaCabeceiraPGN from './componentes/CambiaCabeceiraPGN';
 import Avatares from './componentes/Avatares';
 const Contexto=createContext()
@@ -26,6 +25,8 @@ function App() {
   const stateWhite = useState("")
   const stateBlack = useState("")
   const stateResult = useState("")
+  const stateBrancas = useState()
+  const stateNegras = useState()
   
   return (
     <>
@@ -58,11 +59,8 @@ function App() {
       {/* <BorraPGN></BorraPGN> */}
 
       {/* <CargaPGN/> */}
-
-
-
    
-    <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvent, stateSite, stateDate, stateRound, stateWhite, stateBlack, stateResult}}> 
+    <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvent, stateSite, stateDate, stateRound, stateWhite, stateBlack, stateResult, stateBrancas, stateNegras}}> 
       
       <BrowserRouter>
 

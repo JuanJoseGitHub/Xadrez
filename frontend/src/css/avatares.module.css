@@ -1,6 +1,6 @@
 .esquerda{
     background-color: cornflowerblue;
-    opacity: 0.7;
+    opacity: 0.95;
     position: absolute;
     border: 1px solid;
     border-radius: 5px;
@@ -12,7 +12,7 @@
 }
 .dereita {
     background-color: darkcyan;
-    opacity: 0.7;
+    opacity: 0.95;
     position: absolute;
     border: 1px solid;
     border-radius: 5px;
@@ -22,7 +22,6 @@
     height:92vh;
     width: 18vw;
 }
-
 .centro {
     position: absolute;
     text-align: center;
@@ -34,14 +33,6 @@
     height:92vh;
     width: 40vw;
 }
-
-
-img{
-    position: relative;
-    height: 400px;
-    width: 300px;
-}
-
 
 .formulario {
     display: flex;
@@ -57,10 +48,19 @@ img{
     border-radius: 5px;
     top: 40px;
     left: 1vw;
-    height: 22vh;
+    height: 40vh;
     width: 75vh;
 }
-
 input {
-    margin: 5px;
+    margin: 14px;
+    width: 300px;
+}
+.fondo{
+    position: relative;
+    top: 280px;
+    width: 40vw;
+    height: 24vw;
+    background-image: url(../graficos/Home/Wall2.jpg);
+    background-size: cover ;
+    background-repeat: no-repeat;
 }

@@ -75,10 +75,15 @@ body{
     top: 76px;
     left: 10px;
     width: 24vw;
+    height: 87vh;
 background-color: greenyellow;
 padding: 2rem;
 border: 1px solid;
 border-radius: 5px;
+}
+img{
+    height: 375px;
+    width: 250px;
 }
 
 .partidaPGN {position:absolute;

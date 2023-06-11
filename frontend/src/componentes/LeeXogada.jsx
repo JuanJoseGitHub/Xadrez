@@ -6,14 +6,20 @@ import melen from '../musica/Melendi.mp3'
 
 export default function LeeXogada() {
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
-    
+  
+  const { stateBrancas } = useContext (Contexto)
+  const [ brancas , setBrancas ] = stateBrancas
+  const { stateNegras } = useContext (Contexto)
+  const [ negras , setNegras ] = stateNegras
+  
+  const { stateEmpate } = useContext (Contexto)
+  const [ empate , setEmpate ] = stateEmpate
+
   let pulsado
   let buscandoInicio=useRef(true)
   let arrayPGN = []
   let arrayXogada = []
   const audio=useRef(new Audio(melen))
-  const { stateEmpate } = useContext (Contexto)
-  const [ empate , setEmpate ] = stateEmpate
   
   let [turno , setTurno] = useState("w")
   let [ xaque , setXaque] = useState (false)
@@ -149,6 +155,7 @@ export default function LeeXogada() {
     // Pinta o taboleiro en pantalla
     <>
     <div className={style.container}>
+      
       <p>Xogan: {(turno==="w" && " Brancas") || (turno==="b" && " Negras")}</p>
       <p>Xaque: {xaque && " Xaque !"}</p>
       <p>Empate: {empate && " Taboas"}</p>
@@ -159,8 +166,20 @@ export default function LeeXogada() {
       <p>{opName}</p>
       <br></br>
       <p>{opPlayed}</p>
-
+      <div>
+      BRANCAS:
+      </div>
+      <div>
+      <img src={brancas} alt="B"></img>
+      </div>
+      <div>
+      NEGRAS:
+      </div>
+      <div>
+      <img src={negras} alt="N"></img>
+      </div>
     </div>
+
     <div className={style.bordeV}>
       <div>8</div><div>7</div><div>6</div><div>5</div><div>4</div><div>3</div><div>2</div><div>1</div>      
       </div> 

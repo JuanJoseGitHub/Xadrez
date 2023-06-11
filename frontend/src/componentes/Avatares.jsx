@@ -1,52 +1,54 @@
 import React from 'react'
 import style from '../css/avatares.module.css'
-import { useState } from 'react'
-
-// Cargar avatares (xogadorA, xogadorB)
+import { useContext} from 'react'
+import { Contexto } from "../App";
 
 export default function Avatares() {
 
-    const [file, setFile] = useState()
-    const [name, setName] = useState()
-    const [file2, setFile2] = useState()
-    const [name2, setName2] = useState()
-    
-    
+    const { stateBrancas } = useContext (Contexto)
+    const [ brancas , setBrancas ] = stateBrancas
+    const { stateNegras } = useContext (Contexto)
+    const [ negras , setNegras ] = stateNegras
    
-    function CambioFicheiroDereita(input) {   
+  //  Faltan por engadir:
+  //  const stateEvent = useState("")
+  //  const stateSite = useState("")
+  //  const stateDate = useState("")
+  //  const stateRound = useState("")
+  //  const stateResult = useState("")
+
+    const { stateWhite } = useContext (Contexto)
+    const [ white , setWhite ] = stateWhite
+    const { stateBlack } = useContext (Contexto)
+    const [ black , setBlack ] = stateBlack
+
+  
+    function CambioFicheiroEsquerda(input) {   
       const reader = new FileReader()
-      reader.addEventListener("load", (event)=>{
-        const img = document.createElement("img")
-        img.src = event.target.result;
-        img.className="dereita"
-        document.body.appendChild(img)              
-        setFile(reader.result)
+      reader.addEventListener("load", (event)=>{          
+        setBrancas(event.target.result)
         })
       let ficheiro=input.target.files[0]
       reader.readAsDataURL(ficheiro)
-      setName(ficheiro.name)
-      console.log(name)
       }
 
-      function CambioFicheiroEsquerda(input) {   
+      function CambioFicheiroDereita(input) {   
         const reader = new FileReader()
-        reader.addEventListener("load", (event)=>{
-          const img = document.createElement("img")
-          img.src = event.target.result;
-          img.className="esquerda"
-          document.body.appendChild(img)              
-          setFile2(reader.result)
+        reader.addEventListener("load", (event)=>{       
+          setNegras(event.target.result)
           })
         let ficheiro=input.target.files[0]
         reader.readAsDataURL(ficheiro)
-        setName2(ficheiro.name)
-        console.log(name2)
         }
 
   return (
     <>
     <div className={style.centro}>
     <form className={style.formulario}>
+      <label>Nome brancas:</label>
+      <input name='white' type='text' placeholder="nome brancas"></input>
+      <label>Nome negras:</label>
+      <input name='black' type='text' placeholder="nome negras"></input>
       <label>Evento:</label>
       <input name="event" type="text" placeholder='Nome do evento'></input> 
       <label>Lugar:</label>
@@ -59,17 +61,22 @@ export default function Avatares() {
     </form>
     </div>
 
+    <div className={style.fondo}>   
+    </div>
+
     <div className={style.esquerda}>
     Avatar xogador brancas
-    <input type='file' id="inputEsquerda" onChange={CambioFicheiroEsquerda}/>
-    <input name='white' type='text' placeholder="nome brancas"></input>
-    <input id="submit" type='submit'></input> 
+    <input type='file' onChange={CambioFicheiroEsquerda}/>
+    <div>
+    <img src={brancas} alt='b'></img>
     </div>
+    </div> 
     <div className={style.dereita}>
     Avatar xogador de negras
-    <input type='file' id="inputDereita" onChange={CambioFicheiroDereita}/>
-    <input name='black' type='text' placeholder="nome negras"></input>
-    <input id="submit" type='submit'></input> 
+    <input type='file' onChange={CambioFicheiroDereita}/>
+    <div>
+    <img src={negras} alt='n'></img>
+    </div>
     </div>
     </>
   )
