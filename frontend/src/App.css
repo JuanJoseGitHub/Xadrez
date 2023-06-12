@@ -2,8 +2,9 @@
             font-size: 56px;}
             
 .enlaces {
-    position: absolute;
+    position: fixed;
     top: 0px;
+    right: 260px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

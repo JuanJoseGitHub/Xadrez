@@ -5,9 +5,9 @@
 }
 
 .bordeH {
-    position: relative;
-    right: -40px;
-    top: -550px;
+    position: fixed;
+    left: 420px;
+    top: 24px;
     width: 550px;
     background-color: transparent;
     font-size: 40px;
@@ -17,10 +17,10 @@
     
 }
 .bordeV {
-    position: relative;
-    left: 6px;
+    position: fixed;
+    left: 390px;
     height: 550px;
-    top: 55px;
+    top: 70px;
     background-color: transparent;
     font-size: 40px;
     display:flex;
@@ -42,9 +42,9 @@ body{
     }
 
 .taboleiro      {
-        position: relative;
-        right: -40px;
-        top: -550px;
+        position: fixed;
+        left: 420px;
+        top: 74px;
         width: 550px;
         height: 550px;
         display: grid;
