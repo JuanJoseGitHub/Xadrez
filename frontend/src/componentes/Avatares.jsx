@@ -43,7 +43,6 @@ export default function Avatares() {
 
   return (
     <>
-    <div className={style.centro}>
     <form className={style.formulario}>
       <label>Nome brancas:</label>
       <input name='white' type='text' placeholder="nome brancas"></input>
@@ -59,7 +58,6 @@ export default function Avatares() {
       <input name="date" type="text" value='2023.06.01'></input>
       <input id="submit" type='submit'></input> 
     </form>
-    </div>
 
     <div className={style.fondo}>   
     </div>
