@@ -11,7 +11,6 @@ import SeleccionaPGN from './componentes/SeleccionaPGN';
 import TaboleiroMover from './componentes/TaboleiroMover';
 import CargaPGN from './componentes/CargaPGN';
 import VerLibro from './componentes/VerLibro';
-import Home from './componentes/Home.jsx'
 import CambiaCabeceiraPGN from './componentes/CambiaCabeceiraPGN';
 import Avatares from './componentes/Avatares';
 const Contexto=createContext()
@@ -19,6 +18,15 @@ const Contexto=createContext()
 function App() {
   const stateEmpate = useState(false)
   const statePartidaenPGN = useState("")
+  const stateEvent = useState("")
+  const stateSite = useState("")
+  const stateDate = useState("")
+  const stateRound = useState("")
+  const stateWhite = useState("")
+  const stateBlack = useState("")
+  const stateResult = useState("")
+  const stateBrancas = useState()
+  const stateNegras = useState()
   
   return (
     <>
@@ -79,6 +87,36 @@ function App() {
 
       {/* <CargaPGN/> */}
 
+
+
+    <Avatares/>
+    <Contexto.Provider value={{stateEmpate, statePartidaenPGN}}> 
+      
+      <BrowserRouter>
+
+      <nav className='enlaces'>
+          <Link className='link' to="/">| Xadrez 64 |</Link>
+          <Link className='link' to="/xogar">| Xogar unha partida |</Link>      
+          <Link className='link' to="/verlibro">| Ver Libro |</Link>
+          <Link className='link' to="/verpartida">| Ver Partida 1 |</Link>
+          <Link className='link' to="/verpartidas">| Ver Partidas |</Link>
+          <Link className='link' to="/borra">| Borrar Partidas |</Link>
+          <Link className='link' to="/cambia">| Cambiar |</Link>
+      </nav>
+
+      <Routes className='enlaces'>
+        <Route path='/' element={<Home></Home>}/>
+        <Route path='/xogar' element={<LeeXogada></LeeXogada>}/>
+        <Route path='/verlibro/' element={<VerLibro></VerLibro>}/>
+        <Route path='/verpartida/' element={<VerPartida></VerPartida>}/>
+        <Route path='/verpartidas/' element={<SeleccionaPGN></SeleccionaPGN>}/>
+        <Route path='/borra/' element={<BorraPGN></BorraPGN>}/>
+        <Route path='/cambia/' element={<CambiaCabeceiraPGN></CambiaCabeceiraPGN>}/>
+      </Routes>   
+
+      </BrowserRouter>
+    </Contexto.Provider>
+     
     </>
   )
 }

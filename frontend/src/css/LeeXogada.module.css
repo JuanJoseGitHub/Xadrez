@@ -6,7 +6,7 @@
 .bordeH {
     position: relative;
     right: -100px;
-    top: -560px;
+    top: -500px;
     width: 550px;
     background-color: transparent;
     font-size: 40px;
@@ -19,7 +19,7 @@
     position: relative;
     left: 66px;
     height: 550px;
-    top: 35px;
+    top: 85px;
     background-color: transparent;
     font-size: 40px;
     display:flex;
@@ -43,7 +43,7 @@ body{
 .taboleiro      {
     position: relative;
     right: -100px;
-    top: -560px;
+    top: -500px;
     width: 550px;
     height: 550px;
     display: grid;
@@ -72,27 +72,34 @@ body{
     background-color: hsl(187, 80%, 63%);
 }  
 .container {position: absolute;
-    top: 76px;
+    top: 6px;
     left: 10px;
     width: 24vw;
+    height: 98vh;
 background-color: greenyellow;
-padding: 2rem;
+padding: 1.2rem;
 border: 1px solid;
 border-radius: 5px;
 }
+img{
+    height: 200px;
+    width: 150px;
+}
 
 .partidaPGN {position:absolute;
-    top: 76px;
+    top: 6px;
     right: 30px;
     width: 200px;
-    height: 87vh ;
+    height: 98vh ;
     background-color: aquamarine;
     padding: 2rem;
     border: 1px solid;
     border-radius: 5px;
     overflow-y: scroll;
 }
-button {font-size: large;
+button {position: relative;
+        top: 26px;
+        font-size: large;
         padding: 2px;
         border-radius: 8px;
         margin: 2px;

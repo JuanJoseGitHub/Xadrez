@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import style from '../css/VerLibro.module.css'
 import { useState } from 'react'
 
 // Cargar avatares (xogadorA, xogadorB)
@@ -10,26 +11,23 @@ export default function Avatares() {
     useEffect(
         ()=>{ 
           console.log(file)
+          
          },
         [file]
     )
 
      function CambioFicheiro(e) {   
         const reader = new FileReader()
+        reader.readAsDataURL(e.target.files[0])
         reader.addEventListener("load", ()=>{ 
-        setFile(reader.result)},false) 
-        reader.readAsDataURL(e.target.files[0])  
-        const img = document.createElement("img")
-        img.src = e.target.result;
-        document.body.appendChild(img)              
+            setFile(reader.result)
+            })                 
     }
 
   return (
     <>
-    <div>Avatares</div>
-    <div id="caixa"></div>
-    <input type='file' onChange={CambioFicheiro}/>
-    <img src="data:image/jpeg;base64{file}" alt="a"></img>
+    <div className={style.up}>Avatares</div>
+    <input className={style.up} type='file' onChange={CambioFicheiro}/>
     </>
   )
 }
