@@ -5,8 +5,8 @@
 }
 .bordeH {
     position: relative;
-    right: -100px;
-    top: -500px;
+    right: -40px;
+    top: -530px;
     width: 550px;
     background-color: transparent;
     font-size: 40px;
@@ -17,9 +17,9 @@
 }
 .bordeV {
     position: relative;
-    left: 66px;
+    left: 6px;
     height: 550px;
-    top: 85px;
+    top: 65px;
     background-color: transparent;
     font-size: 40px;
     display:flex;
@@ -42,8 +42,8 @@ body{
 
 .taboleiro      {
     position: relative;
-    right: -100px;
-    top: -500px;
+    right: -40px;
+    top: -530px;
     width: 550px;
     height: 550px;
     display: grid;
@@ -98,7 +98,7 @@ img{
     overflow-y: scroll;
 }
 button {position: relative;
-        top: 26px;
+        top: 24px;
         font-size: large;
         padding: 2px;
         border-radius: 8px;

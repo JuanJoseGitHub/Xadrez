@@ -2,70 +2,61 @@
     background-color: cornflowerblue;
     opacity: 0.95;
     position: absolute;
+    top: 30px;
+    left: 50px;
+    height: 94vh;
+    width: 22vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid;
     border-radius: 5px;
     padding: 1rem;
-    top: 40px;
-    left: 90px;
-    height: 92vh;
-    width: 18vw;
+    
 }
 .dereita {
     background-color: darkcyan;
     opacity: 0.95;
     position: absolute;
+    top: 30px;
+    right: 50px;
+    height:94vh;
+    width: 22vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid;
     border-radius: 5px;
     padding: 1rem;
-    top: 40px;
-    right: 90px;
-    height:92vh;
-    width: 18vw;
 }
-.centro {
-    position: absolute;
-    text-align: center;
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 2rem;
-    top: 36px;
-    left: 31vw;
-    height:53vh;
-    width: 41vw;
-}
-
 .formulario {
+    position: absolute;
+    top: 30px;
+    left: 396px;
+    height: 52vh;
+    width: 91vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: flex-end;
     flex-wrap: nowrap;
-    padding: 1rem;
+    padding: 0.2rem;
     background-color: aquamarine;
     opacity: 0.8;
-    position: absolute;
     border: 1px solid;
     border-radius: 5px;
-    top: 7px;
-    left: 2vh;
-    height: 51vh;
-    width: 84vh;
+    
 }
 input {
-    margin: 5px;
-    width: 300px;
+    margin: 4px;
+    width: 460px;
 }
 .fondo{
     position: relative;
-    top: 200px;
-    left: 23px;
-    width: 41vw;
-    height: 18vw;
+    top: 176px;
+    left: 6px;
+    width: 42vw;
+    height: 19vw;
     background-image: url(../graficos/Home/Wall2.jpg);
     background-size: cover ;
     background-repeat: no-repeat;
