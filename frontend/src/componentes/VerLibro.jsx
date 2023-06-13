@@ -2,8 +2,6 @@ import React, { useState , useContext } from 'react'
 import style from '../css/VerLibro.module.css'
 import { Contexto } from '../App'
 import { Chess } from 'chess.js'
-
-import VisualizaPGN from './VisualizaPGN'
 import PartidaAuto from './PartidaAuto'
 
 export default function VerLibro() {
@@ -54,7 +52,6 @@ export default function VerLibro() {
     </div>
     
     {elexido && <PartidaAuto autoPartida={myGame}></PartidaAuto>}
-    {/* {elexido && <VisualizaPGN partida={myGame}></VisualizaPGN>} */}
     </>
   )
 }

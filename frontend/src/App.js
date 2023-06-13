@@ -43,7 +43,7 @@ function App() {
       {/* <Taboleiro></Taboleiro> */}
       {/* <Taboleiro partida={["e4","Nf6"]}/> */}
       
-      {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop */}
+      {/* LeeXogada: Chama ao módulo Intro.mjs e lee as xogadas por drag and drop. Mostra a apertura (ECO e nome) xogada durante a partida*/}
       {/* <LeeXogada></LeeXogada> */}
 
       {/* Permite seleccionar unha apertura do libro de aperturas e reproducila automaticamente */}

@@ -35,31 +35,24 @@ export default function VisualizaPGN({partida})
     }
     arrayObxetosXogada.push(obxetoXogada)
   }
-
   function principio(){
     setXogada(1)
-    
   }
-  
   function mais(){
     if (xogada<arrayPGN.length/3)
     setXogada(xogada+1)
   }
-
   function menos(){
     if (xogada>1)
     setXogada(xogada-1)
   }
-
   function remate(){
     setXogada(Math.round(arrayPGN.length/3))
   }
-
   function Auto () {
     if (audio.current.paused) audio.current.play()
     else audio.current.pause()
   }
-
     return (
     <>
       <div className={style.container}>
@@ -70,7 +63,6 @@ export default function VisualizaPGN({partida})
         Xogada:{xogada}
         <p></p>
         <button onClick={Auto}>Música</button>
-        
       </div>
     
       <div className={style.partidaPGN}>
