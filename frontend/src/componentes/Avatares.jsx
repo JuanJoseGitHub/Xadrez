@@ -41,11 +41,13 @@ export default function Avatares() {
         reader.readAsDataURL(ficheiro)
         }
 
+        function manexadorInputBrancas(e)
+        setWhite(e.target.value)
   return (
     <>
     <form className={style.formulario}>
       <label>Nome brancas:</label>
-      <input name='white' type='text' placeholder="nome brancas"></input>
+      <input name='white' type='text' placeholder="nome brancas" value={brancas} onInput={manexadorInputBrancas}></input>
       <label>Nome negras:</label>
       <input name='black' type='text' placeholder="nome negras"></input>
       <label>Evento:</label>
