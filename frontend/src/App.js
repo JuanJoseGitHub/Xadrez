@@ -30,7 +30,6 @@ function App() {
   const stateBrancas = useState()
   const stateNegras = useState()
   
-  
   return (
     <>
     
@@ -93,7 +92,6 @@ function App() {
     </>
   )
 }
-
 export default App;
 
 export {

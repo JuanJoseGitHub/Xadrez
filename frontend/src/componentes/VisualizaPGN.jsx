@@ -71,6 +71,7 @@ export default function VisualizaPGN({partida})
     return (
     <>
       <div className={style.container}>
+        <p>BRANCAS:{white}</p>
         <button onClick={principio}>1.</button>
         <button onClick={menos}>-</button>
         <button onClick={mais}>+</button>
@@ -78,6 +79,7 @@ export default function VisualizaPGN({partida})
         Xogada:{xogada}
         <p></p>
         <button onClick={Auto}>Música</button>
+        <p>NEGRAS:{black}</p>
       </div>
     
       <div className={style.partidaPGN}>

@@ -8,8 +8,7 @@ export default function Avatares() {
     const { stateBrancas } = useContext (Contexto)
     const [ brancas , setBrancas ] = stateBrancas
     const { stateNegras } = useContext (Contexto)
-    const [ negras , setNegras ] = stateNegras
-    
+    const [ negras , setNegras ] = stateNegras  
     const { stateWhite } = useContext (Contexto)
     const [ white , setWhite ] = stateWhite
     const { stateBlack } = useContext (Contexto)
@@ -25,14 +24,14 @@ export default function Avatares() {
     const {stateResult } = useContext (Contexto)
     const [result , setResult] = stateResult
   
-    function CambioFicheiroEsquerda(input) {   
-      const reader = new FileReader()
-      reader.addEventListener("load", (event)=>{          
-        setBrancas(event.target.result)
-        })
-      let ficheiro=input.target.files[0]
-      reader.readAsDataURL(ficheiro)
-      }
+      function CambioFicheiroEsquerda(input) {   
+        const reader = new FileReader()
+        reader.addEventListener("load", (event)=>{          
+          setBrancas(event.target.result)
+          })
+        let ficheiro=input.target.files[0]
+        reader.readAsDataURL(ficheiro)
+        }
 
       function CambioFicheiroDereita(input) {   
         const reader = new FileReader()
@@ -61,7 +60,6 @@ export default function Avatares() {
         function manexadorInputData(e){
         setData(e.target.value)}
 
-
   return (
     <>
     <form className={style.formulario}>
@@ -78,10 +76,8 @@ export default function Avatares() {
       <label>Data:</label>
       <input name="date" type="text" placeholder='Data' value={data} onInput={manexadorInputData}></input>
     </form>
-
     <div className={style.fondo}>   
     </div>
-
     <div className={style.esquerda}>
     Avatar xogador brancas
     <p>{white}</p>

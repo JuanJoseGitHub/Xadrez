@@ -7,7 +7,6 @@ export default function CambiaCabeceiraPGN() {
 
     const [ partidas , setPartidas ] = useState ([])
     const [ elexido , setElexido ] = useState (false)
-
     const { stateWhite } = useContext (Contexto)
     const [ white , setWhite ] = stateWhite
     const { stateBlack } = useContext (Contexto)
@@ -34,7 +33,7 @@ export default function CambiaCabeceiraPGN() {
       async function manexadorCambia (event) {
         const resposta2=await fetch ("http://localhost:8000/XadrezAPI/verpartida/?id="+event.target.id)
         const partidaObx=await resposta2.json()
-        console.log(partidaObx)
+        alert("Partida nº "+event.target.id+" cabeceira modificada correctamente")
 
         partidaObx.Event=evento
         partidaObx.Site=site
@@ -70,7 +69,6 @@ export default function CambiaCabeceiraPGN() {
         <ol className={style.centro}>
          {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorCambia}>{partida.PGNGame}</li>)}
         </ol>
-
     </>   
   )
 }

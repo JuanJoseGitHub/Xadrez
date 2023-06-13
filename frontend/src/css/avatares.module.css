@@ -45,13 +45,15 @@
     border: 1px solid;
     border-radius: 5px;   
     }
+    
 input {
     margin: 4px;
     width: 460px;
     }
 .fondo{
     position: relative;
-    top: 157px;
+    /* top: 357px; */
+    top:157px;
     left: 9px;
     width: 42vw;
     height: 20vw;

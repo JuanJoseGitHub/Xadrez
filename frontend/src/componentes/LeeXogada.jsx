@@ -13,7 +13,6 @@ export default function LeeXogada() {
   const [ brancas , setBrancas ] = stateBrancas
   const { stateNegras } = useContext (Contexto)
   const [ negras , setNegras ] = stateNegras
-
   const { stateCodigoECO } = useContext (Contexto)
   const [ codigoECO , setCodigoECO ] = stateCodigoECO
   const { stateWhite } = useContext (Contexto)
@@ -66,7 +65,9 @@ export default function LeeXogada() {
     },
     [casillaInicio, casillaFin]
   )
- 
+ // agregar functionResultadoFinal()
+
+   
   async function BuscaECO(){
     let ecoActualCrudo=chess.ascii()
     let ecoActual=ecoActualCrudo.slice(30,-58)
@@ -122,25 +123,22 @@ export default function LeeXogada() {
         setDatosCompletos(true)
         buscandoInicio.current=true
       }
-  }
+    }
   
   function Dragado(event) { 
     setCasillaInicio(event.target.id)
-  }
-  
+    }
   function Dragover(event) {
       event.preventDefault()
-  }
-
+    }
   function Dropado(event) {
     event.preventDefault()
     setCasillaFin(event.target.id)
-  }
-
+    }
   function Auto () {
     if (audio.current.paused) audio.current.play()
     else audio.current.pause()
-  }
+    }
 
   function manexadorGraba() {
     const pgn=chess.pgn()
@@ -162,7 +160,7 @@ export default function LeeXogada() {
         )
       }
     )
-  console.log("Partida Grabada OK");
+  alert ("Partida Grabada OK");
   }
     
   return (

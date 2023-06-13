@@ -24,17 +24,15 @@ export default function BorraPGN() {
             )
           }
         )
-        alert ("Partida:"+event.target.id+" borrada OK")
+        alert ("Partida nº "+event.target.id+" borrada OK")
       } 
     
       return (
-        <>
-        
+        <>  
         <button className={style.up} onClick={manexadorSelecciona}>Selecciona para borrar</button>
         <ol className={style.centro}>
          {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorBorra}>{partida.PGNGame}</li>)}
         </ol>
-        
         </>
       )
     }
