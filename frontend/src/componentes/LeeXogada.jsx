@@ -4,6 +4,8 @@ import { chess, procesarMovemento} from '../modulos/Intro.mjs'
 import { Contexto } from "../App";
 import melen from '../musica/Melendi.mp3'
 
+//Agregar tempos
+
 export default function LeeXogada() {
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
   
@@ -11,7 +13,23 @@ export default function LeeXogada() {
   const [ brancas , setBrancas ] = stateBrancas
   const { stateNegras } = useContext (Contexto)
   const [ negras , setNegras ] = stateNegras
-  
+
+  const { stateCodigoECO } = useContext (Contexto)
+  const [ codigoECO , setCodigoECO ] = stateCodigoECO
+  const { stateWhite } = useContext (Contexto)
+  const [ white , setWhite ] = stateWhite
+  const { stateBlack } = useContext (Contexto)
+  const [ black , setBlack ] = stateBlack
+  const {stateEvento} = useContext (Contexto)
+  const [evento , setEvento] = stateEvento
+  const { stateSite } = useContext (Contexto)
+  const [site , setSite] = stateSite
+  const { stateData } = useContext (Contexto)
+  const [data , setData] = stateData
+  const { stateRound } = useContext (Contexto)
+  const [round , setRound] = stateRound
+  const {stateResult } = useContext (Contexto)
+  const [result , setResult] = stateResult
   const { stateEmpate } = useContext (Contexto)
   const [ empate , setEmpate ] = stateEmpate
 
@@ -28,9 +46,6 @@ export default function LeeXogada() {
   let [ casillaFin , setCasillaFin ] = useState ('')
   let [ datosCompletos , setDatosCompletos ] = useState (false)
   let [arrayObxetosXogada , setArrayObxetosXogada] = useState ([])
-  let [tempoBrancas,setTempoBrancas] = useState (10)
-  let [tempoNegras,setTempoNegras] = useState(10)
-  let [ECO,setECO] = useState("")
   let [opName,setOpName] = useState("")
   let [opPlayed,setOpPlayed] = useState("")
   
@@ -59,7 +74,7 @@ export default function LeeXogada() {
     const resposta = await fetch ("http://localhost:8000/XadrezAPI/ECO/busca/?Ascii="+buscaECO)
     const ECO = await resposta.json()
     let Codigo=ECO[0]
-    if (Codigo.ECOcode) {setECO(Codigo.ECOcode)}
+    if (Codigo.ECOcode) {setCodigoECO(Codigo.ECOcode)}
     if (Codigo.OpeningName) {setOpName(Codigo.OpeningName)}
     if (Codigo.OpeningPlayed) {setOpPlayed(Codigo.OpeningPlayed)}
     }
@@ -134,14 +149,14 @@ export default function LeeXogada() {
         method:'POST',
         headers:{'Content-type':'application/json'},
         body: JSON.stringify (
-          { Event:"Campionato Mundial",
-            Site: "Xadrez.es",
-            Date: "2023.02.29",
-            Round: "1",
-            White: "Alba Branco",
-            Black: "Black and Decker",
-            Result:"1-0", 
-            ECO: ECO,
+          { Event:evento,
+            Site:site,
+            Date: data,
+            Round: round,
+            White: white,
+            Black: black,
+            Result: result, 
+            ECO: codigoECO,
             PGNGame: pgn
           }
         )
@@ -162,18 +177,18 @@ export default function LeeXogada() {
       <p>Fin: {gameOver && " Fin !!"}</p>
       <button onClick={manexadorGraba}>Grabar partida</button>
       <button onClick={Auto}>Música</button>
-      <p>{ECO}</p>
+      <p>{codigoECO}</p>
       <p>{opName}</p>
       <br></br>
       <p>{opPlayed}</p>
       <div>
-      BRANCAS:
+      BRANCAS:{white}
       </div>
       <div>
       <img src={brancas} alt="B"></img>
       </div>
       <div>
-      NEGRAS:
+      NEGRAS:{black}
       </div>
       <div>
       <img src={negras} alt="N"></img>
@@ -189,6 +204,11 @@ export default function LeeXogada() {
       </div> 
 
     <div className={style.partidaPGN}>
+        <p>{evento}</p>
+        <p>[{round}]</p>
+        <p>{site}</p>
+        <p>{data}</p>
+        <hr></hr>
         {arrayObxetosXogada.map( xogada => <p>{xogada.id+". "} {xogada.blancas} {xogada.negras}</p>)}
     </div>
 

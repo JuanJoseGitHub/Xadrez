@@ -6,6 +6,21 @@ import melen from '../musica/Mecano.mp3'
 
 export default function VisualizaPGN({partida})
  {
+    const { stateWhite } = useContext (Contexto)
+    const [ white , setWhite ] = stateWhite
+    const { stateBlack } = useContext (Contexto)
+    const [ black , setBlack ] = stateBlack
+    const {stateEvento} = useContext (Contexto)
+    const [evento , setEvento] = stateEvento
+    const { stateSite } = useContext (Contexto)
+    const [site , setSite] = stateSite
+    const { stateData } = useContext (Contexto)
+    const [data , setData] = stateData
+    const { stateRound } = useContext (Contexto)
+    const [round , setRound] = stateRound
+    const {stateResult } = useContext (Contexto)
+    const [result , setResult] = stateResult
+
     let pgn=partida
     let arrayPGN=pgn.split(" ")
     let arrayObxetosXogada = []
@@ -66,6 +81,11 @@ export default function VisualizaPGN({partida})
       </div>
     
       <div className={style.partidaPGN}>
+        <p>{evento}</p>
+        <p>[{round}]</p>
+        <p>{site}</p>
+        <p>{data}</p>
+        <hr></hr>
         <table>
           <tbody>
         {arrayObxetosXogada.map( (xogada,index) => <tr key={index}><td>{xogada.id}</td><td>{xogada.blancas}</td><td>{xogada.negras}</td></tr>)}

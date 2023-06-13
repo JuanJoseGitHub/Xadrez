@@ -4,7 +4,7 @@
     position: absolute;
     top: 30px;
     left: 50px;
-    height: 94vh;
+    height: 92vh;
     width: 22vw;
     display: flex;
     flex-direction: column;
@@ -12,15 +12,14 @@
     border: 1px solid;
     border-radius: 5px;
     padding: 1rem;
-    
-}
+    }
 .dereita {
     background-color: darkcyan;
     opacity: 0.95;
     position: absolute;
     top: 30px;
     right: 50px;
-    height:94vh;
+    height:92vh;
     width: 22vw;
     display: flex;
     flex-direction: column;
@@ -28,13 +27,13 @@
     border: 1px solid;
     border-radius: 5px;
     padding: 1rem;
-}
+    }
 .formulario {
     position: absolute;
     top: 30px;
     left: 396px;
-    height: 52vh;
-    width: 91vh;
+    height: 48vh;
+    width: 92vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,20 +43,19 @@
     background-color: aquamarine;
     opacity: 0.8;
     border: 1px solid;
-    border-radius: 5px;
-    
-}
+    border-radius: 5px;   
+    }
 input {
     margin: 4px;
     width: 460px;
-}
+    }
 .fondo{
     position: relative;
-    top: 176px;
-    left: 6px;
+    top: 157px;
+    left: 9px;
     width: 42vw;
-    height: 19vw;
+    height: 20vw;
     background-image: url(../graficos/Home/Wall2.jpg);
     background-size: cover ;
     background-repeat: no-repeat;
-}
+    }

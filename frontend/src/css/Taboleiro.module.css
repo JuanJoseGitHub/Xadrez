@@ -13,7 +13,7 @@ body{
         height: 100vh;
         display: grid;
         place-items: center;
-}
+        }
 .taboleiro      {
         width: 550px;
         height: 550px;
@@ -23,7 +23,7 @@ body{
         background-color: #fff;
         border: solid thick rgb(46, 48, 2); 
         cursor: pointer;   
-}  
+        }  
 .taboleiro *{
         font-family: Chess;
         text-align: center;
@@ -31,14 +31,13 @@ body{
         transition: 0.2s ease-in-out;
         user-select: none;
         border: black thin dotted;
-}       
-
+        }       
 .taboleiro *:hover{
         font-weight: 600;
-}
+        }
 .b{
         background-color: antiquewhite;
-}
+        }
 .n{
         background-color: hsl(187, 80%, 63%);
-}  
+        }  

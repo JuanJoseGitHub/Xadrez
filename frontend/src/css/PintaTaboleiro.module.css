@@ -2,8 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
+    }
 .bordeH {
     position: fixed;
     left: 420px;
@@ -14,8 +13,7 @@
     display:flex;
     justify-content: space-around;
     color:antiquewhite
-    
-}
+    }
 .bordeV {
     position: fixed;
     left: 390px;
@@ -27,8 +25,7 @@
     flex-direction: column; 
     justify-content: space-around; 
     color:antiquewhite
-}
-
+    }
 body{
     background-image: url(../graficos/fondo.jpg);
     background-repeat: no-repeat;
@@ -42,16 +39,16 @@ body{
     }
 
 .taboleiro      {
-        position: fixed;
-        left: 420px;
-        top: 74px;
-        width: 550px;
-        height: 550px;
-        display: grid;
-        grid-template-columns: repeat(8,1fr);
-        grid-template-rows: repeat(8,1fr);
-        background-color: #fff;
-        border: solid thick rgb(46, 48, 2);   
+    position: fixed;
+    left: 420px;
+    top: 74px;
+    width: 550px;
+    height: 550px;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    background-color: #fff;
+    border: solid thick rgb(46, 48, 2);   
     }  
 
 .taboleiro *{

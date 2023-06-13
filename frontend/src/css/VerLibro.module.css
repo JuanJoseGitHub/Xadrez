@@ -4,7 +4,7 @@
     top: 1px;
     left: 10px;
     width: 24vw;
-}
+    }
 .centro {position: absolute;
     top: 160px;
     left: 10px;
@@ -15,7 +15,7 @@
     border: 1px solid;
     border-radius: 5px;
     overflow-y: scroll;
-}
+    }
 .dereita{
     position:absolute;
     top: 32px;
@@ -26,8 +26,9 @@
     padding: 2rem;
     border: 1px solid;
     border-radius: 5px;
-}
+    }
 .centrado{
+    color: antiquewhite;
     position: relative;
     right: -50px;
-}
+    }

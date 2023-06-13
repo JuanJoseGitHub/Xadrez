@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+    }
 .bordeH {
     position: relative;
     right: -40px;
@@ -13,8 +13,7 @@
     display:flex;
     justify-content: space-around;
     color:antiquewhite
-    
-}
+    }
 .bordeV {
     position: relative;
     left: 6px;
@@ -26,8 +25,7 @@
     flex-direction: column; 
     justify-content: space-around; 
     color:antiquewhite
-}
-
+    }
 body{
     background-image: url(../graficos/fondo.jpg);
     background-repeat: no-repeat;
@@ -38,8 +36,7 @@ body{
     height: 100vh;
     display: grid;
     place-items: center;
-}
-
+    }
 .taboleiro      {
     position: relative;
     right: -40px;
@@ -51,7 +48,7 @@ body{
     grid-template-rows: repeat(8,1fr);
     background-color: #fff;
     border: solid thick rgb(46, 48, 2);   
-}  
+    }  
 .taboleiro *{
     font-family: Chess;
     text-align: center;
@@ -60,57 +57,54 @@ body{
     cursor: pointer;
     user-select: none;
     border: black thin dotted;
-}       
+    }       
 
 .taboleiro *:hover{
     font-weight: 600;
-}
+    }
 .b{
     background-color: antiquewhite;
-}
+    }
 .n{
     background-color: hsl(187, 80%, 63%);
-}  
+    }  
 .container {position: absolute;
     top: 6px;
     left: 10px;
     width: 24vw;
     height: 98vh;
-background-color: greenyellow;
-padding: 1.2rem;
-border: 1px solid;
-border-radius: 5px;
-}
+    background-color: greenyellow;
+    padding: 1rem;
+    border: 1px solid;
+    border-radius: 5px;
+    }
 img{
     height: 200px;
     width: 150px;
-}
-
+    }
 .partidaPGN {position:absolute;
     top: 6px;
     right: 30px;
     width: 200px;
     height: 98vh ;
     background-color: aquamarine;
-    padding: 2rem;
+    padding: 1rem;
     border: 1px solid;
     border-radius: 5px;
     overflow-y: scroll;
-}
+    }
 button {position: relative;
-        top: 24px;
-        font-size: large;
-        padding: 2px;
-        border-radius: 8px;
-        margin: 2px;
-        border: 1px solid green;
-        background-color:aquamarine;
-        text-align: center;
-        transition-duration: 0.4s;
-        }
-
+    font-size: large;
+    padding: 2px;
+    border-radius: 8px;
+    margin: 2px;
+    border: 1px solid green;
+    background-color:aquamarine;
+    text-align: center;
+    transition-duration: 0.4s;
+    }
 button:hover {
     background-color:cornflowerblue;
     color: antiquewhite;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+    }

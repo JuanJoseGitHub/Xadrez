@@ -19,15 +19,17 @@ const Contexto=createContext()
 function App() {
   const stateEmpate = useState(false)
   const statePartidaenPGN = useState("")
-  const stateEvent = useState("")
+  const stateEvento = useState("")
   const stateSite = useState("")
-  const stateDate = useState("")
+  const stateData = useState("")
   const stateRound = useState("")
   const stateWhite = useState("")
   const stateBlack = useState("")
   const stateResult = useState("")
+  const stateCodigoECO = useState("")
   const stateBrancas = useState()
   const stateNegras = useState()
+  
   
   return (
     <>
@@ -61,7 +63,7 @@ function App() {
 
       {/* <CargaPGN/> */}
    
-    <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvent, stateSite, stateDate, stateRound, stateWhite, stateBlack, stateResult, stateBrancas, stateNegras}}> 
+    <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvento, stateSite, stateData, stateRound, stateWhite, stateBlack, stateResult, stateBrancas, stateNegras, stateCodigoECO}}> 
       
       <BrowserRouter>
 

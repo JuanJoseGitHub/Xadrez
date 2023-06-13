@@ -24,6 +24,7 @@ export default function BorraPGN() {
             )
           }
         )
+        alert ("Partida:"+event.target.id+" borrada OK")
       } 
     
       return (
