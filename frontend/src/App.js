@@ -13,6 +13,7 @@ import CargaPGN from './componentes/CargaPGN';
 import VerLibro from './componentes/VerLibro';
 import CambiaCabeceiraPGN from './componentes/CambiaCabeceiraPGN';
 import Avatares from './componentes/Avatares';
+import GrabaPGN from './componentes/GrabaPGN';
 
 const Contexto=createContext()
 
@@ -61,12 +62,15 @@ function App() {
       {/* <BorraPGN></BorraPGN> */}
 
       {/* <CargaPGN/> */}
+      
    
     <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvento, stateSite, stateData, stateRound, stateWhite, stateBlack, stateResult, stateBrancas, stateNegras, stateCodigoECO}}> 
       
+    <GrabaPGN></GrabaPGN>
+
       <BrowserRouter>
 
-      <nav className='enlaces'>
+      {/* <nav className='enlaces'>
           <Link className='link' to="/">| Inicio |</Link>
           <Link className='link' to="/xogar">| Xogar unha partida |</Link>      
           <Link className='link' to="/verlibro">| Ver Libro |</Link>
@@ -84,7 +88,7 @@ function App() {
         <Route path='/verpartidas/' element={<SeleccionaPGN></SeleccionaPGN>}/>
         <Route path='/borra/' element={<BorraPGN></BorraPGN>}/>
         <Route path='/cambia/' element={<CambiaCabeceiraPGN></CambiaCabeceiraPGN>}/>
-      </Routes>   
+      </Routes>    */}
 
       </BrowserRouter>
     </Contexto.Provider>
