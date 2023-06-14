@@ -44,16 +44,15 @@ export default function SeleccionaPGN() {
       const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida/?id="+event.target.id)
       const partidaObx=await resposta.json()
       const partidaPGN=partidaObx.PGNGame
-
-        setEvento(partidaObx.Event)
-        setSite(partidaObx.Site)
-        setData(partidaObx.Date)
-        setRound(partidaObx.Round)
-        setBlack(partidaObx.Black)
-        setWhite(partidaObx.White)
-        setResult(partidaObx.Result)
-        setCodigoECO(partidaObx.ECO)
-       setPartidaenPGN(partidaPGN) 
+      setEvento(partidaObx.Event)
+      setSite(partidaObx.Site)
+      setData(partidaObx.Date)
+      setRound(partidaObx.Round)
+      setBlack(partidaObx.Black)
+      setWhite(partidaObx.White)
+      setResult(partidaObx.Result)
+      setCodigoECO(partidaObx.ECO)    
+      setPartidaenPGN(partidaPGN) 
       setElexido(true)
       setAuto(false)   
       }
@@ -77,14 +76,6 @@ export default function SeleccionaPGN() {
   return (
     <div>
         <button className={style.up} onClick={manexadorSelecciona}>Selecciona Partida</button>
-        <p className={style.centrado}>Brancas:{white}</p>
-        <p className={style.centrado}>Negras:{black}</p>
-        <p className={style.centrado}>Evento:{evento}</p>
-        <p className={style.centrado}>Lugar:{site}</p>
-        <p className={style.centrado}>Rolda:{round}</p>
-        <p className={style.centrado}>Data:{data}</p>
-        <p className={style.centrado}>Resultado:{result}</p>
-        <p className={style.centrado}>ECO:{codigoECO}</p>
         <ol className={style.centro}>
         {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorVer}>{partida.PGNGame}</li>)}
         </ol>
