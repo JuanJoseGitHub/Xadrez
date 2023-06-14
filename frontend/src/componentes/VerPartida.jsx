@@ -10,6 +10,24 @@ export default function VerPartida() {
   const [ partidaenPGN , setPartidaenPGN ] = statePartidaenPGN
   const [ auto, setAuto ] = useState(true)
   const [elexido,setElexido] = useState(false)
+
+  const { stateWhite } = useContext (Contexto)
+    const [ white , setWhite ] = stateWhite
+    const { stateBlack } = useContext (Contexto)
+    const [ black , setBlack ] = stateBlack
+    const {stateEvento} = useContext (Contexto)
+    const [evento , setEvento] = stateEvento
+    const { stateSite } = useContext (Contexto)
+    const [site , setSite] = stateSite
+    const { stateData } = useContext (Contexto)
+    const [data , setData] = stateData
+    const { stateRound } = useContext (Contexto)
+    const [round , setRound] = stateRound
+    const {stateResult } = useContext (Contexto)
+    const [result , setResult] = stateResult
+    const { stateCodigoECO } = useContext (Contexto)
+    const [ codigoECO , setCodigoECO ] = stateCodigoECO
+    
   let arrayCon=[]
   let arraySal=[]
 
