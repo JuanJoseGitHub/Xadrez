@@ -13,7 +13,6 @@ import CargaPGN from './componentes/CargaPGN';
 import VerLibro from './componentes/VerLibro';
 import CambiaCabeceiraPGN from './componentes/CambiaCabeceiraPGN';
 import Avatares from './componentes/Avatares';
-import GrabaPGN from './componentes/GrabaPGN';
 
 const Contexto=createContext()
 
@@ -63,11 +62,8 @@ function App() {
 
       {/* <CargaPGN/> */}
       
-   
     <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvento, stateSite, stateData, stateRound, stateWhite, stateBlack, stateResult, stateBrancas, stateNegras, stateCodigoECO}}> 
       
-    {/* <GrabaPGN></GrabaPGN> */}
-
       <BrowserRouter>
 
       <nav className='enlaces'>

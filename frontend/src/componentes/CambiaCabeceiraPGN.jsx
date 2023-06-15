@@ -5,7 +5,7 @@ import style from '../css/VerLibro.module.css'
 import {saveAs} from 'file-saver'
 
 export default function CambiaCabeceiraPGN() {
-  const [ textoGrabado , setTextoGrabado] = useState ("")
+    const [ textoGrabado , setTextoGrabado] = useState ("")
     const [ partidas , setPartidas ] = useState ([])
     const [ elexido , setElexido ] = useState (false)
     const { stateWhite } = useContext (Contexto)
@@ -40,7 +40,6 @@ export default function CambiaCabeceiraPGN() {
         const resposta2=await fetch ("http://localhost:8000/XadrezAPI/verpartida/?id="+event.target.id)
         const partidaObx=await resposta2.json()
         alert("Partida nº "+event.target.id+" cabeceira modificada correctamente")
-
         partidaObx.Event=evento
         partidaObx.Site=site
         partidaObx.Date=data
@@ -49,7 +48,6 @@ export default function CambiaCabeceiraPGN() {
         partidaObx.White=white
         partidaObx.Result=result
         partidaObx.ECO=codigoECO
-
         setTextoGrabado(`[Event "${partidaObx.Event}"]
 [Site "${partidaObx.Site}"]
 [Date "${partidaObx.Date}"]
@@ -60,7 +58,6 @@ export default function CambiaCabeceiraPGN() {
 [ECO "${partidaObx.ECO}"]\r\n
 ${partidaObx.PGNGame}
 `)
-
         const resposta = await fetch ("http://localhost:8000/XadrezAPI/cabeceira/", 
           {
             method:'PUT',
