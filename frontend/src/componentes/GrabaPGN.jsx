@@ -5,7 +5,8 @@ import style from '../css/VerLibro.module.css'
 import {saveAs} from 'file-saver'
 
 export default function GrabaPGN() {
-    const textoGrabado=""
+  // let textoGrabado="" 
+    const [ textoGrabado , setTextoGrabado] = useState ("")
     const [ partidas , setPartidas ] = useState ([])
     const  { statePartidaenPGN } = useContext (Contexto)
     const [ partidaenPGN , setPartidaenPGN ] = statePartidaenPGN
@@ -25,6 +26,11 @@ export default function GrabaPGN() {
     const [result , setResult] = stateResult
     const { stateCodigoECO } = useContext (Contexto)
     const [ codigoECO , setCodigoECO ] = stateCodigoECO
+
+    const createFile = ()=>{
+      const blob=new Blob ([textoGrabado] , { type: "text/plain;charset=utf-8"})
+      saveAs(blob,"Xadrez.pgn")
+    } 
 
     async function manexadorSelecciona(){
         const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida")
@@ -46,12 +52,18 @@ export default function GrabaPGN() {
         setCodigoECO(partidaObx.ECO)
         setPartidaenPGN(partidaObx.PGNGame)
 
-        textoGrabado='[Event "'+evento+'"]'+'/n'+'[Site "'+site+'"]'+'/n'+'[Date "'+data+'"]'+'/n'
-        +'[Round "'+round+'"]'+'/n'+'[White "'+white+'"]'+'/n'+'[Black "'+black+'"]'+'/n'+'[Result "'+result+'"]'+'/n'
-        +'[ECO "'+codigoECO+'"]'+'/n'+'/n'+partidaenPGN
+        setTextoGrabado(`[Event "${partidaObx.Event}"]
+[Site "${partidaObx.Site}"]
+[Date "${partidaObx.Date}"]
+[Round "${partidaObx.Round}"]
+[White "${partidaObx.White}"]
+[Black "${partidaObx.Black}"]
+[Result "${partidaObx.Result}"]
+[ECO "${partidaObx.ECO}"]\r\n
+${partidaObx.PGNGame}
+`)
+   
       }
-
-
 
   return (
     <>
@@ -67,6 +79,7 @@ export default function GrabaPGN() {
         <ol className={style.centro}>
          {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorCambia}>{partida.PGNGame}</li>)}
         </ol>
+        <button onClick={createFile}>Graba Ficheiro xadrez.pgn</button>
     </>
   )
 }
