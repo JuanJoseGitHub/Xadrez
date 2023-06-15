@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext , useState } from 'react'
-import { Contexto } from "../App";
+import { Contexto } from "../App"
 import style from '../css/VerLibro.module.css'
 import {saveAs} from 'file-saver'
 

@@ -66,18 +66,18 @@ function App() {
    
     <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvento, stateSite, stateData, stateRound, stateWhite, stateBlack, stateResult, stateBrancas, stateNegras, stateCodigoECO}}> 
       
-    <GrabaPGN></GrabaPGN>
+    {/* <GrabaPGN></GrabaPGN> */}
 
       <BrowserRouter>
 
-      {/* <nav className='enlaces'>
+      <nav className='enlaces'>
           <Link className='link' to="/">| Inicio |</Link>
           <Link className='link' to="/xogar">| Xogar unha partida |</Link>      
           <Link className='link' to="/verlibro">| Ver Libro |</Link>
           <Link className='link' to="/verpartida">| Ver Partida 1 |</Link>
           <Link className='link' to="/verpartidas">| Ver Partidas |</Link>
           <Link className='link' to="/borra">| Borrar Partidas |</Link>
-          <Link className='link' to="/cambia">| Cambiar |</Link>
+          <Link className='link' to="/datos">| Datos |</Link>
       </nav>
 
       <Routes className='enlaces'>
@@ -87,8 +87,8 @@ function App() {
         <Route path='/verpartida/' element={<VerPartida></VerPartida>}/>
         <Route path='/verpartidas/' element={<SeleccionaPGN></SeleccionaPGN>}/>
         <Route path='/borra/' element={<BorraPGN></BorraPGN>}/>
-        <Route path='/cambia/' element={<CambiaCabeceiraPGN></CambiaCabeceiraPGN>}/>
-      </Routes>    */}
+        <Route path='/datos/' element={<CambiaCabeceiraPGN></CambiaCabeceiraPGN>}/>
+      </Routes>   
 
       </BrowserRouter>
     </Contexto.Provider>

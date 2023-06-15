@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import style from '../css/VerLibro.module.css'
-import { useContext} from 'react'
+import { useContext } from 'react'
 import { Contexto } from "../App"
+import style from '../css/VerLibro.module.css'
+import {saveAs} from 'file-saver'
 
 export default function CambiaCabeceiraPGN() {
-
+  const [ textoGrabado , setTextoGrabado] = useState ("")
     const [ partidas , setPartidas ] = useState ([])
     const [ elexido , setElexido ] = useState (false)
     const { stateWhite } = useContext (Contexto)
@@ -24,6 +25,11 @@ export default function CambiaCabeceiraPGN() {
     const { stateCodigoECO } = useContext (Contexto)
     const [ codigoECO , setCodigoECO ] = stateCodigoECO
     
+    const createFile = ()=>{
+      const blob=new Blob ([textoGrabado] , { type: "text/plain;charset=utf-8"})
+      saveAs(blob,"Xadrez.pgn")
+    } 
+
     async function manexadorSelecciona(){
         const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida")
         const partidaObx=await resposta.json()
@@ -43,6 +49,17 @@ export default function CambiaCabeceiraPGN() {
         partidaObx.White=white
         partidaObx.Result=result
         partidaObx.ECO=codigoECO
+
+        setTextoGrabado(`[Event "${partidaObx.Event}"]
+[Site "${partidaObx.Site}"]
+[Date "${partidaObx.Date}"]
+[Round "${partidaObx.Round}"]
+[White "${partidaObx.White}"]
+[Black "${partidaObx.Black}"]
+[Result "${partidaObx.Result}"]
+[ECO "${partidaObx.ECO}"]\r\n
+${partidaObx.PGNGame}
+`)
 
         const resposta = await fetch ("http://localhost:8000/XadrezAPI/cabeceira/", 
           {
@@ -69,6 +86,7 @@ export default function CambiaCabeceiraPGN() {
         <ol className={style.centro}>
          {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorCambia}>{partida.PGNGame}</li>)}
         </ol>
+        <button onClick={createFile}>Graba xadrez.pgn</button>
     </>   
   )
 }
