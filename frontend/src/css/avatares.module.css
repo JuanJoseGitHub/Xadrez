@@ -5,7 +5,7 @@
     top: 30px;
     left: 50px;
     height: 92vh;
-    width: 22vw;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,7 +20,7 @@
     top: 30px;
     right: 50px;
     height:92vh;
-    width: 22vw;
+    width: 24vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,7 +31,7 @@
 .formulario {
     position: absolute;
     top: 30px;
-    left: 396px;
+    left: 394px;
     height: 48vh;
     width: 92vh;
     display: flex;
@@ -53,8 +53,8 @@ input {
 .fondo{
     position: relative;
     /* top: 357px; */
-    top:157px;
-    left: 9px;
+    top:156px;
+    left: 7px;
     width: 42vw;
     height: 20vw;
     background-image: url(../graficos/Home/Wall2.jpg);

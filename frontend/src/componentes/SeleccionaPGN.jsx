@@ -38,6 +38,7 @@ export default function SeleccionaPGN() {
 
         setPartidas(partidaObx)
         setElexido(false)
+        console.log(elexido)
       }
 
     async function manexadorVer(event){
@@ -54,7 +55,8 @@ export default function SeleccionaPGN() {
       setCodigoECO(partidaObx.ECO)    
       setPartidaenPGN(partidaPGN) 
       setElexido(true)
-      setAuto(false)   
+      setAuto(false)
+      console.log(elexido)   
       }
 
     async function manexadorVerAuto(event){
@@ -83,7 +85,8 @@ export default function SeleccionaPGN() {
         {/* <button onClick={manexadorVerAuto}>Ver Partida (Auto)</button> */}
         <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button>
         {/* {(elexido && auto) && <PartidaAuto autoPartida={partidaenPGN}/>} */}
-        {(elexido && !auto) && <VisualizaPGN partida={partidaenPGN}/>}
+        
+        {elexido && <VisualizaPGN partida={partidaenPGN}/>}
       </div>
   )
 }

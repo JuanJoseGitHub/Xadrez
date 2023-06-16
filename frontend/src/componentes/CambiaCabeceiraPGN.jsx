@@ -71,7 +71,7 @@ ${partidaObx.PGNGame}
 
   return (
     <>
-        <button className={style.up} onClick={manexadorSelecciona}>Selecciona cabeceira</button>
+        <button className={style.up} onClick={manexadorSelecciona}>Selecciona partida </button>
         <p className={style.centrado}>Brancas:{white}</p>
         <p className={style.centrado}>Negras:{black}</p>
         <p className={style.centrado}>Evento:{evento}</p>
