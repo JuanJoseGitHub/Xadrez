@@ -83,10 +83,11 @@ export default function SeleccionaPGN() {
         </ol>
 
         {/* <button onClick={manexadorVerAuto}>Ver Partida (Auto)</button> */}
-        <button onClick={manexadorVer}>Ver Partida (Xogada a xogada)</button>
+        <button onClick={manexadorVer} disabled={ ! elexido }>Ver Partida (Xogada a xogada)</button>
         {/* {(elexido && auto) && <PartidaAuto autoPartida={partidaenPGN}/>} */}
         
         {elexido && <VisualizaPGN partida={partidaenPGN}/>}
+
       </div>
   )
 }

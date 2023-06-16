@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react'
 import style from '../css/VerLibro.module.css'
 import { useState } from 'react'
-import { Chess } from 'chess.js'
-
 
 export default function CargaPGN() {
 
     const [file, setFile] = useState()
-    const chess=new Chess()
 
     useEffect(
         ()=>{ 
@@ -27,8 +24,9 @@ export default function CargaPGN() {
 
   return (
     <>
-    <div className={style.up}>CargaPGN</div>
-    <input className={style.up} type='file' onChange={CambioFicheiro}/>
+    <p>
+    <input className={style.centrado} type='file' onChange={CambioFicheiro}/>
+    </p>
     </>
   )
 }

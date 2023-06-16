@@ -60,7 +60,9 @@ function App() {
       {/* Mostra as partidas almacenadas en base de datos e permite seleccionar unha para borrar */}
       {/* <BorraPGN></BorraPGN> */}
 
-      {/* <CargaPGN/> */}
+      {/* Asigna a cabeceira a unha das partidas da base de datos e unha vez asignada, permite grabar en disco o PGN */}
+      {/* Adicionalmente permite cargar de disco un PGN, que se visualiza por consola (<CargaPGN></CargaPGN>) */}
+      {/* <CambiaCabeceira/> */}
       
     <Contexto.Provider value={{stateEmpate, statePartidaenPGN, stateEvento, stateSite, stateData, stateRound, stateWhite, stateBlack, stateResult, stateBrancas, stateNegras, stateCodigoECO}}> 
       

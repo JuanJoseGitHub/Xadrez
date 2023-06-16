@@ -3,11 +3,13 @@ import { useContext } from 'react'
 import { Contexto } from "../App"
 import style from '../css/VerLibro.module.css'
 import {saveAs} from 'file-saver'
+import CargaPGN from './CargaPGN'
 
 export default function CambiaCabeceiraPGN() {
     const [ textoGrabado , setTextoGrabado] = useState ("")
     const [ partidas , setPartidas ] = useState ([])
     const [ elexido , setElexido ] = useState (false)
+    const [ datosCargados , setDatosCargados] = useState (false)
     const { stateWhite } = useContext (Contexto)
     const [ white , setWhite ] = stateWhite
     const { stateBlack } = useContext (Contexto)
@@ -24,7 +26,7 @@ export default function CambiaCabeceiraPGN() {
     const [result , setResult] = stateResult
     const { stateCodigoECO } = useContext (Contexto)
     const [ codigoECO , setCodigoECO ] = stateCodigoECO
-    
+
     const createFile = ()=>{
       const blob=new Blob ([textoGrabado] , { type: "text/plain;charset=utf-8"})
       saveAs(blob,"Xadrez.pgn")
@@ -39,7 +41,6 @@ export default function CambiaCabeceiraPGN() {
       async function manexadorCambia (event) {
         const resposta2=await fetch ("http://localhost:8000/XadrezAPI/verpartida/?id="+event.target.id)
         const partidaObx=await resposta2.json()
-        alert("Partida nº "+event.target.id+" cabeceira modificada correctamente")
         partidaObx.Event=evento
         partidaObx.Site=site
         partidaObx.Date=data
@@ -48,6 +49,8 @@ export default function CambiaCabeceiraPGN() {
         partidaObx.White=white
         partidaObx.Result=result
         partidaObx.ECO=codigoECO
+        alert("Partida nº "+event.target.id+" cabeceira modificada correctamente")
+        setDatosCargados(true)
         setTextoGrabado(`[Event "${partidaObx.Event}"]
 [Site "${partidaObx.Site}"]
 [Date "${partidaObx.Date}"]
@@ -67,7 +70,11 @@ ${partidaObx.PGNGame}
             )
           }
         )
-      } 
+      }
+
+function cargarPGN(){
+  setElexido(true)
+}       
 
   return (
     <>
@@ -83,7 +90,9 @@ ${partidaObx.PGNGame}
         <ol className={style.centro}>
          {partidas.map(partida=><li key={partida.id} id={partida.id} onClick={manexadorCambia}>{partida.PGNGame}</li>)}
         </ol>
-        <button onClick={createFile}>Graba xadrez.pgn</button>
+        <button onClick={createFile} disabled={!datosCargados}>Graba xadrez.pgn</button>
+        <button onClick={cargarPGN}>Carga PGN (pulsa F12)</button>
+        {elexido && <CargaPGN></CargaPGN>}
     </>   
   )
 }
