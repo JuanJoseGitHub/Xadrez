@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useContext } from "react";
 import style from "../css/LeeXogada.module.css";
 import { chess, procesarMovemento} from '../modulos/Intro.mjs'
 import { Contexto } from "../App";
-import melen from '../musica/Melendi.mp3'
+import melen from '../musica/InMotion.mp3'
 
 //Agregar tempos
 
@@ -136,8 +136,15 @@ export default function LeeXogada() {
     setCasillaFin(event.target.id)
     }
   function Auto () {
-    if (audio.current.paused) audio.current.play()
-    else audio.current.pause()
+    if (audio.current.paused) {
+      audio.current.play()
+      audio.current.loop=true
+      alert ('Obra: En Movimiento \n\r Música de https://www.fiftysounds.com/es/ ')
+      }
+    else {
+      audio.current.pause()
+      audio.current.loop=false
+      }
     }
 
   function manexadorGraba() {

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useContext } from 'react'
 import style from '../css/VisualizaPGN.module.css'
 import TaboleiroMover from './TaboleiroMover'
 import { Contexto } from '../App'
-import melen from '../musica/Mecano.mp3'
+import melen from '../musica/InMotion.mp3'
 
 export default function VisualizaPGN({partida})
  {
@@ -65,8 +65,15 @@ export default function VisualizaPGN({partida})
     setXogada(Math.round(arrayPGN.length/3))
   }
   function Auto () {
-    if (audio.current.paused) audio.current.play()
-    else audio.current.pause()
+    if (audio.current.paused) {
+      audio.current.play()
+      audio.current.loop=true
+      alert ('Obra: En Movimiento \n\r Música de https://www.fiftysounds.com/es/ ')
+      }
+    else {
+        audio.current.pause()
+        audio.current.loop=false
+        }
   }
     return (
     <>
