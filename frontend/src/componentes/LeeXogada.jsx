@@ -3,6 +3,8 @@ import style from "../css/LeeXogada.module.css";
 import { chess, procesarMovemento} from '../modulos/Intro.mjs'
 import { Contexto } from "../App";
 import melen from '../musica/InMotion.mp3'
+import xaq from '../musica/xaque.mp3'
+import emp from '../musica/empate.mp3'
 
 //Agregar tempos
 
@@ -37,6 +39,8 @@ export default function LeeXogada() {
   let arrayPGN = []
   let arrayXogada = []
   const audio=useRef(new Audio(melen))
+  const audioXaque=useRef(new Audio(xaq))
+  const audioEmpate=useRef(new Audio(emp))
   
   let [turno , setTurno] = useState("w")
   let [ xaque , setXaque] = useState (false)
@@ -58,15 +62,25 @@ export default function LeeXogada() {
         PintaPartida()
         setTurno(chess.turn())
         setXaque(chess.inCheck())
+        if (chess.inCheck()) {audioXaque.current.play()}
         setGameOver(chess.isGameOver())
         setEmpate(chess.isDraw())
+        if (chess.isDraw()) {
+          audioEmpate.current.play()
+          setResult("1/2-1/2")}
         BuscaECO()
+        ResultadoFinal()
       }
     },
     [casillaInicio, casillaFin]
   )
- // agregar functionResultadoFinal()
-
+ function ResultadoFinal(){
+  if (gameOver===true)
+    {console.log("GO:"+chess.isGameOver())}
+    //   if (turno==="w") {setResult("0-1")}
+    //       else {setResult("1-0")}
+    // } 
+ }
    
   async function BuscaECO(){
     let ecoActualCrudo=chess.ascii()
