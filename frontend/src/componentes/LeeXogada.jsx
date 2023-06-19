@@ -64,24 +64,17 @@ export default function LeeXogada() {
         setXaque(chess.inCheck())
         if (chess.inCheck()) {audioXaque.current.play()}
         setGameOver(chess.isGameOver())
+        if (chess.isGameOver()) {turno==="w" ? setResult("1-0") : setResult("0-1")}
         setEmpate(chess.isDraw())
         if (chess.isDraw()) {
           audioEmpate.current.play()
           setResult("1/2-1/2")}
         BuscaECO()
-        ResultadoFinal()
       }
     },
     [casillaInicio, casillaFin]
   )
- function ResultadoFinal(){
-  if (gameOver===true)
-    {console.log("GO:"+chess.isGameOver())}
-    //   if (turno==="w") {setResult("0-1")}
-    //       else {setResult("1-0")}
-    // } 
- }
-   
+    
   async function BuscaECO(){
     let ecoActualCrudo=chess.ascii()
     let ecoActual=ecoActualCrudo.slice(30,-58)
@@ -228,7 +221,7 @@ export default function LeeXogada() {
         <p>{site}</p>
         <p>{data}</p>
         <hr></hr>
-        {arrayObxetosXogada.map( xogada => <p>{xogada.id+". "} {xogada.blancas} {xogada.negras}</p>)}
+        {arrayObxetosXogada.map( xogada => <p key={xogada.id}>{xogada.id+". "} {xogada.blancas} {xogada.negras}</p>)}
     </div>
 
     <div className={style.taboleiro}>
