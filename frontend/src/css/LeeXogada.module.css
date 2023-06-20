@@ -83,10 +83,10 @@ img{
     width: 150px;
     }
 .partidaPGN {position:absolute;
-    top: 6px;
+    top: 60px;
     right: 30px;
     width: 200px;
-    height: 88vh ;
+    height: 83vh ;
     background-color: aquamarine;
     padding: 1rem;
     border: 1px solid;
@@ -108,16 +108,28 @@ button:hover {
     color: antiquewhite;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
-.tempo{
+.resultado{
 position: fixed;
-top: 560px;
+top: 584px;
 right: 30px;
 width: 200px;
-height: 10vh;
+height: 6vh;
 border: 1px solid;
 border-radius: 5px;
 background-color: darkkhaki;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
+}
+
+.tempo{
+position: fixed;
+top: 6px;
+right: 30px;
+width: 200px;
+height: 6vh;
+border: 1px solid;
+border-radius: 5px;
+background-color: darkkhaki;
+display: flex;
 }
