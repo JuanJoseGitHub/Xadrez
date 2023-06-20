@@ -224,6 +224,11 @@ export default function LeeXogada() {
         {arrayObxetosXogada.map( xogada => <p key={xogada.id}>{xogada.id+". "} {xogada.blancas} {xogada.negras}</p>)}
     </div>
 
+    <div className={style.tempo}>
+     
+    <button>1-0</button><button>1/2-1/2</button><button>0-1</button><button>*</button>
+    </div>
+
     <div className={style.taboleiro}>
       <div className={style.b} id="a8" draggable="true" onDrag={Dragado} onDragOver={Dragover} onDrop={Dropado} onClick={PulsadoInicio} >
         {taboleiro[0][0]}
