@@ -224,8 +224,7 @@ export default function LeeXogada() {
         {arrayObxetosXogada.map( xogada => <p key={xogada.id}>{xogada.id+". "} {xogada.blancas} {xogada.negras}</p>)}
     </div>
 
-    <div className={style.tempo}>
-     
+    <div className={style.tempo}> 
     <button>1-0</button><button>1/2-1/2</button><button>0-1</button><button>*</button>
     </div>
 

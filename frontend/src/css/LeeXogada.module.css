@@ -86,7 +86,7 @@ img{
     top: 6px;
     right: 30px;
     width: 200px;
-    height: 86vh ;
+    height: 88vh ;
     background-color: aquamarine;
     padding: 1rem;
     border: 1px solid;
@@ -110,7 +110,7 @@ button:hover {
     }
 .tempo{
 position: fixed;
-top: 640px;
+top: 560px;
 right: 30px;
 width: 200px;
 height: 10vh;
@@ -119,5 +119,5 @@ border-radius: 5px;
 background-color: darkkhaki;
 display: flex;
 flex-direction: row;
-
+justify-content: space-around;
 }
