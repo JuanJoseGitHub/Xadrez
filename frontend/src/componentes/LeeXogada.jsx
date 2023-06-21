@@ -4,9 +4,8 @@ import { chess, procesarMovemento} from '../modulos/Intro.mjs'
 import { Contexto } from "../App";
 import melen from '../musica/InMotion.mp3'
 import xaq from '../musica/xaque.mp3'
+import toc from '../musica/xaqueclinck.mp3'
 import emp from '../musica/empate.mp3'
-
-//Agregar tempos
 
 export default function LeeXogada() {
   const [ taboleiro, setTaboleiro ] = useState(xeneraTaboleiro())
@@ -39,6 +38,7 @@ export default function LeeXogada() {
   let arrayPGN = []
   let arrayXogada = []
   const audio=useRef(new Audio(melen))
+  const audioTic=useRef(new Audio(toc))
   const audioXaque=useRef(new Audio(xaq))
   const audioEmpate=useRef(new Audio(emp))
   
@@ -51,8 +51,14 @@ export default function LeeXogada() {
   let [arrayObxetosXogada , setArrayObxetosXogada] = useState ([])
   let [opName,setOpName] = useState("")
   let [opPlayed,setOpPlayed] = useState("")
-  let [tempoB,setTempoB] = useState(10000)
-  let [tempoN,setTempoN] = useState(10000)
+  let [tempoB,setTempoB] = useState(600)
+  let [tempoN,setTempoN] = useState(600)
+  let [segundosB,setSegundosB] = useState(0)
+  let [segundosN,setSegundosN] = useState(0)
+  let [minutosB,setMinutosB] = useState(0)
+  let [minutosN,setMinutosN] = useState(0)
+  let [horasB,setHorasB] = useState(0)
+  let [horasN,setHorasN] = useState (0)
   let inicio
   inicioTurno()
   
@@ -82,7 +88,11 @@ export default function LeeXogada() {
   )
 
   function descontaTempo(){ 
+    
     chess.turn()==="b" ? setTempoB (tempoB - (Date.now()-inicio)) : setTempoN (tempoN - (Date.now()-inicio))
+    setHorasB(tempoB%3600)
+    audioTic.current.play()
+
   }
    function inicioTurno(){
     inicio = Date.now()
@@ -201,7 +211,18 @@ export default function LeeXogada() {
   }
   function Other(){
     setResult("*")
+  }
+
+  function maisTempo(){
+    setTempoB(tempoB+60)
+    setTempoN(tempoN+60)
   }   
+  function menosTempo(){
+    setTempoB(tempoB-60)
+    setTempoN(tempoN-60)
+  }   
+
+
   return (
     
     // Pinta o taboleiro en pantalla
@@ -241,7 +262,7 @@ export default function LeeXogada() {
       </div> 
 
     <div className={style.tempo}>
-    {tempoB} - {tempoN} 
+    <button onClick={maisTempo}>+</button>{horasB}:{tempoB} - {tempoN}<button onClick={menosTempo}>-</button> 
     </div>
 
     <div className={style.partidaPGN}>
