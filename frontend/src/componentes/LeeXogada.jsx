@@ -51,11 +51,17 @@ export default function LeeXogada() {
   let [arrayObxetosXogada , setArrayObxetosXogada] = useState ([])
   let [opName,setOpName] = useState("")
   let [opPlayed,setOpPlayed] = useState("")
+  let [tempoB,setTempoB] = useState(10000)
+  let [tempoN,setTempoN] = useState(10000)
+  let inicio
+  inicioTurno()
   
    useEffect(
     ()=>{
       if((casillaInicio && casillaFin)&&(casillaInicio !==casillaFin)) {
         procesarMovemento( { from: casillaInicio, to: casillaFin} )
+        descontaTempo()
+        inicioTurno()
         setTaboleiro(xeneraTaboleiro())
         setCasillaInicio()
         setCasillaFin()
@@ -74,6 +80,13 @@ export default function LeeXogada() {
     },
     [casillaInicio, casillaFin]
   )
+
+  function descontaTempo(){ 
+    chess.turn()==="b" ? setTempoB (tempoB - (Date.now()-inicio)) : setTempoN (tempoN - (Date.now()-inicio))
+  }
+   function inicioTurno(){
+    inicio = Date.now()
+   }
     
   async function BuscaECO(){
     let ecoActualCrudo=chess.ascii()
@@ -176,7 +189,19 @@ export default function LeeXogada() {
     )
   alert ("Partida Grabada OK");
   }
-    
+
+  function Bwin(){
+    setResult("1-0")
+  }
+  function Draw(){
+    setResult("1/2-1/2")
+  }
+  function Nwin(){
+    setResult("0-1")
+  }
+  function Other(){
+    setResult("*")
+  }   
   return (
     
     // Pinta o taboleiro en pantalla
@@ -215,6 +240,10 @@ export default function LeeXogada() {
       <div>a</div><div>b</div><div>c</div><div>d</div><div>e</div><div>f</div><div>g</div><div>h</div>      
       </div> 
 
+    <div className={style.tempo}>
+    {tempoB} - {tempoN} 
+    </div>
+
     <div className={style.partidaPGN}>
         <p>{evento}</p>
         <p>[{round}]</p>
@@ -222,6 +251,10 @@ export default function LeeXogada() {
         <p>{data}</p>
         <hr></hr>
         {arrayObxetosXogada.map( xogada => <p key={xogada.id}>{xogada.id+". "} {xogada.blancas} {xogada.negras}</p>)}
+    </div>
+
+    <div className={style.resultado}> 
+    <button onClick={Bwin}>1-0</button><button onClick={Draw}>1/2-1/2</button><button onClick={Nwin}>0-1</button><button onClick={Other}>*</button>
     </div>
 
     <div className={style.taboleiro}>
