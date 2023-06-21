@@ -60,7 +60,9 @@ export default function LeeXogada() {
   let [horasB,setHorasB] = useState(0)
   let [horasN,setHorasN] = useState (0)
   let inicio
+  let restoH
   inicioTurno()
+  HMS()
   
    useEffect(
     ()=>{
@@ -88,13 +90,15 @@ export default function LeeXogada() {
   )
 
   function descontaTempo(){ 
-    
     chess.turn()==="b" ? setTempoB (tempoB - (Date.now()-inicio)) : setTempoN (tempoN - (Date.now()-inicio))
-    setHorasB(tempoB%3600)
+    HMS()
     audioTic.current.play()
-
-  }
-   function inicioTurno(){
+    }
+  function HMS(){
+    setHorasB=Math.trunc(tempoB/3600)
+    
+    }
+  function inicioTurno(){
     inicio = Date.now()
    }
     
