@@ -83,7 +83,7 @@ export default function Avatares() {
     <p>{white}</p>
     <input type='file' onChange={CambioFicheiroEsquerda}/>
     <div>
-    <img src={brancas} alt='b'></img>
+    <img className={style.imaxe} src={brancas} alt='b'></img>
     </div>
     </div> 
     <div className={style.dereita}>
@@ -91,7 +91,7 @@ export default function Avatares() {
     <p>{black}</p>
     <input type='file' onChange={CambioFicheiroDereita}/>
     <div>
-    <img src={negras} alt='n'></img>
+    <img className={style.imaxe} src={negras} alt='n'></img>
     </div>
     </div>
     </>

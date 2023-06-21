@@ -60,9 +60,7 @@ export default function LeeXogada() {
   let [horasB,setHorasB] = useState(0)
   let [horasN,setHorasN] = useState (0)
   let inicio
-  let HBrancas
-  let MBrancas
-  let SBrancas
+
   inicioTurno()
   
    useEffect(
@@ -92,13 +90,6 @@ export default function LeeXogada() {
 
   function descontaTempo(){ 
     chess.turn()==="b" ? setTempoB (tempoB - (Date.now()-inicio)) : setTempoN (tempoN - (Date.now()-inicio))
-    HBrancas=Math.trunc(tempoB/3600)
-    MBrancas=Math.trunc((tempoB-(HBrancas*3600))/60)
-    SBrancas=tempoB-HBrancas*3600-MBrancas*60
-    console.log(HBrancas+":"+MBrancas+":"+SBrancas)
-    setHorasB(HBrancas)
-    setMinutosB(MBrancas)
-    setSegundosB(SBrancas)
     audioTic.current.play()
     }
   
@@ -245,7 +236,6 @@ export default function LeeXogada() {
       <button onClick={Auto}>Música</button>
       <p>{codigoECO}</p>
       <p>{opName}</p>
-      <br></br>
       <p>{opPlayed}</p>
       <div>
       BRANCAS:{white}
@@ -270,7 +260,7 @@ export default function LeeXogada() {
       </div> 
 
     <div className={style.tempo}>
-    <button onClick={maisTempo}>+</button>{horasB}:{minutosB}:{segundosB}#{tempoB} - {tempoN}<button onClick={menosTempo}>-</button> 
+    <button onClick={maisTempo}>+</button>{("0"+(tempoB/60).toFixed(2)).slice(-5)} - {("0"+(tempoN/60).toFixed(2)).slice(-5)}<button onClick={menosTempo}>-</button> 
     </div>
 
     <div className={style.partidaPGN}>
