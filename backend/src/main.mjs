@@ -40,7 +40,8 @@ const ECO = sequelize.define('ECO', {
     Ascii:{type: DataTypes.STRING}
 })
 
-//await sequelize.sync({ alter:true })
+
+// await sequelize.sync({ alter:true })
 await sequelize.sync()
 
 export {
@@ -88,7 +89,11 @@ app.get("/XadrezAPI/ECO/",async (peticion,resposta)=>{
 app.get("/XadrezAPI/",(peticion,resposta)=>{
     try{
     resposta.status(200)
-    resposta.send("Benvido á API de xadrez")
+    resposta.send(`Benvido á API de xadrez
+        <p>NODE_ENV: ${process.env.NODE_ENV}</p>
+        <p>PORT: ${process.env.PORT}</p>`
+        )
+    
     } catch (error) {
         resposta.status(500)
         resposta.send('Erro!')
@@ -183,4 +188,9 @@ app.delete("/XadrezAPI/borra/", async (peticion,resposta)=>{
         }
 })
 
-app.listen(8000,()=>{console.log("[Escoitando]");})
+app.listen(process.env.PORT ?? 8000, ()=>{
+    console.log("[Escoitando]");
+    console.log("NODE_ENV", process.env.NODE_ENV)
+    console.log("PORT", process.env.PORT)
+    }
+)
