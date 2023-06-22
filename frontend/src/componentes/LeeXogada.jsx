@@ -260,7 +260,7 @@ export default function LeeXogada() {
       </div> 
 
     <div className={style.tempo}>
-    <button onClick={maisTempo}>+</button>{("0"+(tempoB/60).toFixed(2)).slice(-5)} - {("0"+(tempoN/60).toFixed(2)).slice(-5)}<button onClick={menosTempo}>-</button> 
+    <button onClick={maisTempo}>+</button>{("00"+(tempoB/60).toFixed(2)).slice(-6)} - {("00"+(tempoN/60).toFixed(2)).slice(-6)}<button onClick={menosTempo}>-</button> 
     </div>
 
     <div className={style.partidaPGN}>
