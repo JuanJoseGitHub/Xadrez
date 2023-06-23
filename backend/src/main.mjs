@@ -8,10 +8,15 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './database/partidas.sqlite'
-})
+const sequelize = new Sequelize(
+    process.env.NODE_ENV === "production" ?
+    process.env.DB_URL:
+    'sqlite:./database/partidas.sqlite'
+    
+    // Antes
+    // dialect: 'sqlite',
+    // storage: './database/partidas.sqlite'
+)
 
 //Comprobar conexión
 try{
