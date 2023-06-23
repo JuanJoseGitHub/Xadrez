@@ -1,4 +1,4 @@
-import { ECO } from './src/main.mjs'
+import { ECO } from './src/db.mjs'
 import fs from "fs"
 import { Chess } from 'chess.js';
 
