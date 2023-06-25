@@ -62,7 +62,6 @@ app.get("/XadrezAPI/",(peticion,resposta)=>{
 app.get("/XadrezAPI/verECO/", async (peticion,resposta)=>{
     if (peticion.query.id) {
         try {
-            // const game=await ECO.findAll({where:{Ascii: peticion.query.id}})
             const game=await ECO.findByPk(parseInt(peticion.query.id))
             resposta.setHeader("Content-Type", "application/json")
             resposta.status(200)
