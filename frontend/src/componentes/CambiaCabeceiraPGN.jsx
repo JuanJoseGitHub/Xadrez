@@ -4,6 +4,8 @@ import { Contexto } from "../App"
 import style from '../css/VerLibro.module.css'
 import {saveAs} from 'file-saver'
 import CargaPGN from './CargaPGN'
+import { BACKEND_URL } from "../config.mjs"
+
 
 export default function CambiaCabeceiraPGN() {
     const [ textoGrabado , setTextoGrabado] = useState ("")
@@ -33,13 +35,13 @@ export default function CambiaCabeceiraPGN() {
     } 
 
     async function manexadorSelecciona(){
-        const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida")
+        const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verpartida")
         const partidaObx=await resposta.json()
         setPartidas(partidaObx)
       }
 
       async function manexadorCambia (event) {
-        const resposta2=await fetch ("http://localhost:8000/XadrezAPI/verpartida/?id="+event.target.id)
+        const resposta2=await fetch (BACKEND_URL+"/XadrezAPI/verpartida/?id="+event.target.id)
         const partidaObx=await resposta2.json()
         partidaObx.Event=evento
         partidaObx.Site=site
@@ -61,7 +63,7 @@ export default function CambiaCabeceiraPGN() {
 [ECO "${partidaObx.ECO}"]\r\n
 ${partidaObx.PGNGame}
 `)
-        const resposta = await fetch ("http://localhost:8000/XadrezAPI/cabeceira/", 
+        const resposta = await fetch (BACKEND_URL+"/XadrezAPI/cabeceira/", 
           {
             method:'PUT',
             headers:{'Content-type':'application/json'},

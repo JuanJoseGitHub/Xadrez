@@ -3,6 +3,7 @@ import { Contexto } from '../App'
 import style from '../css/VerLibro.module.css'
 import PartidaAuto from './PartidaAuto'
 import VisualizaPGN from './VisualizaPGN'
+import { BACKEND_URL } from "../config.mjs"
 
 export default function VerPartida() {
 
@@ -26,14 +27,14 @@ export default function VerPartida() {
   const [result , setResult] = stateResult
   const { stateCodigoECO } = useContext (Contexto)
   const [ codigoECO , setCodigoECO ] = stateCodigoECO
-    
+  
   let arrayCon=[]
   let arraySal=[]
 
   comun()
 
   async function comun(){
-  const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida?id=1")
+  const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verpartida?id=1")
   const partidaObx=await resposta.json()
       setEvento(partidaObx.Event)
       setSite(partidaObx.Site)
@@ -46,7 +47,7 @@ export default function VerPartida() {
 }
 
   async function manexadorVerAuto(){
-    const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida?id=1")
+    const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verpartida?id=1")
     const partidaObx=await resposta.json()
     const partidaPGN=partidaObx.PGNGame
     arrayCon=partidaPGN.split(" ")
@@ -61,7 +62,7 @@ export default function VerPartida() {
   }
 
   async function manexadorVer(){
-    const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida?id=1")
+    const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verpartida?id=1")
     const partidaObx=await resposta.json()
     const partidaPGN=partidaObx.PGNGame
     

@@ -3,6 +3,7 @@ import style from '../css/VerLibro.module.css'
 import { Contexto } from '../App'
 import PartidaAuto from './PartidaAuto'
 import VisualizaPGN from './VisualizaPGN'
+import { BACKEND_URL } from "../config.mjs"
 
 export default function SeleccionaPGN() {
 
@@ -33,7 +34,7 @@ export default function SeleccionaPGN() {
   let arraySal=[]
 
     async function manexadorSelecciona(){
-        const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida")
+        const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verpartida")
         const partidaObx=await resposta.json()
 
         setPartidas(partidaObx)
@@ -42,7 +43,7 @@ export default function SeleccionaPGN() {
       }
 
     async function manexadorVer(event){
-      const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida/?id="+event.target.id)
+      const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verpartida/?id="+event.target.id)
       const partidaObx=await resposta.json()
       const partidaPGN=partidaObx.PGNGame
       setEvento(partidaObx.Event)
@@ -60,7 +61,7 @@ export default function SeleccionaPGN() {
       }
 
     async function manexadorVerAuto(event){
-    const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida/?id="+event.target.id)
+    const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verpartida/?id="+event.target.id)
     const partidaObx=await resposta.json()
     const partidaPGN=partidaObx.PGNGame
     arrayCon=partidaPGN.split(" ")

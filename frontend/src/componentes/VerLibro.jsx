@@ -3,6 +3,7 @@ import style from '../css/VerLibro.module.css'
 import { Contexto } from '../App'
 import { Chess } from 'chess.js'
 import PartidaAuto from './PartidaAuto'
+import { BACKEND_URL } from "../config.mjs"
 
 export default function VerLibro() {
 
@@ -17,13 +18,13 @@ export default function VerLibro() {
   let [myGame,setMyGame] = useState ("")
 
     async function manexadorSelecciona(){
-        const resposta =await fetch ("http://localhost:8000/XadrezAPI/verECO")
+        const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verECO")
         const partidaObx=await resposta.json()
         setPartidas(partidaObx)
       }
 
     async function manexadorVer(event){
-      const resposta =await fetch ("http://localhost:8000/XadrezAPI/verECO/?id="+event.target.id)
+      const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verECO/?id="+event.target.id)
       const partidaObx=await resposta.json()
       const partidaenPGN=partidaObx.OpeningPlayed
       const ECO=partidaObx.ECOcode

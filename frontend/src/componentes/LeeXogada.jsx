@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, useContext } from "react";
 import style from "../css/LeeXogada.module.css";
 import { chess, procesarMovemento} from '../modulos/Intro.mjs'
 import { Contexto } from "../App";
+import { BACKEND_URL } from "../config.mjs"
 import melen from '../musica/InMotion.mp3'
 import xaq from '../musica/xaque.mp3'
 import toc from '../musica/xaqueclinck.mp3'
@@ -61,6 +62,8 @@ export default function LeeXogada() {
   let [horasN,setHorasN] = useState (0)
   let inicio
 
+  console.log(BACKEND_URL);
+
   inicioTurno()
   
    useEffect(
@@ -101,7 +104,7 @@ export default function LeeXogada() {
     let ecoActualCrudo=chess.ascii()
     let ecoActual=ecoActualCrudo.slice(30,-58)
     let buscaECO = encodeURIComponent(ecoActual)
-    const resposta = await fetch ("http://localhost:8000/XadrezAPI/ECO/busca/?Ascii="+buscaECO)
+    const resposta = await fetch (BACKEND_URL+"/XadrezAPI/ECO/busca/?Ascii="+buscaECO)
     const ECO = await resposta.json()
     let Codigo=ECO[0]
     if (Codigo.ECOcode) {setCodigoECO(Codigo.ECOcode)}
@@ -178,7 +181,7 @@ export default function LeeXogada() {
 
   function manexadorGraba() {
     const pgn=chess.pgn()
-    const resposta = fetch ("http://localhost:8000/XadrezAPI/partida", 
+    const resposta = fetch (BACKEND_URL+"/XadrezAPI/partida", 
       {
         method:'POST',
         headers:{'Content-type':'application/json'},

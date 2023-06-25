@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import style from '../css/VerLibro.module.css'
+import { BACKEND_URL } from "../config.mjs"
 
 export default function BorraPGN() {
 
@@ -7,13 +8,13 @@ export default function BorraPGN() {
   const [ elexido , setElexido ] = useState (false)
 
   async function manexadorSelecciona(){
-    const resposta =await fetch ("http://localhost:8000/XadrezAPI/verpartida")
+    const resposta =await fetch (BACKEND_URL+"/XadrezAPI/verpartida")
     const partidaObx=await resposta.json()
     setPartidas(partidaObx)
   }
 
     async function manexadorBorra (event) {
-        const resposta = await fetch ("http://localhost:8000/XadrezAPI/borra", 
+        const resposta = await fetch (BACKEND_URL+"/XadrezAPI/borra", 
           {
             method:'DELETE',
             headers:{'Content-type':'application/json'},
