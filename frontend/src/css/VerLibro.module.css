@@ -1,14 +1,14 @@
 .up {position: absolute;
     background-color: blue;
     color:aquamarine;
-    top: 1px;
+    top: 2px;
     left: 10px;
     width: 24vw;
     }
 .centro {position: absolute;
     top: 200px;
     left: 10px;
-    width: 24vw;
+    width: 28vw;
     height: 74vh;
     background-color: greenyellow;
     padding: 3rem;
@@ -18,7 +18,7 @@
     }
 .dereita{
     position:absolute;
-    top: 32px;
+    top: 60px;
     right:40px;
     width: 18vw;
     height: 94vh;
@@ -30,5 +30,5 @@
 .centrado{
     color: cadetblue;
     position: relative;
-    right: -50px;
+    right: +100px;
     }

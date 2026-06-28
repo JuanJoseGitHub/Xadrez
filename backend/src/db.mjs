@@ -1,6 +1,8 @@
 import { Sequelize, DataTypes } from 'sequelize'
 
 const sequelize = new Sequelize(
+    
+
     process.env.NODE_ENV === "production" ?
     process.env.DB_URL:
     'sqlite:./database/partidas.sqlite'
